@@ -62,6 +62,7 @@ export class CharacterListComponent implements OnInit {
   }
 
   onScrollDown():void{
+    console.log('onScrollDown', this.info.next);
     if (this.info.next) {
       this.pageNum++;
       this.getDataFromService();

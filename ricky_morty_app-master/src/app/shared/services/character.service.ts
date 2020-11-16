@@ -26,9 +26,7 @@ export class CharacterService {
   }
 
 
-  private handleHttpError(
-    error:HttpErrorResponse
-  ):Observable<TrackHttpError>{
+  private handleHttpError(error:HttpErrorResponse): Observable<TrackHttpError>{
 
     let dataError = new TrackHttpError();
     dataError.errorNumber = error.status;
