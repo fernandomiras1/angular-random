@@ -1,0 +1,17 @@
+:host {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+
+  background-color: #fafafa;
+}
+
+ngx-dynamic-hooks {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
