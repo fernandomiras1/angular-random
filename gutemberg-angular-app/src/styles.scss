@@ -1,1 +1,77 @@
 /* You can add global styles to this file, and also import other style files */
+
+@font-face {
+  font-family: geometric-bold;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://static.naranja.com/fonts/URWGeometric-Bold.woff)
+    format("woff");
+}
+
+@font-face {
+  font-family: geometric-semi;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://static.naranja.com/fonts/URWGeometric-SemiBold.woff)
+    format("woff");
+}
+
+@font-face {
+  font-family: geometric-regular;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://static.naranja.com/fonts/URWGeometric-Regular.woff)
+    format("woff");
+}
+html {
+  height: 100%;
+}
+
+body {
+  font-family: "geometric-regular", sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #fafafa;
+}
+
+// utility class
+.hide {
+  display: none !important;
+}
+
+// component visual guides
+.expandInContainer {
+  flex-grow: 1!important;
+}
+
+.centerContent {
+  justify-content: center;
+}
+
+.bottomContainer {
+  flex-grow: 1!important;
+  align-items: flex-end !important;
+}
+
+::-webkit-scrollbar {
+  width: 0px;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+.phone-360 {
+  width: calc(360px + 16px);
+  height: calc(640px + 60px);
+}
+
+
+.phone-320 {
+  width: calc(320px + 16px);
+  height: calc(568px + 60px);
+}
+
+.phone-414 {
+  width: calc(414px + 16px);
+  height: calc(896px + 60px);
+}
