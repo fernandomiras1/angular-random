@@ -1,8 +1,9 @@
 import {
   Component, Input, OnDestroy, OnInit,
 } from '@angular/core'
-
-import { Carousel } from '../../model/cards/carousel'
+import {
+  interval, Subscription,
+} from 'rxjs'
 
 @Component({
   selector: 'w2fly-carousel-v2',
@@ -10,9 +11,11 @@ import { Carousel } from '../../model/cards/carousel'
   styleUrls: ['./w2fly-carousel-v2.component.scss'],
 })
 export class W2flyCarouselv2Component implements OnInit, OnDestroy {
-  @Input() carousel: Carousel
+  @Input() defaultTime = 4000
 
   slideIndex = 1
+
+  timer$ = new Subscription()
 
   myTimer: number
 
@@ -23,16 +26,15 @@ export class W2flyCarouselv2Component implements OnInit, OnDestroy {
   ]
 
   ngOnDestroy(): void {
-    this.clearTimeout()
+    this.timer$.unsubscribe()
   }
 
   ngOnInit(): void {
     this.showSlides(this.slideIndex)
-    this.myTimer = setInterval(() => this.plusSlides(1), 4000)
+    this.changeSlide(1)
   }
 
   plusSlides(index: number) {
-    clearInterval(this.myTimer)
     if (index < 0) {
       this.showSlides(this.slideIndex -= 1)
     } else {
@@ -40,15 +42,14 @@ export class W2flyCarouselv2Component implements OnInit, OnDestroy {
     }
 
     if (index === -1) {
-      this.myTimer = setInterval(() => this.plusSlides(index + 2), 4000)
+      this.changeSlide(index + 2)
     } else {
-      this.myTimer = setInterval(() => this.plusSlides(index + 1), 4000)
+      this.changeSlide(index + 1)
     }
   }
 
   currentSlide(index: number) {
-    clearInterval(this.myTimer)
-    this.myTimer = setInterval(() => this.plusSlides(index + 1), 4000)
+    this.changeSlide(index + 1)
     this.showSlides(this.slideIndex = index)
   }
 
@@ -57,9 +58,11 @@ export class W2flyCarouselv2Component implements OnInit, OnDestroy {
     if (index < 1) { this.slideIndex = this.myImages.length }
   }
 
-  clearTimeout() {
-    if (this.myTimer) {
-      clearInterval(this.myTimer)
-    }
+  private changeSlide(index: number): void {
+    this.timer$.unsubscribe()
+    this.timer$ = interval(this.defaultTime)
+      .subscribe(() => {
+        this.plusSlides(index)
+      })
   }
 }
