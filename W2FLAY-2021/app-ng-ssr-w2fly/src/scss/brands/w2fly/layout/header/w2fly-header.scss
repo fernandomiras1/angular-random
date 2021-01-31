@@ -1,0 +1,37 @@
+.w2f-header {
+  background-color: #18188E;
+  height: 6rem;
+
+  button {
+    color: white;
+  }
+
+  &__logo {
+    width: 180px;
+  }
+
+  &__menu {
+    margin-left: 1rem;
+    display: flex;
+    max-width: 50%;
+  }
+
+  &__spacer {
+    flex: 1 1 auto;
+  }
+
+  &__button {
+    color: white;
+    border: 1px solid currentColor;
+  }
+}
+
+::ng-deep .menu-customize {
+  background: white;
+  max-width: none !important;
+}
+
+::ng-deep .mat-menu-content:not(:empty) {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}

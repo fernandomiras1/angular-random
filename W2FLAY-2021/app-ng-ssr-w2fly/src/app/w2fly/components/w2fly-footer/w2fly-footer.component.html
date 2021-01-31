@@ -1,0 +1,41 @@
+<footer class="w2f-footer">
+  <div class="container pt-8">
+    <ul class="columns pb-8 has-same-height is-desktop is-gapless">
+      <li *ngFor="let column of dataFooter$ | async" class="column w2f-footer__item">
+        <p class="w2f-footer__item__title">{{column.name}}</p>
+        <div class="is-flex mb-4">
+          <span class="w2f-footer__item__dot w2f-footer__item__dot--red"></span>
+          <span class="ml-1 w2f-footer__item__dot w2f-footer__item__dot--skyblue"></span>
+          <span class="ml-1 w2f-footer__item__dot w2f-footer__item__dot--blue"></span>
+        </div>
+        <ul *ngFor="let subItem of column.subItems">
+          <li class="w2f-footer__item__text">
+            <a [href]="subItem.url">{{subItem.name}}</a>
+          </li>
+        </ul>
+        <div class="is-flex">
+          <ul *ngFor="let icon of column.icons">
+            <li class="w2f-footer__item__icon ml-1">
+              <a [href]="icon.url">
+                <i class="fab" [class]="icon.name" aria-hidden="false"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+    <hr>
+    <div class="is-flex is-justify-content-space-between">
+      <div class="is-flex-direction-column">
+        <p class="w2f-footer__legal__text">{{ 'W2FLY.FOOTER.LEGAL_TEXT' | translate }}</p>
+        <p class="w2f-footer__legal__text-lightgrey">&copy; {{ 'W2FLY.FOOTER.COPYRIGHT' | translate }}</p>
+      </div>
+
+      <div>
+         <!-- TODO: (Design): change images -->
+        <img class="w2f-footer__legal__img" src="assets/img/visa.png" width="120" alt="">
+        <img class="w2f-footer__legal__img" src="assets/img/visa.png" width="120" alt="">
+      </div>
+    </div>
+  </div>
+</footer>

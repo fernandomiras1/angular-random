@@ -1,0 +1,23 @@
+// Import library functions for theme creation.
+@import '../base/theme.scss';
+
+footer {
+  background-color: $primary;
+  padding-top: 4rem;
+}
+
+.legal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  color: white;
+}
+
+.legal__links {
+  display: flex;
+  align-items: center;
+}
+
+.test-temp {
+  color: $primary;
+}

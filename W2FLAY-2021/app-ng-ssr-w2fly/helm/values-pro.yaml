@@ -1,0 +1,22 @@
+namespace: w2fly
+
+replicaCount: 1
+
+labels:
+  group: w2fly
+  cluster: pro
+service:
+  containerPort: 4000
+
+#Ingress configuration
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: nginx-internal
+    nginx.ingress.kubernetes.io/rewrite-target: /
+  hosts:
+    - host: w2fly.internal.w2m.com
+      paths:
+        - serviceName: ssr-w2fly
+          servicePort: 80
+          path: /

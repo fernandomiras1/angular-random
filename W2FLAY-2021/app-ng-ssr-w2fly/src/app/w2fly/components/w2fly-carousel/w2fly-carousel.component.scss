@@ -1,0 +1,21 @@
+.w2f-carousel {
+  &__item {
+    .mat-card {
+      border-radius: 0;
+      border-bottom-left-radius: 10px;
+    }
+  }
+
+  &__slides__item--icon {
+    cursor: pointer;
+    font-size: 10px;
+    opacity: 0.5;
+    color: #CBCDCD;
+
+    &.active {
+      opacity: 1;
+      font-size: 15px;
+      color: #121E7E;
+    }
+  }
+}

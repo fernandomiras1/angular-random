@@ -1,0 +1,33 @@
+<mat-toolbar class="w2f-header">
+  <img src="assets/img/w2fly_logo.svg" class="w2f-header__logo" alt="w2fly company logo">
+  <div class="w2f-header__menu is-hidden-touch is-hidden-desktop-only">
+    <ng-container *ngFor="let menu of listMenu">
+      <button mat-button [matMenuTriggerFor]="menuFloat">
+        {{menu.name}}
+        <i class="fas fa-angle-down"></i>
+      </button>
+      <mat-menu class="menu-customize" #menuFloat="matMenu" >
+        <w2fly-float-menu [menu]="menu"></w2fly-float-menu>
+      </mat-menu>
+    </ng-container>
+  </div>
+  <span class="w2f-header__spacer"></span>
+  <div class="is-flex is-hidden-touch is-hidden-desktop-only">
+    <button mat-button [matMenuTriggerFor]="menuFloat">
+      <i class="fas fa-search"></i>
+      {{'W2FLY.HEADER.TEXT_HAVE_ANY_DOUBTS' | translate}}
+    </button>
+    <mat-menu class="menu-customize" #menuFloat="matMenu">
+      <w2fly-float-menu></w2fly-float-menu>
+    </mat-menu>
+    <language-picker></language-picker>
+    <button class="w2f-header__button" mat-stroked-button>{{'W2FLY.HEADER.BTN_MANAGE_MY_COMPANY' | translate | uppercase}}</button>
+  </div>
+  <button class="is-hidden-widescreen" (click)="showMobileMenu = !showMobileMenu" mat-icon-button>
+    <i class="fas fa-bars"></i>
+  </button>
+</mat-toolbar>
+<w2fly-mobile-menu *ngIf="showMobileMenu"
+  [itemsMenu]="listMenu"
+  (closeClicked)="onCloseMobileMenu()"
+></w2fly-mobile-menu>

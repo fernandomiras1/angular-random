@@ -1,0 +1,49 @@
+{
+  "COMMON": {
+    "TIME_AGO": {
+      "JUST_NOW": " justo ahora",
+      "YEAR": "hace {{value}} año",
+      "YEARS": "hace {{value}} años",
+      "MONTH": "hace {{value}} mes",
+      "MONTHS": "hace {{value}} meses",
+      "WEEK": "hace {{value}} semana",
+      "WEEKS": "hace {{value}} semanas",
+      "DAY": "hace {{value}} día",
+      "DAYS": "hace {{value}} días",
+      "HOUR": "hace {{value}} hora",
+      "HOURS": "hace {{value}} horas",
+      "MINUTE": "hace {{value}} minuto",
+      "MINUTES": "hace {{value}} minutos",
+      "SECOND": "hace {{value}} segundo",
+      "SECONDS": "hace {{value}} segundos"
+    }
+  },
+  "W2FLY": {
+    "COMMON": {
+      "NO_DATA": "No hay datos en la respuesta.",
+      "ERROR": "No se han cargado correctamente los componentes cards."
+    },
+    "HOME": {
+      "TITLE": "INICIO"
+    },
+    "BASIC_CARD": {},
+    "MANAGEMENT": {
+      "TITLE_FIRST_SECTION": "Primera sección Home",
+      "TITLE_SECOND_SECTION": "Segunda sección Home",
+      "TITLE_THIRD_SECTION": "Tercera sección Home"
+    },
+    "HEADER": {
+      "BTN_MANAGE_MY_COMPANY": "Gestionar mi empresa",
+      "TEXT_HAVE_ANY_DOUBTS": "¿ Tienes dudas ?"
+    },
+    "FOOTER": {
+      "LEGAL_TEXT": "Aviso Legal / Politica de Privacidad / Politica de cookies",
+      "COPYRIGHT": "2020 World 2 Fly, S.L.U. Edificio W2M, C/ General Riera 154, 07010, Palma de Mallorca (Islas Baleares - España), CIF B62880992 - Teléfono: +34 971 594 100"
+    }
+  },
+  "LANGUAGE": {
+    "es_ES": "Español",
+    "en_US": "Inglés"
+  },
+  "Sitetitle": "Sitio angular Multilenguaje - es_ES"
+}

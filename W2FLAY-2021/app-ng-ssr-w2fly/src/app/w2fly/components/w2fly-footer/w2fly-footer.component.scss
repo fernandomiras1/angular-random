@@ -1,0 +1,63 @@
+.w2f-footer {
+  // TODO: design: change color by variable
+  background-color: #212188;
+
+  &__item {
+    &__title {
+      color: white;
+      font-weight: 400;
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+    }
+
+    &__text {
+      margin: 10px 0;
+
+      a {
+        color: white;
+      }
+    }
+
+    &__dot {
+      height: 5px;
+      width: 5px;
+      border-radius: 50%;
+
+      &--red {
+        background-color: #F32121;
+      }
+
+      &--skyblue {
+        background-color: #21F3F3;
+      }
+
+      &--blue {
+        background-color: #4E5CFF;
+      }
+    }
+
+    &__icon {
+      margin-top: auto;
+
+      &__social {
+        color: white;
+      }
+    }
+  }
+
+  &__legal {
+    &__text {
+      color: white;
+
+      &-lightgrey {
+        color: lightgrey;
+      }
+    }
+
+    &__img {
+      background-color: whitesmoke;
+      border-radius: 5px;
+      margin-left: 10px;
+    }
+  }
+}

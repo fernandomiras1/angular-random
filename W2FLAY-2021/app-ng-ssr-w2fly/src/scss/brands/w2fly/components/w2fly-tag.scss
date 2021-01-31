@@ -1,0 +1,21 @@
+@import '../base/variables.scss';
+
+.w2f-tags {
+  &__item {
+    background-color: $primary;
+    border-radius: $chip-border-radius;
+    color: $chip-color;
+    font-family: $chip-font-family;
+    font-size: $chip-font-size;
+    line-height: $chip-line-height;
+    padding: 3px 10px 5px;
+
+    &--red {
+      background-color: $red;
+    }
+
+    &--blue {
+      background-color: $primary;
+    }
+  }
+}

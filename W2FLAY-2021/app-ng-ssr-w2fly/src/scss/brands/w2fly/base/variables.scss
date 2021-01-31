@@ -1,0 +1,15 @@
+@import '../../../core/general_styles/variables.scss';
+@import '../base/theme.scss';
+
+//Overriding global variables
+
+//Mat-basic-chip
+$chip-font-family: $headings-font-family;
+
+//Mat-card
+$card-border-radius: 10px;
+$card-content-padding: 40px;
+
+//W2F variables
+$w2f-card-border-radius: 0 0 0 80px;
+$w2f-card-height: 340px;

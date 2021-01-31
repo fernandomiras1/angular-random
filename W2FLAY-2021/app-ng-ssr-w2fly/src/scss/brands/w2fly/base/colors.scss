@@ -1,0 +1,341 @@
+$w2f-darkblue: (
+  50: #E3E4F0,
+  100: #B8BCD8,
+  200: #898FBF,
+  300: #5962A5,
+  400: #364091,
+  500: #121E7E,
+  600: #101A76,
+  700: #0D166B,
+  800: #0A1261,
+  900: #050A4E,
+  A100: #8286FF,
+  A200: #4F54FF,
+  A400: #1C23FF,
+  A700: #030AFF,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #FFFFFF,
+    400: #FFFFFF,
+    500: #FFFFFF,
+    600: #FFFFFF,
+    700: #FFFFFF,
+    800: #FFFFFF,
+    900: #FFFFFF,
+    A100: #000000,
+    A200: #FFFFFF,
+    A400: #FFFFFF,
+    A700: #FFFFFF,
+  )
+);
+
+$w2f-blue: (
+  50: #ECF3FE,
+  100: #D1E1FD,
+  200: #B2CEFC,
+  300: #93BAFA,
+  400: #7BABF9,
+  500: #649CF8,
+  600: #5C94F7,
+  700: #528AF6,
+  800: #4880F5,
+  900: #366EF3,
+  A100: #FFFFFF,
+  A200: #FFFFFF,
+  A400: #D4E0FF,
+  A700: #BBCEFF,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #000000,
+    800: #FFFFFF,
+    900: #FFFFFF,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  )
+);
+
+$w2f-turquoise: (
+  50: #E2FDFC,
+  100: #B7FAF8,
+  200: #87F7F4,
+  300: #56F3F0,
+  400: #32F1EC,
+  500: #0EEEE9,
+  600: #0CECE6,
+  700: #0AE9E3,
+  800: #08E7DF,
+  900: #04E2D9,
+  A100: #FFFFFF,
+  A200: #D6FFFD,
+  A400: #A3FFFB,
+  A700: #8AFFFA,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #000000,
+    800: #000000,
+    900: #000000,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  )
+);
+
+$w2f-red: (
+  50: #F8E6E4,
+  100: #EEC0BB,
+  200: #E2978E,
+  300: #D66D60,
+  400: #CE4D3E,
+  500: #C52E1C,
+  600: #BF2919,
+  700: #B82314,
+  800: #B01D11,
+  900: #A31209,
+  A100: #FFD2D0,
+  A200: #FFA19D,
+  A400: #FF6F6A,
+  A700: #FF5751,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #FFFFFF,
+    500: #FFFFFF,
+    600: #FFFFFF,
+    700: #FFFFFF,
+    800: #FFFFFF,
+    900: #FFFFFF,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  )
+);
+
+$w2f-orange: (
+  50: #FEF6E8,
+  100: #FCE9C5,
+  200: #FADB9F,
+  300: #F7CC78,
+  400: #F6C15B,
+  500: #F4B63E,
+  600: #F3AF38,
+  700: #F1A630,
+  800: #EF9E28,
+  900: #EC8E1B,
+  A100: #FFFFFF,
+  A200: #FFF6EC,
+  A400: #FFDEB9,
+  A700: #FFD2A0,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #000000,
+    800: #000000,
+    900: #000000,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  )
+);
+
+$w2f-green: (
+  50: #EAF5EA,
+  100: #C9E7CB,
+  200: #A6D7A8,
+  300: #82C785,
+  400: #67BB6A,
+  500: #4CAF50,
+  600: #45A849,
+  700: #3C9F40,
+  800: #339637,
+  900: #248627,
+  A100: #C5FFC7,
+  A200: #92FF95,
+  A400: #5FFF64,
+  A700: #46FF4B,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #FFFFFF,
+    700: #FFFFFF,
+    800: #FFFFFF,
+    900: #FFFFFF,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  )
+);
+
+$w2f-gray: (
+  50: #EAEBEB,
+  100: #CBCDCD,
+  200: #A8ABAC,
+  300: #85898B,
+  400: #6A7072,
+  500: #505759,
+  600: #494F51,
+  700: #404648,
+  800: #373C3E,
+  900: #272C2E,
+  A100: #82D1F9,
+  A200: #52C0F7,
+  A400: #16B1FF,
+  A700: #00A8FC,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #FFFFFF,
+    500: #FFFFFF,
+    600: #FFFFFF,
+    700: #FFFFFF,
+    800: #FFFFFF,
+    900: #FFFFFF,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #FFFFFF,
+  )
+);
+
+$w2f-soft: (
+  50: #FEFEFE,
+  100: #FDFDFD,
+  200: #FBFBFB,
+  300: #F9F9F9,
+  400: #F8F8F8,
+  500: #F7F7F7,
+  600: #F6F6F6,
+  700: #F5F5F5,
+  800: #F3F3F3,
+  900: #F1F1F1,
+  A100: #FFFFFF,
+  A200: #FFFFFF,
+  A400: #FFFFFF,
+  A700: #FFFFFF,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #000000,
+    800: #000000,
+    900: #000000,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  )
+);
+
+// Lavel
+$app-primary: mat-palette($w2f-darkblue);
+$app-secondary: mat-palette($w2f-blue);
+$app-tertiary: mat-palette($w2f-turquoise);
+$app-quaternary: mat-palette($w2f-red);
+
+// Uso
+$app-info: mat-palette($w2f-blue);
+$app-success: mat-palette($w2f-green);
+$app-warning: mat-palette($w2f-orange);
+$app-danger: mat-palette($w2f-red);
+$app-light: mat-palette($w2f-soft);
+$app-dark: mat-palette($w2f-gray, 900);
+
+// Angular Material
+$app-accent:  mat-palette($w2f-blue);
+$app-warn:  mat-palette($w2f-orange);
+$app-foreground: mat-palette($w2f-gray);
+$app-background: mat-palette($w2f-soft);
+
+// Color Name
+$app-darkblue: mat-palette($w2f-darkblue);
+$app-blue: mat-palette($w2f-blue);
+$app-turquoise: mat-palette($w2f-turquoise);
+$app-red: mat-palette($w2f-red);
+$app-orange: mat-palette($w2f-orange);
+$app-green: mat-palette($w2f-green);
+$app-gray: mat-palette($w2f-gray);
+$app-soft: mat-palette($w2f-soft);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as `color` or `typography`.
+$w2f-app-theme: mat-light-theme(
+    (
+        color: (
+            primary: $app-primary,
+            accent: $app-accent,
+            warn: $app-warn
+        )
+    )
+);
+
+// Lavel
+$primary: mat-color($app-primary);
+$secondary: mat-color($app-secondary);
+$tertiary: mat-color($app-tertiary);
+$quaternary: mat-color($app-quaternary);
+
+// Uso
+$info: mat-color($app-info);
+$success: mat-color($app-success);
+$warning: mat-color($app-warning);
+$danger: mat-color($app-danger);
+$light: mat-color($app-light);
+$dark: mat-color($app-dark);
+
+// Angular Material
+$accent: mat-color($app-accent);
+$warn: mat-color($app-warn);
+$foreground: mat-color($app-foreground);
+$background: mat-color($app-background);
+
+// Color Name
+$darkblue: mat-color($app-darkblue);
+$blue: mat-color($app-blue);
+$turquoise: mat-color($app-turquoise);
+$red: mat-color($app-red);
+$orange: mat-color($app-orange);
+$green: mat-color($app-green);
+$gray: mat-color($app-gray);
+$soft: mat-color($app-soft);
+$white: #FFFFFF;
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($w2f-app-theme);

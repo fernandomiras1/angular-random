@@ -1,0 +1,16 @@
+<ng-container *ngIf="carousel && carousel?.listCard.length">
+  <div class="w2f-carousel columns">
+    <w2fly-basic-card class=" w2f-carousel__item column" *ngFor="let card of displayedCards" [card]="card">
+    </w2fly-basic-card>
+  </div>
+  <div class="columns is-centered mt-2 pt-2">
+    <div class="colum is-full">
+      <ul class="columns is-centered v-centered">
+        <li [ngClass]="{'active':index===currentSlide}" class="column mx-1 px-0 w2f-carousel__slides__item--icon"
+          *ngFor="let index of slides" (click)="getCurrentSlides(index)">
+          <i class="fas fa-circle"></i>
+        </li>
+      </ul>
+    </div>
+  </div>
+</ng-container>
