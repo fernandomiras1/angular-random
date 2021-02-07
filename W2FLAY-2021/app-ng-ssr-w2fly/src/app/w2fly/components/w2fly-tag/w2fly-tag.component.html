@@ -1,8 +1,6 @@
-<mat-chip-list *ngIf="tags?.length" class="columns ml-1 my-0 py-0 w2f-tags">
-  <mat-basic-chip *ngFor="let tag  of tags"
-            [ngClass]="'w2f-tags__item--'+tag.color"
-            [class]="tag?.styleClassTag"
-            class="w2f-tags__item">
+<mat-chip-list *ngIf="tags?.length" class="w2f-tags">
+  <mat-basic-chip *ngFor="let tag  of tags" [ngClass]="'w2f-tags__item--'+tag.color" [class]="tag?.styleClassTag"
+    class="w2f-tags__item">
     {{tag?.text}}
   </mat-basic-chip>
 </mat-chip-list>

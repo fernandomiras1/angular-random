@@ -5,6 +5,7 @@ replicaCount: 1
 labels:
   group: w2fly
   cluster: pre
+
 service:
   containerPort: 4000
 
@@ -20,3 +21,11 @@ ingress:
         - serviceName: tst-ssr-w2fly
           servicePort: 80
           path: /
+
+resources:
+  limits:
+    cpu: 600m
+    memory: 300Mi
+  requests:
+    cpu: 10m
+    memory: 50Mi

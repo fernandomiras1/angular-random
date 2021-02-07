@@ -5,7 +5,7 @@ import { MagnoliaHeaderService } from '../../../services/magnolia-header.service
 @Component({
   selector: 'w2fly-header',
   templateUrl: './w2fly-header.component.html',
-  styleUrls: ['../../../../../scss/brands/w2fly/layout/header/w2fly-header.scss'],
+  styleUrls: ['./w2fly-header.component.scss'],
 })
 export class W2flyHeaderComponent implements OnInit {
   public showMobileMenu = false

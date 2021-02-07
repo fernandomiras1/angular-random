@@ -1,63 +1,109 @@
+@import "src/scss/brands/w2fly/variables";
+
 .w2f-footer {
-  // TODO: design: change color by variable
-  background-color: #212188;
+  background-color: $primary;
+  color: $white;
+  padding-bottom: 0;
+  padding-top: 0;
+  position: relative;
 
-  &__item {
-    &__title {
-      color: white;
-      font-weight: 400;
-      font-size: 1.2rem;
-      margin-bottom: 5px;
+  &__top,
+  &__bottom {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__top {
+    margin-bottom: 0;
+    padding: 2.5rem 0;
+  }
+
+  &__title {
+    margin-bottom: 0.625rem;
+  }
+
+  &__dots {
+    display: flex;
+    margin-bottom: 1.25rem;
+  }
+
+  &__dot {
+    border-radius: 50%;
+    height: 0.3125rem;
+    width: 0.3125rem;
+
+    &--red {
+      background-color: $quaternary;
     }
 
-    &__text {
-      margin: 10px 0;
-
-      a {
-        color: white;
-      }
+    &--skyblue {
+      background-color: $tertiary;
     }
 
-    &__dot {
-      height: 5px;
-      width: 5px;
-      border-radius: 50%;
+    &--blue {
+      background-color: $secondary;
+    }
+  }
 
-      &--red {
-        background-color: #F32121;
-      }
-
-      &--skyblue {
-        background-color: #21F3F3;
-      }
-
-      &--blue {
-        background-color: #4E5CFF;
-      }
+  &__list {
+    &-item {
+      margin-bottom: 0.625rem;
     }
 
-    &__icon {
-      margin-top: auto;
+    &-link {
+      color: $white;
+    }
+  }
 
-      &__social {
-        color: white;
-      }
+  &__icon {
+    color: rgba($white, 0.3);
+    font-size: 1.5rem;
+    margin-right: 0.625rem;
+
+    &:hover {
+      color: $white;
+    }
+  }
+
+  &__bottom {
+    align-items: center;
+    padding-bottom: 0.625rem;
+
+    &-divider {
+      background-color: rgba($white, 0.3);
+      height: 0.0625rem;
+      margin: 0;
     }
   }
 
   &__legal {
-    &__text {
-      color: white;
+    &-text {
+      font-size: 0.8125rem;
+      margin: 0;
 
-      &-lightgrey {
-        color: lightgrey;
+      &--lightgrey {
+        color: rgba($white, 0.3);
       }
     }
+  }
 
-    &__img {
-      background-color: whitesmoke;
-      border-radius: 5px;
-      margin-left: 10px;
+  &__security {
+    display: flex;
+
+    @media (min-width: $media-desktop) {
+      justify-content: flex-end;
+    }
+  }
+
+  &__logo {
+    display: none;
+    height: 100%;
+    position: absolute;
+    right: -3rem;
+    top: 0;
+
+    @media (min-width: $media-desktop) {
+      display: block;
     }
   }
 }

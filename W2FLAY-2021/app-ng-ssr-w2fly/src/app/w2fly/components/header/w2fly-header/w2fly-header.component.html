@@ -1,8 +1,13 @@
 <mat-toolbar class="w2f-header">
   <img src="assets/img/w2fly_logo.svg" class="w2f-header__logo" alt="w2fly company logo">
   <div class="w2f-header__menu is-hidden-touch is-hidden-desktop-only">
-    <ng-container *ngFor="let menu of listMenu">
-      <button mat-button [matMenuTriggerFor]="menuFloat">
+    <ng-container *ngFor="let menu of listMenu;let last = last">
+      <button *ngIf="menu.subMenu.length === 0" mat-button>
+        <i *ngIf="menu.icon" class="fas" [class]="menu.icon"></i>
+        {{menu.name}}
+      </button>
+      <button *ngIf="menu.subMenu && menu.subMenu.length > 0" mat-button [matMenuTriggerFor]="menuFloat">
+        <i *ngIf="menu.icon" class="fas" [class]="menu.icon"></i>
         {{menu.name}}
         <i class="fas fa-angle-down"></i>
       </button>
@@ -13,13 +18,6 @@
   </div>
   <span class="w2f-header__spacer"></span>
   <div class="is-flex is-hidden-touch is-hidden-desktop-only">
-    <button mat-button [matMenuTriggerFor]="menuFloat">
-      <i class="fas fa-search"></i>
-      {{'W2FLY.HEADER.TEXT_HAVE_ANY_DOUBTS' | translate}}
-    </button>
-    <mat-menu class="menu-customize" #menuFloat="matMenu">
-      <w2fly-float-menu></w2fly-float-menu>
-    </mat-menu>
     <language-picker></language-picker>
     <button class="w2f-header__button" mat-stroked-button>{{'W2FLY.HEADER.BTN_MANAGE_MY_COMPANY' | translate | uppercase}}</button>
   </div>

@@ -4,7 +4,7 @@ import { Card } from '../../model/cards/card'
 @Component({
   selector: 'w2fly-basic-card',
   templateUrl: './w2fly-basic-card.component.html',
-  styleUrls: ['../../../../scss/brands/w2fly/components/w2fly-basic-card.scss'],
+  styleUrls: ['./w2fly-basic-card.component.scss'],
 })
 export class W2flyBasicCardComponent implements OnInit {
   @Input() card: Card

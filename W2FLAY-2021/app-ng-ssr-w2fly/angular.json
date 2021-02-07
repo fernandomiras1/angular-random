@@ -12,7 +12,7 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "",
+      "prefix": "w2fly",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -31,6 +31,12 @@
               "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
               "src/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/scss/brands/w2fly",
+                "src/scss/brands/w2fly/core"
+              ]
+            },
             "scripts": []
           },
           "configurations": {
@@ -57,8 +63,8 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
+                  "maximumWarning": "16kb",
+                  "maximumError": "20kb"
                 }
               ]
             }
@@ -96,6 +102,12 @@
               "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
               "src/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/scss/brands/w2fly",
+                "src/scss/brands/w2fly/core"
+              ]
+            },
             "scripts": []
           }
         },

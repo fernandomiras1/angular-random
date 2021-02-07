@@ -1,26 +1,13 @@
-<mat-card
-  class="w2f-hover-card"
+<mat-card class="w2f-hover-card mat-elevation-z"
   [style.background]="'url('+(card?.urlImage | w2flyImgCdn)+') no-repeat center / cover'"
-  (mouseover)="this.hidden = !this.hidden"
-  (mouseout)="this.hidden = !this.hidden">
-  <mat-card-content
-    *ngIf="card"
-    class="w2f-hover-card__container container">
-    <div
-      *ngIf="card?.title"
-      class="has-text-centered w2f-hover-card__content"
-      [ngClass]="{'hidden':this.hidden}">
+  (mouseover)="this.hidden = !this.hidden" (mouseout)="this.hidden = !this.hidden">
+  <mat-card-content *ngIf="card" class="w2f-hover-card__container container">
+    <div *ngIf="card?.title" class="has-text-centered w2f-hover-card__content" [ngClass]="{'hidden':this.hidden}">
       <h3 class="has-text-left w2f-hover-card__title">{{card?.title}}</h3>
     </div>
-    <div
-      [ngClass]="{'hidden':!this.hidden}"
-      class="w2f-hover-card__content w2f-hover-card__content--dark">
-      <h3
-        *ngIf="card?.title"
-        class="w2f-hover-card__title">{{card?.title}}</h3>
-      <p
-        *ngIf="card?.content"
-        class="w2f-hover-card__paragraph">{{card?.content}}</p>
+    <div [ngClass]="{'hidden':!this.hidden}" class="w2f-hover-card__content w2f-hover-card__content--dark">
+      <h3 *ngIf="card?.title" class="w2f-hover-card__title">{{card?.title}}</h3>
+      <p *ngIf="card?.content" class="w2f-hover-card__paragraph">{{card?.content}}</p>
     </div>
   </mat-card-content>
 </mat-card>

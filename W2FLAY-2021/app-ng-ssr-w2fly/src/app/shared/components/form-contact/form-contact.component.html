@@ -1,0 +1,90 @@
+<div class="form-contact columns is-multiline is-centered">
+  <form
+    [formGroup]="formContact"
+    (ngSubmit)="submit(formContact.value)">
+    <mat-form-field
+      class="form-contact__item form-contact__item--name column is-6 is-offset-3"
+      appearance="fill">
+      <mat-label>
+        {{'COMMON.CONTACT_FORM.NAME'|translate}}
+      </mat-label>
+      <input
+        formControlName="name"
+        matInput
+        [placeholder]="'COMMON.CONTACT_FORM.NAME'|translate">
+      <mat-error *ngIf="name.hasError('minlength')">
+        {{'COMMON.CONTACT_FORM.MIN_LENGTH' | translate :{value:name.errors.minlength.requiredLength} }}
+      </mat-error>
+      <mat-error *ngIf="name.hasError('maxlength')">
+        {{'COMMON.CONTACT_FORM.MAX_LENGTH' | translate :{value:name.errors.maxlength.requiredLength} }}
+      </mat-error>
+      <mat-error *ngIf="name.hasError('required')">
+        {{'COMMON.CONTACT_FORM.REQUIRED' | translate}}
+      </mat-error>
+      <mat-error *ngIf="name.hasError('pattern')">
+        {{'COMMON.CONTACT_FORM.INVALID_CHARACTERS' | translate:{length:MIN_LENGTH_VALIDATOR, field: ('COMMON.CONTACT_FORM.NAME'|translate|lowercase)} }}
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field
+      class="form-contact__item form-contact__item--surnames column is-6 is-offset-3"
+      appearance="fill">
+      <mat-label>
+        {{'COMMON.CONTACT_FORM.SURNAMES'|translate}}
+      </mat-label>
+      <input
+        formControlName="surname"
+        matInput
+        [placeholder]="'COMMON.CONTACT_FORM.SURNAMES'|translate">
+      <mat-error *ngIf="surname.hasError('minlength')">
+        {{'COMMON.CONTACT_FORM.MIN_LENGTH' | translate :{value:surname.errors.minlength.requiredLength} }}
+      </mat-error>
+      <mat-error *ngIf="surname.hasError('maxlength')">
+        {{'COMMON.CONTACT_FORM.MAX_LENGTH' | translate :{value:surname.errors.maxlength.requiredLength} }}
+      </mat-error>
+      <mat-error *ngIf="surname.hasError('required')">
+        {{'COMMON.CONTACT_FORM.REQUIRED' | translate}}
+      </mat-error>
+      <mat-error *ngIf="surname.hasError('pattern')">
+        {{'COMMON.CONTACT_FORM.INVALID_CHARACTERS' | translate:{length:MIN_LENGTH_VALIDATOR, field: ('COMMON.CONTACT_FORM.SURNAME'|translate|lowercase)} }}
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field
+      class="form-contact__item form-contact__item--email column is-6 is-offset-3"
+      appearance="fill">
+      <mat-label>
+        {{'COMMON.CONTACT_FORM.EMAIL'|translate}}
+      </mat-label>
+      <input
+        formControlName="email"
+        matInput
+        [placeholder]="'COMMON.CONTACT_FORM.EMAIL'|translate">
+      <mat-error *ngIf="email.hasError('email')">
+        {{'COMMON.CONTACT_FORM.BAD_FORMAT' | translate}}
+      </mat-error>
+      <mat-error *ngIf="email.hasError('required')">
+        {{'COMMON.CONTACT_FORM.REQUIRED' | translate}}
+      </mat-error>
+    </mat-form-field>
+    <div class="column is-6 is-offset-3">
+      <mat-checkbox
+        formControlName="acceptedPolicy"
+        class="mb-1 form-contact__item form-contact__item--policies">
+        {{'COMMON.CONTACT_FORM.ACCEPT_THE'|translate}}
+        <a [href]="urlPolicies">
+          {{'COMMON.CONTACT_FORM.POLICIES'|translate}}
+        </a>
+      </mat-checkbox>
+      <mat-error *ngIf="acceptedPolicy.dirty &&  acceptedPolicy.hasError('required')">
+        {{'COMMON.CONTACT_FORM.REQUIRED' | translate}}
+      </mat-error>
+    </div>
+    <button
+      class="mt-4 form-contact__item--button column is-4 is-offset-4"
+      mat-raised-button
+      color="primary"
+      [disabled]="!formContact.valid"
+      type="submit">
+      {{'COMMON.CONTACT_FORM.SUBMIT_BUTTON'|translate}}
+    </button>
+  </form>
+</div>

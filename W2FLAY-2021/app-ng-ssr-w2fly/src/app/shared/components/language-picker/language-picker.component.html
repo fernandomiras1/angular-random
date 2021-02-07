@@ -5,7 +5,7 @@
     <ng-container [ngTemplateOutlet]="flagTemplate"
       [ngTemplateOutletContext]="{ img: currentLang }">
     </ng-container>
-    {{ displayCode }}
+    {{ currentLang | uppercase }}
 </button>
 
 <mat-menu #menu="matMenu">

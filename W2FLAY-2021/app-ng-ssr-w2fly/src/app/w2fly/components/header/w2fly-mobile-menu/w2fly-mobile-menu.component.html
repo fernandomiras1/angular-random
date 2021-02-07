@@ -21,9 +21,6 @@
       <li *ngFor="let item of itemsMenu">
         <div class="w2f-mobile-menu__body__list__item"
           (click)="openDialog(item.subMenu)">
-          <div class="w2f-mobile-menu__body__list__item__container">
-            <i class="fas" [class]="item.icon"></i>
-          </div>
           {{ item.name }}
         </div>
       </li>

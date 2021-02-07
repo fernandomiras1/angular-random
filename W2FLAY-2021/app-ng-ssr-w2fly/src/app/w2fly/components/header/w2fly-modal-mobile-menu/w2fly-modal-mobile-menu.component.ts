@@ -5,7 +5,7 @@ import { SubMenuHeader } from '../../../model/header/header-dto'
 @Component({
   selector: 'w2fly-modal-mobile-menu',
   templateUrl: './w2fly-modal-mobile-menu.component.html',
-  styleUrls: ['../../../../../scss/brands/w2fly/layout/header/w2fly-modal-mobile-menu.scss'],
+  styleUrls: ['./w2fly-modal-mobile-menu.component.scss'],
 })
 export class W2flyModalMobileMenuComponent {
   constructor(@Inject(MAT_DIALOG_DATA) public data: SubMenuHeader[],

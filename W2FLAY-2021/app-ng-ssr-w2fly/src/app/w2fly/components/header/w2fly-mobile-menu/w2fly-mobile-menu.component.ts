@@ -8,7 +8,7 @@ import { W2flyModalMobileMenuComponent } from '../w2fly-modal-mobile-menu/w2fly-
 @Component({
   selector: 'w2fly-mobile-menu',
   templateUrl: './w2fly-mobile-menu.component.html',
-  styleUrls: ['../../../../../scss/brands/w2fly/layout/header/w2fly-mobile-menu.scss'],
+  styleUrls: ['./w2fly-mobile-menu.component.scss'],
 })
 export class W2flyMobileMenuComponent {
   @Input() itemsMenu: HeaderDto[]

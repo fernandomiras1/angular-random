@@ -5,6 +5,8 @@
 export const environment = {
   production: false,
   URL_CDN: 'https://material.angular.io/',
+  URL_CONTACT: '#',
+  URL_POLICIES: '#',
 }
 
 /*

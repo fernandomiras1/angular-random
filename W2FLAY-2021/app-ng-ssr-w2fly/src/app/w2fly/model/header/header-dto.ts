@@ -1,11 +1,13 @@
+import { FloatMenuType } from '../../enum/common-enum'
+
 export interface HeaderDto {
   name: string;
-  icon: string;
+  type: FloatMenuType;
   url: string;
   subMenu: SubMenuHeader[];
+  icon?: string;
   title?: string;
 }
-
 export interface SubMenuHeader {
   steps: string;
   options: OptionsHeaderI[];

@@ -5,7 +5,7 @@
 def pipelineConfig = [
     azure_project: "W2fly",
     git_repository: "app-ng-ssr-w2fly",
-    application_name: "w2fly",
+    application_name: "ssr-w2fly",
     k8s_namespace: "w2fly",
     min_reviewer_votes: "1"
 ]

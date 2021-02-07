@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http'
 import { Observable, of } from 'rxjs'
 import { Carousel } from '../model/cards/carousel'
 import { Card } from '../model/cards/card'
+import { ButtonDto } from '../model/button/button-dto'
 
 @Injectable({
   providedIn: 'root',
@@ -49,10 +50,10 @@ export class MagnoliaService {
 
   public listCard: Card[] = [
     {
-      title: '',
-      content: '',
+      title: 'Medidas contra el covid',
+      content: 'medidas contr el covid',
       urlImage: 'assets/img/examples/shiba2.jpg',
-      titleImage: 'MEDIDAS CONTRA EL COVID-19',
+      titleImage: 'Medidas contra el Covid-19',
       descriptionImage: 'Medidas contra el covid-19',
       imageZoom: true,
       generalTags: [
@@ -60,16 +61,16 @@ export class MagnoliaService {
       ],
       categoryTags: [
         { text: 'Importante', color: 'blue', styleClassTag: 'top-right' },
-        { text: 'Importante', color: 'red', styleClassTag: 'top-right' },
         { text: 'Importante', color: 'blue', styleClassTag: 'top-right' },
-        { text: 'Importante', color: 'red', styleClassTag: 'top-right' },
+        { text: 'Importante', color: 'blue', styleClassTag: 'top-right' },
+        { text: 'Importante', color: 'blue', styleClassTag: 'top-right' },
       ],
     },
     {
-      title: '',
-      content: '',
+      title: 'Hello world',
+      content: 'Hello world',
       urlImage: 'assets/img/examples/shiba2.jpg',
-      titleImage: '¿TIENES RESERVA? ELIGE TU ASIENTO',
+      titleImage: '¿Tienes reserva? Elige tu asiento',
       descriptionImage: '¿Tienes reserva? Elige tu asiento',
       imageZoom: false,
       generalTags: [],
@@ -79,10 +80,12 @@ export class MagnoliaService {
       title: '',
       content: '',
       urlImage: 'assets/img/examples/shiba2.jpg',
-      titleImage: '5 DESTINOS PARA DESCUBRIR',
+      titleImage: '5 destinos para descubrir',
       descriptionImage: '5 destinos para descrubir',
       imageZoom: true,
-      generalTags: [],
+      generalTags: [
+        { text: 'Gastronomía', color: 'blue', styleClassTag: 'top-right' },
+      ],
       categoryTags: [],
     },
   ]
@@ -100,9 +103,9 @@ export class MagnoliaService {
       ],
       categoryTags: [
         { text: 'Importante', color: 'blue', styleClassTag: 'top-right' },
-        { text: 'Importante', color: 'red', styleClassTag: 'top-right' },
         { text: 'Importante', color: 'blue', styleClassTag: 'top-right' },
-        { text: 'Importante', color: 'red', styleClassTag: 'top-right' },
+        { text: 'Importante', color: 'blue', styleClassTag: 'top-right' },
+        { text: 'Importante', color: 'blue', styleClassTag: 'top-right' },
       ],
     },
     {
@@ -113,7 +116,7 @@ export class MagnoliaService {
       descriptionImage: '2 ¿Tienes reserva? Elige tu asiento',
       imageZoom: false,
       generalTags: [],
-      categoryTags: [{ text: 'Importante', color: 'red', styleClassTag: 'top-right' }],
+      categoryTags: [{ text: 'Importante', color: 'blue', styleClassTag: 'top-right' }],
     },
     {
       title: '',
@@ -135,9 +138,9 @@ export class MagnoliaService {
       generalTags: [],
       categoryTags: [
         { text: 'Importante', color: 'blue', styleClassTag: 'top-right' },
-        { text: 'Importante', color: 'red', styleClassTag: 'top-right' },
         { text: 'Importante', color: 'blue', styleClassTag: 'top-right' },
-        { text: 'Importante', color: 'red', styleClassTag: 'top-right' },
+        { text: 'Importante', color: 'blue', styleClassTag: 'top-right' },
+        { text: 'Importante', color: 'blue', styleClassTag: 'top-right' },
       ],
     },
     {
@@ -170,9 +173,9 @@ export class MagnoliaService {
       generalTags: [],
       categoryTags: [
         { text: 'Importante', color: 'blue', styleClassTag: 'top-right' },
-        { text: 'Importante', color: 'red', styleClassTag: 'top-right' },
         { text: 'Importante', color: 'blue', styleClassTag: 'top-right' },
-        { text: 'Importante', color: 'red', styleClassTag: 'top-right' },
+        { text: 'Importante', color: 'blue', styleClassTag: 'top-right' },
+        { text: 'Importante', color: 'blue', styleClassTag: 'top-right' },
       ],
     },
     {
@@ -203,6 +206,13 @@ export class MagnoliaService {
     listCard: this.carouselCards,
   }
 
+  public button: ButtonDto={
+    enabledComponent: true,
+    typeComponent: 'w2fly-button',
+    text: 'Reserva nuestros servicios',
+    href: '/profile',
+  }
+
   private readonly URL_MAGNOLIA = '/cards'
 
   constructor(private httpClient: HttpClient) { }
@@ -218,5 +228,9 @@ export class MagnoliaService {
 
   public HoverCardsSection(): Observable<Card[]> {
     return of(this.listHoverCard)
+  }
+
+  public buttonComponent(): Observable<ButtonDto> {
+    return of(this.button)
   }
 }

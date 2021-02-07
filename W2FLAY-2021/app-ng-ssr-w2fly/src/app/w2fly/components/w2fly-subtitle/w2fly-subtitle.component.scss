@@ -1,0 +1,16 @@
+@import "src/scss/brands/w2fly/variables";
+@import "src/scss/brands/w2fly/mixins";
+
+.w2f-subtitle {
+  background-color: $background;
+
+  &__title {
+    color: $headings-color;
+  }
+
+  &__button-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 2rem;
+  }
+}

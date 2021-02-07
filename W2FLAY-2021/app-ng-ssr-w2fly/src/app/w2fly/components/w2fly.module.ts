@@ -10,6 +10,8 @@ import { MatDialogModule } from '@angular/material/dialog'
 import { MatMenuModule } from '@angular/material/menu'
 import { RouterModule } from '@angular/router'
 import { TranslateModule } from '@ngx-translate/core'
+import { MatFormFieldModule } from '@angular/material/form-field'
+import { MatInputModule } from '@angular/material/input'
 import { W2flyBasicCardComponent } from './w2fly-basic-card/w2fly-basic-card.component'
 import { W2flyTagComponent } from './w2fly-tag/w2fly-tag.component'
 import { PipesModule } from '../pipes/pipes.module'
@@ -21,7 +23,8 @@ import { SharedModule } from '../../shared/shared.module'
 import { W2flyHoverCardComponent } from './w2fly-hover-card/w2fly-hover-card.component'
 import { W2flyCarouselComponent } from './w2fly-carousel/w2fly-carousel.component'
 import { W2flyFooterComponent } from './w2fly-footer/w2fly-footer.component'
-import { W2flyCarouselv2Component } from './w2fly-carousel-v2/w2fly-carousel-v2.component'
+import { W2flySubtitleComponent } from './w2fly-subtitle/w2fly-subtitle.component'
+import { W2flyButtonComponent } from './w2fly-button/w2fly-button.component'
 
 const MATERIAL_MODULES = [
   MatCardModule,
@@ -30,6 +33,8 @@ const MATERIAL_MODULES = [
   MatMenuModule,
   MatDialogModule,
   MatChipsModule,
+  MatInputModule,
+  MatFormFieldModule,
 ]
 
 const W2FLY_COMPONENTS = [
@@ -41,8 +46,9 @@ const W2FLY_COMPONENTS = [
   W2flyMobileMenuComponent,
   W2flyModalMobileMenuComponent,
   W2flyCarouselComponent,
-  W2flyCarouselv2Component,
   W2flyFooterComponent,
+  W2flySubtitleComponent,
+  W2flyButtonComponent,
 ]
 
 @NgModule({
