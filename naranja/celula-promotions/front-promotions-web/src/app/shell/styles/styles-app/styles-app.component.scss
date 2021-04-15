@@ -1,0 +1,18 @@
+@import "~@zumo/core/colors";
+@import "~@zumo/core/animations";
+@import "~@zumo/core/vendor/flexboxgrid/flexboxgrid";
+@import "~snazzy-info-window/dist/snazzy-info-window.css";
+@import "~@zumo/core/spaces";
+@import "~@zumo/core/vendor/reset";
+
+html {
+  font-size: $global-font-size; // defined by UX team
+}
+
+body {
+  background-color: $color-grayscale-200;
+}
+
+.body-fixed {
+  overflow: hidden;
+}

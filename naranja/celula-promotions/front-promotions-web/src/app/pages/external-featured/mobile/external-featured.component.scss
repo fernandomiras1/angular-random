@@ -1,0 +1,37 @@
+@import "~@zumo/core/colors";
+
+.featured--container {
+  height: 100%;
+  padding: 16px 16px 16px;
+}
+
+.spinner--container {
+  align-items: center;
+  display: flex;
+  height: 90vh;
+  justify-content: center;
+}
+
+.filter--container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 16px;
+  margin-top: 16px;
+}
+
+.message--counter {
+  color: $color-grayscale-800;
+  font-family: Roboto;
+  font-size: 14px;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: normal;
+  line-height: 1.88;
+}
+
+img {
+  height: 122px;
+  width: 100%;
+}

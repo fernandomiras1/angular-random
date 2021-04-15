@@ -1,0 +1,6 @@
+<svg class="chat-button_img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 49 49">
+    <path fill="#FFF" stroke-width="1.5" stroke="#FFF"
+        d="M24,0A24,24,0,0,0,3,35.57L0,48l12.13-3.14A24,24,0,1,0,24,0Zm0,46a22,22,0,0,1-11.21-3.07l-0.36-.22-9.6,2.46,2.29-9.88-0.21-.36A22,22,0,1,1,24,46Z" />
+    <path fill="#FFF" d="M24,32a9,9,0,0,1-9-9H13a11,11,0,0,0,22,0H33A9,9,0,0,1,24,32Z" stroke-width="1.5"
+        stroke="#FFF" />
+</svg>

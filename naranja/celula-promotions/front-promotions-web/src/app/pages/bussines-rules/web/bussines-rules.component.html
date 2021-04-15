@@ -1,0 +1,125 @@
+<app-navbar-web></app-navbar-web>
+<div *ngIf="!error">
+
+  <ng-container *ngIf="loading && loadingFeatured; then isLoading; else partialLoading"></ng-container>
+
+  <ng-template #isLoading>
+    <div class="spinner__container--initial" *ngIf="loading">
+      <z-loading type="primary" size="large"></z-loading>
+    </div>
+  </ng-template>
+
+  <ng-template #partialLoading>
+
+    <div class="BussinesRules-container container">
+      <div class="message-container" *ngIf="!location && showLocationAlert">
+        <z-message [closable]="true" [text]="messageLocationText" [type]="'warning'" appDebounceClick
+          (debounceClick)="hideLocationMessage()" [debounceTime]="50">
+        </z-message>
+      </div>
+      <div class="margin-bottom-24" style="display: flex; flex-direction: row-reverse;align-items: center">
+        <z-switch [switch]="switch" [type]="'right-align'" (switchChange)="redirectToMap()">
+        </z-switch>
+        <app-promo-geolocation (locationBlocked)="locationBlocked()" (locationFetched)="locationFetched($event)">
+        </app-promo-geolocation>
+      </div>
+    </div>
+    <div class="spinner__container--featured" *ngIf="loadingFeatured">
+      <z-loading type="primary" size="large"></z-loading>
+    </div>
+
+    <div *ngIf="!loadingFeatured">
+      <app-promo-carousel class="carousel--container" [height]="'440px'" *ngIf="featuredPromotions.length"
+        [enableDotClick]="true" [canSwipe]="false" [showDots]="true" [showArrows]="true" [infinite]="false"
+        [autoPlay]="false" (change)="onSelectedSlide($event)">
+        <app-promo-carousel-card (slideSelect)="selectedSlide($event)" *ngFor="let promo of featuredPromotions"
+          [slide]="promo">
+
+          <app-lazy-image *ngIf="promo" [image]="promo.mainImageName" [alt]="promo.alt"
+            classImage="{{promo.type.description === 'array' ? 'nol-promociones-destacadas-agrupador' : 'nol-promociones-destacadas-directa'}}">
+          </app-lazy-image>
+
+        </app-promo-carousel-card>
+      </app-promo-carousel>
+    </div>
+
+    <div>
+      <div class="container margin-top-32">
+        <div class="filter--btn" [ngClass]="{'filter--btn-empty ': promosRendered.length === 0}">
+          <app-promo-counter-label *ngIf="!loading" class="promos--counter" [isFilterApply]="isFilterApply"
+            [promosRendered]="promosRendered" [promosCount]="totalPromotionsNumber">
+          </app-promo-counter-label>
+          <div class="chips--container" *ngIf="isFilteredSearchActive() && !loading">
+            <app-info-chips-web *ngIf="commerceNameFiltered" [type]="'commerceName'" [data]="[commerceNameFiltered]"
+              (edit)="showFilters()" (close)="onCloseChip($event)">
+            </app-info-chips-web>
+            <app-info-chips-web *ngIf="locationFilteredData().length" [type]="'location'"
+              [data]="locationFilteredData()" (edit)="showFilters()" (close)="onCloseChip($event)">
+            </app-info-chips-web>
+
+            <app-info-chips-web *ngIf="mapCategoriesFilteredFromFilterBody().length > 0" [type]="'categories'"
+              [data]="mapCategoriesFilteredFromFilterBody()" (edit)="showFilters()" (close)="onCloseChip($event)">
+            </app-info-chips-web>
+          </div>
+          <app-promo-btn style="z-index: 1;" *ngIf="!isFilteredSearchActive() && !loading && hasHorizontalPromos" (click)="showFilters()"
+            [btnText]="'Filtros'">
+          </app-promo-btn>
+        </div>
+      </div>
+
+      <div *ngIf="!isFilteredSearchActive()" class="BussinesRules--container">
+        <div *ngFor="let rule of rules">
+          <app-promo-horizontal-grid-web [rule]="rule" (openRuleDetail)="openRuleDetail($event)">
+          </app-promo-horizontal-grid-web>
+        </div>
+
+        <div class="BussinesRules-container container margin-top-64 margin-bottom-64"
+          *ngIf="loadingHPFinished && !hasHorizontalPromos">
+          <app-error-state-web [errorStateData]="emptyStateData" (retryClicked)="showFilters()">
+          </app-error-state-web>
+        </div>
+
+      </div>
+      <div *ngIf="isFilteredSearchActive()" class="BussinesRules-container">
+        <div class="spinner__container--featured" *ngIf="loading">
+          <z-loading type="primary" size="large"></z-loading>
+        </div>
+        <div class="promos_container" *ngIf="!loading">
+          <div class="promotions--list">
+            <div class="promotions--list__items" *ngFor="let promo of promosRendered; let i = index">
+              <app-card-with-tag-web [promo]="promo" [index]="i"></app-card-with-tag-web>
+            </div>
+          </div>
+
+          <div class="row center-xs" *ngIf="promosRendered.length > 0">
+            <div class="margin-top-24 margin-bottom-24">
+              <app-paginator [lastPageNumber]="this.lastPageNumber" [currentPageNumber]="currentPageNumber"
+                (loadPageNumberRequested)="onLoadPageNumberRequested($event)">
+              </app-paginator>
+            </div>
+          </div>
+
+          <div class="BussinesRules-container container margin-top-64 margin-bottom-64"
+            *ngIf="promosRendered.length === 0">
+            <app-error-state-web [errorStateData]="emptyStateData" (retryClicked)="showFilters()">
+            </app-error-state-web>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div>
+
+<div *ngIf="error" class="BussinesRules-container container margin-top-64 margin-bottom-64">
+  <app-error-state-web [errorStateData]="errorData" (retryClicked)="retry()">
+  </app-error-state-web>
+</div>
+
+<app-filter-web *ngIf="showFiltersMenu" (filtersApplied)="applyFilters($event)" (closeFilters)="setFiltersValue($event)"
+  [categoriesFiltered]="categoriesFilteredItems" [provinceFiltered]="provinceFiltered"
+  [localityFiltered]="localityFiltered" [commerceNameFiltered]="commerceNameFiltered" [showFilters]="showFiltersMenu">
+</app-filter-web>
+
+<ng-container *ngIf="!loading">
+  <app-footer-ncom></app-footer-ncom>
+</ng-container>

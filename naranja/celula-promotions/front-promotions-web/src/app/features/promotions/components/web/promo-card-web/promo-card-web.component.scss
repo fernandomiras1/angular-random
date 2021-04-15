@@ -1,0 +1,188 @@
+@import "~@zumo/core/colors";
+
+.promo--brand-container {
+  align-items: center;
+  display: flex;
+  height: 64px;
+  justify-content: center;
+  margin: 32px 0 24px 0;
+  width: 96px;
+}
+
+:host /deep/ .promo--brand-logo {
+  height: auto;
+  max-height: 80px;
+  max-width: 180px;
+  width: auto;
+}
+
+.promo--footer {
+  bottom: 13px;
+  position: absolute;
+  width: 100%;
+}
+
+.promo--category {
+  align-items: center;
+  border: solid 0.8px $color-grayscale-200;
+  border-radius: 9px;
+  display: flex;
+  height: 20px;
+  width: 100%;
+}
+
+.promo--category-title {
+  color: #666666;
+  font-family: Roboto;
+  font-size: 12px;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-height: 0.91;
+  padding: 0 10px;
+}
+
+:host /deep/ .promo--category-icon {
+  color: #666666;
+  display: block;
+  height: 12px;
+  margin-left: 8px;
+  width: 12px;
+}
+
+.promo--title {
+  color: #333333;
+  font-family: Roboto;
+  font-size: 18px;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: bold;
+  letter-spacing: -0.09px;
+  line-height: 1.44;
+  margin: 10px 16px;
+  padding: 0 8px;
+  text-align: center;
+  width: 100%;
+}
+
+.promo--title span {
+  font-weight: 400;
+}
+
+.promo--type {
+  color: #666666;
+  font-family: Roboto;
+  font-size: 16px;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: normal;
+  height: 14px;
+  letter-spacing: normal;
+  line-height: 1.4;
+  text-align: center;
+  width: 100%;
+}
+
+.promo--line {
+  border-top: solid 1px $color-grayscale-200;
+  margin: 12px auto;
+  width: 85%;
+}
+
+.promo--time {
+  color: #666666;
+  font-family: Roboto;
+  font-size: 16px;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: normal;
+  margin: 8px 0;
+  width: 100%;
+}
+
+.promo--counter {
+  color: #880000;
+  font-family: Roboto;
+  font-size: 16px;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.gtm--variables {
+  display: none;
+}
+
+.card__header {
+  left: 16px;
+  position: absolute;
+  top: 16px;
+}
+
+.card__header-tag {
+  border-radius: 4px;
+  color: $color-grayscale-100;
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.1px;
+  line-height: 24px;
+  padding: 4px 12px;
+}
+
+@media screen and (max-width: 1003px) {
+
+  :host {
+
+    &::ng-deep {
+
+      .z-card {
+        width: 233px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1004px) {
+
+  :host {
+
+    &::ng-deep {
+
+      .z-card {
+        width: 190px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1204px) {
+
+  :host {
+
+    &::ng-deep {
+
+      .z-card {
+        width: 225px;
+      }
+    }
+  }
+}
+
+// @media screen and (min-width: 1600px) {
+
+//   :host {
+
+//     &::ng-deep {
+
+//       .z-card {
+//         width: 240px;
+//       }
+//     }
+//   }
+// }

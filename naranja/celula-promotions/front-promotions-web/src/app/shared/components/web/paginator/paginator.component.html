@@ -1,0 +1,27 @@
+ <ul class="paginator" *ngIf="lastPageNumber > 1">
+   <!--  arrow left -->
+   <li class="paginator--left-arrow" *ngIf="!currentPageIsFirstPage()">
+     <z-button [text]="'&#x2039;'" type="link" (clickButton)="onLeftArrowClicked()"></z-button>
+   </li>
+
+   <!--  first Page-->
+   <li [class]="currentPageIsFirstPage() ? 'paginator--page--current': 'paginator--page'">
+     <z-button text="1" type="link" [disabled]="currentPageIsFirstPage()" (clickButton)="onPageClicked(1)"></z-button>
+   </li>
+   <!--  pages -->
+   <li *ngFor="let page of pagesCurrentlyRendered; let i = index">
+     <z-button text="{{shouldDisplayEllipsis(page,i)}}" type="link" [disabled]="pageIsCurrentPage(page)"
+       (clickButton)="onPageClicked(page)"
+       [class]="((page) === currentPageNumber) ? 'paginator--page--current': 'paginator--page'"></z-button>
+   </li>
+
+   <!--  last Page-->
+   <li [class]="currentPageIsLastPage() ? 'paginator--page--current': 'paginator--page'">
+     <z-button text="{{lastPageNumber}}" type="link" [disabled]="currentPageIsLastPage()"
+       (clickButton)="onPageClicked(lastPageNumber)"></z-button>
+   </li>
+   <!--  arrow right -->
+   <li class="paginator--right-arrow" *ngIf="!currentPageIsLastPage()">
+     <z-button [text]="'&#x203A;'" type="link" (clickButton)="onRightArrowClicked()"></z-button>
+   </li>
+ </ul>

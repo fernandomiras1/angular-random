@@ -1,0 +1,147 @@
+@import "~@zumo/core/colors";
+
+.promo--container-ncom {
+  margin-top: 130px;
+}
+
+.promo--header-container {
+  box-sizing: border-box;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.promo--body {
+  padding-bottom: 24px;
+}
+
+.promo--header {
+  background-color: $color-grayscale-100;
+  background-position: center center;
+  background-size: cover;
+  filter: blur(24px);
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+.promo--time {
+  color: #880000;
+  font-family: Roboto;
+  font-size: 14px;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: normal;
+  margin: 16px 0;
+  width: 100%;
+}
+
+.promo--description-title {
+  color: #A9A9A9;
+  font-family: Roboto;
+  font-size: 16px;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: -0.16px;
+}
+
+.promo--description-text {
+  color: #333333;
+  font-family: Roboto;
+  font-size: 18px;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: -0.11px;
+}
+
+.promo--description-counter {
+  color: #880000;
+  font-family: Roboto;
+  font-size: 18px;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: normal;
+  line-height: 1.33;
+}
+
+.bold {
+  color: #880000;
+  font-weight: 500;
+}
+
+.more-locals p {
+  color: #AAAAAA;
+  font-family: Roboto;
+  font-size: 14px;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: normal;
+}
+
+.promo--title span {
+  font-weight: 400;
+}
+
+.spinner--container {
+  align-items: center;
+  display: flex;
+  height: 90vh;
+  justify-content: center;
+}
+
+.promo--supra--header {
+
+  &__label {
+    color: #666666;
+    font-family: Roboto;
+    font-size: 14px;
+    font-stretch: normal;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: -0.08px;
+    line-height: 1.86;
+  }
+
+  &__action {
+    color: #333333;
+    font-family: Roboto;
+    font-size: 18px;
+    font-stretch: normal;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: -0.1px;
+    line-height: 1.44;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.block--title {
+  color: $color-grayscale-800;
+  font-family: Roboto;
+  font-size: 18px;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: -0.1px;
+  line-height: 1.44;
+}
+
+.block--text {
+  color: $color-grayscale-400;
+  font-family: Roboto;
+  font-size: 16px;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-height: 1.5;
+}

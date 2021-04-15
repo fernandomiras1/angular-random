@@ -1,0 +1,75 @@
+<header #nav class="nav no-print" [ngClass]="{'showHeader': showHeader, 'hideHeader': !showHeader}">
+  <a class="nav-skip cloak" [href]="skipLinkPath">Saltar al contenido principal</a>
+  <nav class="top" *ngIf="renderTop">
+    <ng-template ngFor let-link [ngForOf]="linksTop">
+      <a class="link" href="{{ link.url }}" rel="noopener noreferrer" target="_blank">{{ link.text }}</a>
+    </ng-template>
+  </nav>
+  <nav class="main">
+    <a class="logo" (click)="exit()">
+      <picture>
+        <source type="image/webp" [appDatasrcset]="'assets/images/logos/logo.svg'">
+        <img [appDatasrc]="'assets/images/logos/logo.svg'" alt="Ir al inicio" class="lazyload">
+      </picture>
+    </a>
+    <ng-template ngFor let-link let-i="index" [ngForOf]="linksMain">
+      <a class="link" href="{{ link.url }}">{{ link.text }}</a>
+    </ng-template>
+    <a class="login" href="{{ login }}" rel="noopener noreferrer" target="_blank">Ingresar a Naranja Online</a>
+  </nav>
+  <nav #navMobile class="mobile {{ data?.orange ? 'orange' : '' }}">
+    <div (click)="goBack()">
+      <ng-container *ngIf="isShowingArrowButton$ | async; then arrowButton; else nIconButton"></ng-container>
+      <ng-template #arrowButton>
+        <div class="icon" style="cursor: pointer;">
+          <p class="icon-arrow-left size-24"></p>
+        </div>
+      </ng-template>
+      <ng-template #nIconButton>
+        <ng-container *appShellNoRender>
+          <div class="logo-mobile">
+            <img src="assets/images/logos/logo.svg" alt="Naranja Icon">
+          </div>
+        </ng-container>
+      </ng-template>
+    </div>
+    <div style="width: 100%;">
+      <ng-container *appShellNoRender>
+
+       <p *ngIf="showTitle" class="subtitle">{{title}}</p>
+      </ng-container>
+
+    </div>
+    <div *ngIf="filter" class="filter">
+      <img class="filter__icon" [src]="filterIcon" alt="Filter Icon" (click)="onOpenFilter()">
+    </div>
+    <div *ngIf="showMenuButton" class="hamburger" (click)="showMenu=true; toggleScroll();">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="menu {{ showMenu ? '' : 'hidden' }}">
+      <div class="links">
+        <div class="login">
+          <picture>
+            <source type="image/webp" [appDatasrcset]="'assets/images/logos/logo.svg'">
+            <img [appDatasrc]="'assets/images/logos/sign-in.svg'" alt="Ingresar" class="lazyload">
+          </picture>
+          <a rel="noopener noreferrer" href="{{ login }}" target="_blank">Ingresar a Naranja Online</a>
+        </div>
+        <div class="separator"></div>
+        <ng-template ngFor let-link let-i="index" [ngForOf]="linksMain">
+          <a class="link" href="{{ link.url }}">{{ link.text }}</a>
+        </ng-template>
+      </div>
+      <div class="other" *ngIf="renderTop">
+        <div class="title">Otras páginas</div>
+        <ng-template ngFor let-link [ngForOf]="linksTop">
+          <a class="link" href="{{ link.url }}">{{ link.text }}</a>
+        </ng-template>
+      </div>
+    </div>
+    <div id="overlayMobile" class="overlay {{ showMenu ? '' : 'hidden' }}" (click)="showMenu=false; toggleScroll();">
+    </div>
+  </nav>
+</header>

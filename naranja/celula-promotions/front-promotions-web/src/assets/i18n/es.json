@@ -1,0 +1,74 @@
+{
+  "PAGES": {
+    "HOME": {
+      "META": {
+        "SECTION": "Página principal"
+      },
+      "WELCOME": "Bienvenidos",
+      "BTN_HOME": "Principal",
+      "BTN_ABOUT": "Acerca",
+      "BTN_COUNTRIES": "Países",
+      "TAB_NEAREST": "Cerca tuyo",
+      "TAB_ALL": "Todas"
+    },
+    "GEOLOCATION": {
+      "USE_LOCATION": "Utilizar mi ubicación",
+      "SEARCHING": "Buscando Ubicación ...",
+      "MESSAGE_LOCATION": "Para mejorar tu experiencia, activá la ubicación"
+    },
+    "MAPS": {
+      "WELCOME": "¡Encontrá promociones cerca tuyo!",
+      "LOCATION_REQUEST": "¿Dónde estás?",
+      "SEARCH": "Buscar promos",
+      "SEARCH_ZONE": "Buscar en esta zona",
+      "EMPTY_MARKERS": "No se encontraron resultados. Intenta desplazar el mapa o aplicar un filtro.",
+      "EMPTY_FILTERS": "No se encontraron resultados. Intenta desplazar el mapa o intentar otro filtro."
+    },
+    "ABOUT": {
+      "META": {
+        "SECTION": "Acerca de nosotros"
+      },
+      "TITLE": "Acerca de nosotros"
+    },
+    "NOT_FOUND": {
+      "DEFAULT": "Página no encontrada"
+    },
+    "LOGOUT": {
+      "DEFAULT": "Estas saliendo del sistema"
+    },
+    "SESSION_EXPIRED": {
+      "DEFAULT": "Su sesión ha expirado"
+    },
+    "DESKTOP": {
+      "TITLE": "Continuá desde tu celular",
+      "SUBTITLE": "Estamos trabajando para que pronto puedas ver las promos desde tu computadora."
+    },
+    "PROMO_DETAIL": {
+      "VALIDATION": "Vigencia",
+      "WHERE": "Dónde",
+      "DESCRIPTION": "Descripción",
+      "WEBSITE_CLICK_LEGAL": "Al consultar estos legales ud está accediendo a un sitio web administrado por"
+    }
+  },
+  "SHARED_COMPONENTS": {
+    "ERROR_STATE": {
+      "TITLE": "Parece que algo falló",
+      "SUBTITLE": "Tuvimos un problema para mostrarte esta sección. Reintentá más tarde.",
+      "BTN": "Reintentar"
+    },
+    "EMPTY_STATE": {
+      "TITLE": "No encontramos ninguna promoción",
+      "SUBTITLE": "Intentá cambiar los filtros que seleccionaste.",
+      "BTN": "Revisar filtros"
+    },
+    "UNAVAILABLE_STATE": {
+      "TITLE": "Esta promo ya no está disponible",
+      "SUBTITLE": "Pero tenemos otras opciones para vos.",
+      "BTN": "Ver promos"
+    },
+    "FILTER_DIALOG": {
+      "VIEW_MORE_CATEGORIES": "Ver todas las categorías",
+      "VIEW_LESS_CATEGORIES": "Ver menos categorías"
+    }
+  }
+}

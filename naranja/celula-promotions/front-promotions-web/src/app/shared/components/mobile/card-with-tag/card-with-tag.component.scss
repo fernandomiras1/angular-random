@@ -1,0 +1,125 @@
+@import "~@zumo/core/colors";
+
+.card {
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  &__container {
+    height: 176px;
+    padding: 12px 12px 0 12px;
+  }
+
+  &__brand-container {
+    align-items: center;
+    display: flex;
+    height: 64px;
+    justify-content: center;
+    margin: 24px 0 18px 0;
+    width: 120px;
+  }
+
+  &__header {
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+
+    &-tag {
+      border-radius: 2px;
+      color: $color-grayscale-100;
+      font-family: Roboto;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: -0.1px;
+      padding: 6px 8px;
+      position: absolute;
+    }
+
+    &-separator {
+      flex: 1 1 auto;
+    }
+
+    &-icon {
+      border-radius: 0;
+      height: 20px;
+      width: 20px;
+    }
+  }
+
+  &__title {
+    color: $color-grayscale-800;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 600;
+    height: 24px;
+    letter-spacing: 0;
+    line-height: 24px;
+    margin-bottom: 4px;
+  }
+
+  &__subtitle {
+    color: $color-grayscale-700;
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 500;
+    height: 32px;
+    letter-spacing: -0.08px;
+    line-height: 16px;
+  }
+
+  &__separator {
+    border-top: 1px solid $color-grayscale-200;
+  }
+
+  &__footer {
+    height: 28px;
+    padding: 11px 12px 12px 12px;
+
+    &-time {
+      color: $color-grayscale-800;
+      font-family: Roboto;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 500;
+      height: 12px;
+      letter-spacing: 0;
+      line-height: 7.27px;
+    }
+
+    &-counter {
+      color: $color-error-800;
+      font-family: Roboto;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 500;
+      height: 12px;
+      letter-spacing: 0;
+      line-height: 7.27px;
+    }
+
+    &-category {
+      color: $color-grayscale-400;
+      font-family: Roboto;
+      font-size: 10px;
+      font-weight: 600;
+      height: 8px;
+      letter-spacing: 0.5px;
+      line-height: 7.27px;
+      margin-top: 8px;
+    }
+  }
+}
+
+:host ::ng-deep .card__brand-logo {
+  height: auto;
+  max-height: 64px;
+  max-width: 120px;
+  min-width: 56px;
+  width: auto;
+}
+
+.gtm--variables {
+  display: none;
+}

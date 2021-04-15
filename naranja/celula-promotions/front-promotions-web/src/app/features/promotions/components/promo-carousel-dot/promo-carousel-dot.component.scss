@@ -1,0 +1,37 @@
+:host {
+  display: inline-block;
+  position: absolute;
+}
+
+:host(.left) {
+  bottom: 10px;
+  left: 10px;
+}
+
+:host(.right) {
+  bottom: 10px;
+  right: 10px;
+}
+
+:host(.middle) {
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.dot {
+  background: #DDDDDD;
+  border-radius: 5px;
+  display: inline-block;
+  height: 10px;
+  margin: 0 4px;
+  width: 10px;
+}
+
+.dot--enable-click {
+  cursor: pointer;
+}
+
+.dot.active {
+  background: #FF5500;
+}

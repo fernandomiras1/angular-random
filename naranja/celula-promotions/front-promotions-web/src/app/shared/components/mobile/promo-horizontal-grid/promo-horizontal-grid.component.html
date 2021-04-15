@@ -1,0 +1,21 @@
+<div class="horizontal-grid-container">
+  <div class="row center-xs margin-top-32" *ngIf="!rule.promos && !rule.err">
+    <z-loading type="primary" size="large"></z-loading>
+  </div>
+
+  <div *ngIf="rule && rule.promos?.length > 0">
+    <div class="horizontal-grid-top margin-bottom-16">
+      <div class="title">
+        <p class="z-highlight-2 horizontal-title">{{rule.description}}</p>
+      </div>
+      <div class="view-more" *ngIf="rule.total > 8">
+        <p (click)="emmitOpenRuleDetail()" class="z-body-text" style="color: #fe5000;">Ver más</p>
+      </div>
+    </div>
+    <div class="horizontal-grid disable-scrollbars">
+      <div class="margin-bottom-16 grid" *ngFor="let promo of rule.promos; let i=index;">
+        <app-card-with-tag-mobile [rule]="rule" [promo]="promo" [index]="i"></app-card-with-tag-mobile>
+      </div>
+    </div>
+  </div>
+</div>

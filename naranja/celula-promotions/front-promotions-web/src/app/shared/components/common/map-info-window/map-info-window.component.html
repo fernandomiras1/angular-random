@@ -1,0 +1,30 @@
+<div *ngFor="let promo of data; let index = index">
+  <z-list [ngClass]="[isMobile ? 'container-mobile' : 'container-web']" [index]="index"
+    (elementSelected)="onPromoSelected(promo)">
+    <div left>
+      <app-lazy-image [image]="promo.imgSrc" [emptyImage]="getEmptyIcon(promo)" [alt]="'Logo'" classImage="window_img">
+      </app-lazy-image>
+    </div>
+    <div primaryTitle>
+      <span class=" item_text__primary">{{promo.title}}</span>
+    </div>
+    <div primaryTitle>
+      <span class="item_text__secondary"> {{promo.subtitle}} </span>
+    </div>
+    <div primaryTitle>
+      <span class="item_text__direction"> {{promo?.street}} </span>
+    </div>
+    <div primaryTitle>
+      <span class="item_text__distance"> {{promo.distance}} </span>
+    </div>
+  </z-list>
+  <!-- Hidden GTM Variables -->
+  <div class="gtm--variables">
+    <span class="Promo ID">{{ promo.id }}</span>
+    <span class="Promo Name">{{ promo.planPrincipal }}</span>
+    <span class="Promo Creative">cerca tuyo</span>
+    <span class="Promo Brand">{{ promo.nombreComercio }}</span>
+    <span class="Category">{{ promo.categoria | capitalizeFirst }}</span>
+  </div>
+  <!-- End GTM Variables -->
+</div>

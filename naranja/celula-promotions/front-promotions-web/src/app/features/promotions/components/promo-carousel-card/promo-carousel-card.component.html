@@ -1,0 +1,23 @@
+<div (click)="goDetail(slide)" #carouselItem
+  class="{{singleSlide ? 'ui-carousel-item-single-slide fade' : 'ui-carousel-item fade'}}" [appSwiper]="canSwipe"
+  tabindex="-1" style="outline: none">
+      <!-- Hidden GTM Variables -->
+      <div class="gtm--variables" *ngIf="slide?.type.description === 'array'">
+        <span class="Promo ID">{{ slide._id }}</span>
+        <span class="Promo Name">{{ slide.alt }}</span>
+        <span class="Promo List">Destacadas</span>
+        <span class="Promo Brand">Agrupadas</span>
+        <span class="Promo Position">{{ slide.order }}</span>
+        <span class="List Position">0</span>
+      </div>
+      <div class="gtm--variables" *ngIf="slide?.type.description === 'detail'">
+        <span class="Promo ID">{{ slide._id }}</span>
+        <span class="Promo Name">{{ slide.description }}</span>
+        <span class="Promo List">Destacadas</span>
+        <span class="Promo Brand">{{ slide.commerceName }}</span>
+        <span class="Promo Position">{{ slide.order }}</span>
+        <span class="List Position">0</span>
+      </div>
+      <!-- End GTM Variables -->
+  <ng-content></ng-content>
+</div>

@@ -1,0 +1,7 @@
+<div class="modal--container" (click)="onClickOutside()">
+  <div class="modal--content" [ngClass]="{ 'modal--content__mobile': isMobile, 'modal--content__desktop': !isMobile}">
+    <z-card>
+      <ng-content></ng-content>
+    </z-card>
+  </div>
+</div>

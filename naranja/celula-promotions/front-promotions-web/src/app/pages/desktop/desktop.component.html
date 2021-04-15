@@ -1,0 +1,19 @@
+<div class="desktop--copy-container">
+  <div class="desktop--copy-header">
+    <a href="https://www.naranja.com/">
+      <picture>
+        <source type="image/webp" [appDatasrcset]="'assets/images/icons/naranja-logo.svg'">
+        <img alt="Logo icon" [appDatasrc]="'assets/images/icons/naranja-logo.svg'" class="lazyload naranja-logo">
+      </picture>
+    </a>
+  </div>
+
+  <div class="desktop--copy-body">
+    <picture>
+      <source type="image/webp" [appDatasrcset]="'assets/images/icons/ilustracion-link.svg'">
+      <img alt="Imagen" [appDatasrc]="'assets/images/icons/ilustracion-link.svg'" class="lazyload naranja-logo">
+    </picture>
+    <h2 class="desktop--copy-title"> {{ 'PAGES.DESKTOP.TITLE' | translate }}</h2>
+    <p class="desktop--copy-subtitle"> {{ 'PAGES.DESKTOP.SUBTITLE' | translate }}</p>
+  </div>
+</div>

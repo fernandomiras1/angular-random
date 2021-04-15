@@ -1,0 +1,49 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "downlevelIteration": true,
+    "importHelpers": true,
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "module": "es2015",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es5",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2017",
+      "dom"
+    ],
+    "plugins": [{
+      "name": "tslint-language-service"
+    }],
+    "paths": {
+      "@app/": ["./app"],
+      "@app/*": ["./app/*"],
+      "@core/": ["./app/core"],
+      "@core/*": ["./app/core/*"],
+      "@constants/": ["./app/constants"],
+      "@constants/*": ["./app/constants/*"],
+      "@environments/": ["./environments"],
+      "@environments/*": ["./environments/*"],
+      "@filter/": ["./app/features/filter"],
+      "@filter/*": ["./app/features/filter/*"],
+      "@promotions/": ["./app/features/promotions"],
+      "@promotions/*": ["./app/features/promotions/*"],
+      "@root-store/": ["./app/root-store"],
+      "@root-store/*": ["./app/root-store/*"],
+      "@shared/": ["./app/shared"],
+      "@shared/*": ["./app/shared/*"],
+      "@testing/": ["../test"],
+      "@testing/*": ["../test/*"],
+      "core-js/es7/reflect": [
+        "node_modules/core-js/proposals/reflect-metadata"
+      ]
+    }
+  }
+}

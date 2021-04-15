@@ -1,0 +1,6 @@
+<div class="error-container">
+    <img [src]="emptyIconUrl" alt="Empty Icon" class="error--icon">
+    <p class="error--title">{{ 'SHARED_COMPONENTS.ERROR_STATE.TITLE' | translate }}</p>
+    <p class="error--subtitle">{{ 'SHARED_COMPONENTS.ERROR_STATE.SUBTITLE' | translate }}</p>
+    <z-button text="Reintentar" type="link" [widthButton]="'260px'" (clickButton)="onClickButton()"></z-button>
+</div>

@@ -1,0 +1,8 @@
+<div class="filter-menu" [class.hidden]="showFilters">
+  <app-filter-dialog (close)="clickOverlay()" (filterApply)="sendFiters($event)" [provinceFiltered]="provinceFiltered"
+    [localityFiltered]="localityFiltered" [categoriesFiltered]="categoriesFiltered"
+    [commerceNameFiltered]="commerceNameFiltered">
+  </app-filter-dialog>
+</div>
+
+<div class="overlay" [class.hidden]="!showFilters" (click)="clickOverlay()"></div>

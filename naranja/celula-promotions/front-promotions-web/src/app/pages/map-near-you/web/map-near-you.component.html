@@ -1,0 +1,101 @@
+<app-navbar-web></app-navbar-web>
+
+<div class="spinner--container" *ngIf="loading">
+  <z-loading type="primary" size="large"></z-loading>
+</div>
+
+<div *ngIf="!loading" class="map-container">
+  <div class="container btn-filter-ncom" style="height: 40px;">
+    <div *ngIf="!showFiltersMenu && !showFilterWithoutLocation">
+      <app-promo-btn *ngIf="!isFilteredSearchActive()" (click)="showFilters()" [btnText]="'Filtros'">
+      </app-promo-btn>
+
+      <div class="chips--container" *ngIf="isFilteredSearchActive()">
+        <app-info-chips-web *ngIf="commerceNameFiltered" [type]="'commerceName'" [data]="[commerceNameFiltered]"
+          (edit)="showFilters()" (close)="onCloseChip($event)"></app-info-chips-web>
+        <app-info-chips-web *ngIf="locationFilteredData().length" [type]="'location'" [data]="locationFilteredData()"
+          (edit)="showFilters()" (close)="onCloseChip($event)">
+        </app-info-chips-web>
+        <app-info-chips-web *ngIf="mapCategoriesFilteredFromFilterBody().length > 0" [type]="'categories'"
+          [data]="mapCategoriesFilteredFromFilterBody()" (edit)="showFilters()" (close)="onCloseChip($event)">
+        </app-info-chips-web>
+      </div>
+    </div>
+  </div>
+
+  <div class="header-container-ncom container">
+    <div class="margin-bottom-24" style="display: flex; flex-direction: row-reverse;">
+      <!--  -->
+      <z-switch [switch]="switch" [type]="'right-align'" (switchChange)="redirectToAll()">
+      </z-switch>
+    </div>
+  </div>
+
+  <div *ngIf='openFilter; then filter; else maps'></div>
+  <ng-template #maps>
+
+    <div class="map-container__button">
+      <z-button *ngIf="outOfBounds" text="{{'PAGES.MAPS.SEARCH_ZONE' | translate }}" (clickButton)="getNewLocation()"
+        widthButton="200px" [isLoading]="isLoading" type="link"
+        style="background-color: #FFFFFF; border-radius: 60px; box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.3);">
+      </z-button>
+    </div>
+
+    <agm-map (centerChange)="verifyPosition($event)" [latitude]="currentPoint.lat" [longitude]="currentPoint.lng"
+      [zoom]="currentZoom" [minZoom]="8" [streetViewControl]="false" [styles]="mapStyles" [zoomControl]="false"
+      (zoomChange)="manageZoom($event)" [gestureHandling]="'greedy'">
+      <agm-marker [latitude]="initialPoint.lat" [longitude]="initialPoint.lng"
+        [iconUrl]="'assets/images/icons/punto.jpg'">
+      </agm-marker>
+      <agm-marker-cluster [styles]="clusterStyles" [calculator]="calculator">
+        <agm-marker *ngFor="let marker of markersFiltered; let i = index" [latitude]="marker.lat"
+          [longitude]="marker.lng" [iconUrl]="marker.pointer" [zIndex]="i +1"
+          [label]="showLabels ? {'font-size': '14px',
+      'font-weight': 'normal', 'font-family': 'Roboto', 'color': '#333333', 'text': truncateLabel(marker.label, marker.isSelected)} : null" (markerClick)="markerSelect(marker)">
+          <agm-snazzy-info-window (afterClose)="setIcon(marker, false)" [pointer]="'4px'" [shadow]="true"
+            [closeWhenOthersOpen]="true" [maxWidth]="'300px'" [maxHeight]="'400px'" [padding]="'24px 24px 0 24px'"
+            [placement]="'bottom'" [showCloseButton]="true">
+            <ng-template>
+              <app-map-info-window class="window" [data]="marker.promotions"></app-map-info-window>
+            </ng-template>
+          </agm-snazzy-info-window>
+        </agm-marker>
+      </agm-marker-cluster>
+    </agm-map>
+  </ng-template>
+  <ng-template #filter>
+    <div class="map-container-items">
+      <picture>
+        <source type="image/webp" [appDatasrcset]="imgSrc">
+        <img alt="icon item" [appDatasrc]="imgSrc" class="lazyload">
+      </picture>
+      <div class="map-container-items__primary">
+        {{'PAGES.MAPS.WELCOME' | translate }}
+      </div>
+      <div class="map-container-items__secondary">
+        {{'PAGES.MAPS.LOCATION_REQUEST' | translate }}
+      </div>
+
+      <div *ngIf="isEnableGeolocation">
+        <app-filter-dialog *ngIf="openFilter" class="map-component" (filterApply)="onFilterApplied($event)"
+          (close)="closeFilterDialog()" [categoriesFiltered]="categoriesFilteredItems"
+          [provinceFiltered]="currentProvince.text" [localityFiltered]="currentLocality.text">
+        </app-filter-dialog>
+      </div>
+      <div *ngIf="showFilterWithoutLocation">
+        <app-filter-dialog class="map-component" (filterApply)="onFilterAppliedWithoutLocation($event)"
+          (close)="closeFilterDialog()" [categoriesFiltered]="categoriesFilteredItems"
+          [provinceFiltered]="currentProvince.text" [localityFiltered]="currentLocality.text" [type]="'mapFilter'">
+        </app-filter-dialog>
+      </div>
+    </div>
+  </ng-template>
+</div>
+
+<app-filter-web *ngIf="showFiltersMenu" (filtersApplied)="applyFilterMap($event)"
+  (closeFilters)="setFiltersValue($event)" [categoriesFiltered]="categoriesFilteredItems"
+  [provinceFiltered]="currentProvince.text" [localityFiltered]="currentLocality.text"
+  [commerceNameFiltered]="commerceNameFiltered" [showFilters]="showFiltersMenu">
+</app-filter-web>
+
+<app-footer-ncom *ngIf="!loading"></app-footer-ncom>

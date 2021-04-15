@@ -1,0 +1,47 @@
+:host {
+  width: 100%;
+}
+
+.gtm--variables {
+  display: none;
+}
+
+.transition {
+  transition: transform;
+  transition-timing-function: ease;
+}
+
+.ui-carousel-item {
+  display: block;
+  height: auto;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  user-select: none;
+  width: 85%;
+}
+
+.ui-carousel-item-single-slide {
+  display: block;
+  height: auto;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  user-select: none;
+  width: 100%;
+}
+
+.fade {
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+:host /deep/ img {
+  border-radius: 4px;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 4px 0 rgba(0, 0, 0, 0.04);
+  height: auto;
+}

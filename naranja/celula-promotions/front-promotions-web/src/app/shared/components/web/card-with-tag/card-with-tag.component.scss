@@ -1,0 +1,118 @@
+@import "~@zumo/core/colors";
+
+.card {
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  &__container {
+    height: 260px;
+    padding: 16px 16px 0 16px;
+  }
+
+  &__brand-container {
+    align-items: center;
+    display: flex;
+    height: 90px;
+    justify-content: center;
+    margin: 36px 0;
+    width: 180px;
+  }
+
+  &__header {
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+
+    &-tag {
+      border-radius: 2px;
+      color: $color-grayscale-100;
+      font-family: Roboto;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: -0.1px;
+      line-height: 20px;
+      margin-top: 6px;
+      padding: 0 8px;
+      position: absolute;
+    }
+
+    &-separator {
+      flex: 1 1 auto;
+    }
+
+    &-icon {
+      border-radius: 0;
+      height: auto;
+      width: 32px;
+    }
+  }
+
+  &__title {
+    color: $color-grayscale-800;
+    font-family: Roboto;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 30px;
+  }
+
+  &__subtitle {
+    color: $color-grayscale-700;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    margin-top: 4px;
+  }
+
+  &__separator {
+    border-top: 1px solid $color-grayscale-200;
+  }
+
+  &__footer {
+    height: 65px;
+    padding: 0 16px 16px 16px;
+
+    &-time {
+      color: $color-grayscale-800;
+      font-family: Roboto;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      margin-top: 15px;
+    }
+
+    &-counter {
+      color: $color-error-800;
+      font-family: Roboto;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      margin-top: 15px;
+    }
+
+    &-category {
+      color: $color-grayscale-400;
+      font-family: Roboto;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      line-height: 22px;
+      margin-top: 4px;
+    }
+  }
+}
+
+:host ::ng-deep .card__brand-logo {
+  height: auto;
+  max-height: 90px;
+  max-width: 180px;
+  min-width: 64px;
+  width: auto;
+}
+
+.gtm--variables {
+  display: none;
+}

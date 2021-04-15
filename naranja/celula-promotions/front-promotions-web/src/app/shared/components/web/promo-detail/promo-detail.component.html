@@ -1,0 +1,63 @@
+<app-modal *ngIf="loadingLocals" [hidden]="!showLocalsModal" (close)="closeModal()" [isMobile]="false">
+  <div *ngFor="let address of showAddresses; let index=index">
+    <z-list [index]="index" (elementSelected)="onSelectedAddress(index)">
+      <div primaryTitle>
+        <div>
+          {{address.address}}
+        </div>
+      </div>
+      <div primarySubtitle>
+        <div>
+          {{address.locality}}
+        </div>
+      </div>
+    </z-list>
+  </div>
+</app-modal>
+
+
+<div *ngIf="promo" class="container detail">
+
+  <p class="promo--supra--header__label margin-top-16 no-print">{{ getBreadcrumbTitle() }}</p>
+  <p class="promo--supra--header__action margin-top-16 margin-bottom-16 no-print" (click)="goBack()">Volver</p>
+
+  <z-card [isNotHover]="true" [styleList]="{ 'margin-bottom': '48px'}">
+
+    <div [appGradientBackground]="logoUrl" class="promo--header-container no-print">
+      <ng-container *ngIf="bannerImage; then featuredBanner; else simpleBanner"></ng-container>
+      <ng-template #featuredBanner>
+        <app-lazy-image [image]="bannerImage" [alt]="'Banner Image'" classImage="header--icon-custom">
+        </app-lazy-image>
+      </ng-template>
+      <ng-template #simpleBanner>
+        <app-lazy-image [image]="categoryIcon" [animationDisabled]="true" [emptyImage]="emptyIcon"
+          [alt]="'Category Image'" classImage="header--icon">
+        </app-lazy-image>
+      </ng-template>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-offset-1 col-xs-10 col-xs-offset-1">
+        <app-header-web [logoUrl]="logoUrl" [defaultLogo]="defaultLogo" [promo]="promo" [emptyIcon]="emptyIcon"
+          [promoIcon]="categoryIcon" [title]="title" [subtitle]="subtitle" [tag]="tag">
+        </app-header-web>
+        <app-description-web [promo]="promo" [counterData]="counterData" [showDates]="showDates">
+        </app-description-web>
+        <app-address-web [moreLocalsFinished]="moreLocalsFinished" [promo]="promo" [addresses]="addresses"
+          [showMore]="showWhereBlock()" [isOnline]="isPromoOnline" [promoSelected]="promoSelected"
+          (clickMoreLocals)="moreLocals()">
+        </app-address-web>
+
+        <app-map-web *ngIf="promoMap" [promoMap]="promoMap" [addresses]="addresses" (clickMap)="onMapClick()"
+          class="no-print">
+        </app-map-web>
+
+        <app-legals [addresses]="addresses" [promo]="promo">
+        </app-legals>
+
+        <z-button [text]="'Descargar'" [type]="'link'" (clickButton)="printWeb()"
+            class="promo--donwload-button no-print"></z-button>
+      </div>
+    </div>
+  </z-card>
+</div>

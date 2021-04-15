@@ -1,0 +1,43 @@
+/* You can add global styles to this file, and also import other style files */
+// $font-path: "/assets/fonts" !default;
+
+@import "~@zumo/core/variables";
+@import "~@zumo/core/iconsFont";
+@import "~@zumo/core/typography";
+
+@media print {
+
+  .no-print,
+  .no-print * {
+    display: none !important;
+  }
+
+  .container.detail,
+  .promo--container-ncom {
+    margin-top: 0 !important;
+  }
+
+  .promo--brand-container {
+    top: 0 !important;
+  }
+
+  app-description-web .row {
+    display: block;
+    margin-top: 7%;
+  }
+
+  app-header-web .promo--title {
+    flex-wrap: wrap;
+  }
+
+  body {
+    background-color: #FFFFFF !important;
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  @page {
+    margin-right: 1.5mm;
+  }
+
+}

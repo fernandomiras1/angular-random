@@ -1,0 +1,54 @@
+.arrow {
+  height: 95%;
+  opacity: 0.6;
+  position: absolute;
+  user-select: none;
+  width: 5%;
+}
+
+.arrow.right {
+  filter: "FlipH";
+  right: 5px;
+  top: 45%;
+  transform: scaleX(-1) translateY(-50%);
+}
+
+.arrow.left {
+  left: 5px;
+  top: 45%;
+  transform: translateY(-50%);
+}
+
+.arrow:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
+.arrow::before {
+  content: "";
+  display: block;
+  height: 3px;
+  position: absolute;
+  top: 14px;
+  transform: rotate(-45deg);
+  width: 30px;
+}
+
+.arrow::after {
+  bottom: 14px;
+  content: "";
+  display: block;
+  height: 3px;
+  position: absolute;
+  transform: rotate(45deg);
+  width: 30px;
+}
+
+.arrow.disabled {
+  opacity: 0.4;
+}
+
+.arrow.disabled:hover {
+  cursor: pointer;
+  opacity: 0.4;
+}

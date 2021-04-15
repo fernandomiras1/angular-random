@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-xs-6 margin-top-32" *ngIf="promo.reimbursementCap || promo.specification.otherDetails">
+    <p class="block--title margin-bottom-8">{{ 'PAGES.PROMO_DETAIL.DESCRIPTION' | translate }}</p>
+    <p class="block--text" *ngIf="promo.reimbursementCap">Tope de reintegro hasta: ${{ promo.reimbursementCap }}</p>
+    <p class="block--text" *ngIf="promo.specification.otherDetails">{{ promo.specification.otherDetails }}</p>
+  </div>
+
+  <div class="col-xs-6 margin-top-32">
+    <p class="block--title margin-bottom-8">{{ 'PAGES.PROMO_DETAIL.VALIDATION' | translate }}</p>
+    <p [ngClass]="{ 'promo--description-counter': counterData.alert, 'block--text': !counterData.alert }">
+      {{ counterData.show ? counterData.message : '' }} </p>
+    <p class="block--text" *ngIf="showDates && promo.days.dateFrom && promo.days.dateTo">Del {{ promo.days.dateFrom }}
+      al {{ promo.days.dateTo }}
+    </p>
+  </div>
+</div>
+<div class="divider"></div>

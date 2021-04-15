@@ -1,0 +1,37 @@
+@import "~@zumo/core/colors";
+
+.filter-menu {
+  background-color: $color-grayscale-100;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  overflow: auto;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transform: translateX(478px);
+  transition: transform 0.35s;
+  width: 478px;
+  z-index: 3;
+
+  &.hidden {
+    transform: translateX(0);
+    transition: all 0.35s;
+  }
+}
+
+.overlay {
+  animation: appear 0.4s ease-out;
+  background-color: #00000070;
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 2;
+}
+
+.overlay.hidden {
+  display: none;
+}

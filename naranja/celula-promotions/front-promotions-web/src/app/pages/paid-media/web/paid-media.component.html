@@ -1,0 +1,52 @@
+<app-navbar-web [shadow]="true" [fixed]="false"></app-navbar-web>
+<div class="spinner--container" *ngIf="loading">
+  <z-loading type="primary" size="large"></z-loading>
+</div>
+
+<div *ngIf="!error">
+  <div *ngIf="!loading">
+    <div *ngIf="individualPromo" class="promo--container-ncom">
+      <app-promo-detail-web [promo]="individualPromo">
+      </app-promo-detail-web>
+    </div>
+
+    <div class="container">
+      <div *ngIf="agrupatedPromosRendered.length" class="featured--container-ncom">
+        <div class="detail">
+          <p class="promo--supra--header__label margin-top-16">Promociones</p>
+          <p class="promo--supra--header__action margin-top-16 margin-bottom-16" (click)="goBack()">Volver</p>
+        </div>
+
+        <div class="filter--container">
+          <p class="message--counter" *ngIf="agrupatedPromos.length + agrupatedPromosRendered.length === 1">
+            Tenemos {{ agrupatedPromos.length + agrupatedPromosRendered.length }} promo especial</p>
+          <p class="message--counter" *ngIf="agrupatedPromos.length + agrupatedPromosRendered.length > 1">
+            Tenemos {{ agrupatedPromos.length + agrupatedPromosRendered.length }} promos especiales</p>
+        </div>
+
+        <app-infinite-scroll (scrolled)="onScroll()" *ngIf="agrupatedPromosRendered.length">
+          <div class="promotions--list">
+            <div class="promotions--list__items" *ngFor="let promo of agrupatedPromosRendered; let i = index">
+              <app-card-with-tag-web [promo]="promo" [index]="i"></app-card-with-tag-web>
+            </div>
+          </div>
+        </app-infinite-scroll>
+
+        <div class="separator"></div>
+
+      </div>
+    </div>
+
+
+    <div *ngIf="!individualPromo && !agrupatedPromosRendered.length" class="separator"></div>
+    <app-empty-state-grid *ngIf="!individualPromo && !agrupatedPromosRendered.length" class="margin-top-64"
+      (showFilter)="onErrorStateButtonPressed()" [emptyStateData]="emptyStateData" [showOpenFilterButton]="true">
+    </app-empty-state-grid>
+  </div>
+</div>
+
+<div *ngIf="error">
+  <app-error-state (retryClicked)="retry()"></app-error-state>
+</div>
+
+<app-footer-ncom></app-footer-ncom>

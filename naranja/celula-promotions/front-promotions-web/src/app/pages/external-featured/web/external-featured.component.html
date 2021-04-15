@@ -1,0 +1,43 @@
+<app-navbar-web [shadow]="true" [fixed]="false"></app-navbar-web>
+
+<div class="spinner--container" *ngIf="loading">
+    <z-loading type="primary" size="large"></z-loading>
+</div>
+
+<div *ngIf="!error">
+    <div *ngIf="!loading">
+
+        <div class="featured-container container">
+            <div class="detail">
+                <p class="promo--supra--header__label margin-top-16">Promociones >
+                    {{ selectedFeaturePromo.description }}</p>
+            </div>
+
+            <img alt="Header image" class="margin-bottom-24" *ngIf="selectedFeaturePromo" [src]="getHeaderImage()">
+
+            <div class="filter--container">
+                <p class="message--counter" *ngIf="promos.length + promosRendered.length === 1">
+                    Tenemos {{ promos.length + promosRendered.length }} promo especial</p>
+                <p class="message--counter" *ngIf="promos.length + promosRendered.length > 1">
+                    Tenemos {{ promos.length + promosRendered.length }} promos especiales</p>
+            </div>
+
+            <app-infinite-scroll (scrolled)="onScroll()" *ngIf="promosRendered.length > 0">
+                <div class="promotions--list">
+                    <div class="promotions--list__items" *ngFor="let promo of promosRendered; let i = index">
+                        <app-card-with-tag-web [promo]="promo" [index]="i"></app-card-with-tag-web>
+                    </div>
+                </div>
+            </app-infinite-scroll>
+        </div>
+
+    </div>
+</div>
+
+<div *ngIf="error">
+    <app-error-state (retryClicked)="retry()"></app-error-state>
+</div>
+
+<ng-container *ngIf="promos.length === 0">
+    <app-footer-ncom></app-footer-ncom>
+</ng-container>

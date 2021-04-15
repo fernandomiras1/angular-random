@@ -1,0 +1,67 @@
+<z-card [clickable]="true" (clickCard)="goDetail()" [styleList]="{
+  'height': '358px',
+  'margin-right': '15px',
+  'margin-left': '15px',
+  'margin-top': '5px',
+  'margin-bottom': '5px',
+  'width': '250px'}">
+
+  <div class="card">
+
+    <div class="card__container">
+      <div *ngIf="tag" class="card__header">
+        <span class="card__header-tag"
+          [ngStyle]="{ 'background-color': tag.color ? tag.color : '#FE5000' }">{{ tag.label | capitalizeFirst | elypsis:18}}</span>
+        <span class="card__header-separator"></span>
+        <!-- <img [src]="favIcon" class="card__header-icon" alt="Favorito"> -->
+      </div>
+
+      <!-- LOGO -->
+      <div class="row center-xs">
+        <div class="card__brand-container">
+          <app-lazy-image [image]="logoUrl" [emptyImage]="emptyIcon" [alt]="'Logo Icon'"
+            [classImage]="'card__brand-logo'">
+          </app-lazy-image>
+        </div>
+      </div>
+
+
+      <!-- TITLE -->
+      <div class="card__title">
+        <p>{{ title | elypsis:20 }}</p>
+      </div>
+
+      <!-- SUBTITLE  -->
+      <div class="card__subtitle">
+        <p *ngIf="subtitle">{{ subtitle | elypsis:48 }}</p>
+        <p *ngIf="!subtitle">En {{ promo.commerceName | elypsis:42  }}</p>
+      </div>
+
+    </div>
+
+    <div class="card__separator"></div>
+
+    <!-- FOOTER  -->
+    <div class="card__footer">
+      <p *ngIf="counterData"
+        [ngClass]="{ 'card__footer-counter': counterData.alert, 'card__footer-time': !counterData.alert }">
+        {{ counterData.show ? (counterData.message | elypsis:27) : ''  }}</p>
+      <p class="card__footer-category">{{ promo.sector.category | uppercase | elypsis:20  }}</p>
+    </div>
+  </div>
+
+  <!-- Hidden GTM Variables -->
+  <div class="gtm--variables">
+    <span class="Promo ID">{{ promo.id }}</span>
+    <span class="Promo Name">{{ title }}</span>
+    <span class="Promo List">{{ rule ? rule.description : null }}</span>
+    <span class="Promo Brand">{{ promo.commerceName }}</span>
+    <span class="Category">{{ promo.sector.category | capitalizeFirst }} -
+      {{ promo.sector.subCategory | capitalizeFirst }}</span>
+    <span class="Promo Position">{{ index }}</span>
+    <span class="List Position">{{ rule ? rule.order : null }}</span>
+    <span class="Promo Creative">{{ analitycsCreativeClass }}</span>
+  </div>
+  <!-- End GTM Variables -->
+
+</z-card>
