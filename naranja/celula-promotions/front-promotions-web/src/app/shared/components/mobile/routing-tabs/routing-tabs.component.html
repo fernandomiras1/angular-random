@@ -1,8 +1,0 @@
-<app-navbar-mobile [title]="'Promociones'" [filter]="filter" (openFilter)="onOpenFilter()"></app-navbar-mobile>
-<div class="tabs--container-ncom">
-  <z-tabs (click)="onTabClick($event)">
-      <z-tab [title]="'PAGES.HOME.TAB_ALL' | translate" [isActive]="allActive"></z-tab>
-    <!-- <z-tab [title]="'PAGES.HOME.TAB_SUGGESTED' | translate" [isActive]="suggestedActive"></z-tab> -->
-    <z-tab [title]="'PAGES.HOME.TAB_NEAREST' | translate" [isActive]="nearestActive"></z-tab>
-  </z-tabs>
-</div>

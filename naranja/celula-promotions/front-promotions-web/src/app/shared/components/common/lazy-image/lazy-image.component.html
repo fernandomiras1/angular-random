@@ -1,9 +1,0 @@
-<ng-container *appShellNoRender>
-  <picture *ngIf="!showEmptyImage">
-    <source type="image/webp" [appDatasrcset]="image">
-    <img #container loading="lazy" [@imageAnimation]="animationDisabled ?  null : imageCtrl"
-      class="lazyload {{ classImage }}" (load)="onLoad()" [alt]="alt" [appDatasrc]="fallbackImage">
-  </picture>
-  <img #empty *ngIf="showEmptyImage" [@emptyImageAnimation]="animationDisabled ?  null : emptyImageCtrl" loading="lazy"
-    class="lazyload {{ classImage }}" (load)="onLoadEmpty()" [alt]="alt" [appDatasrc]="emptyImage">
-</ng-container>
