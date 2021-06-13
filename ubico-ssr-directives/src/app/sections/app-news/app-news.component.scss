@@ -1,0 +1,219 @@
+@import "src/scss/ubico/variables";
+@import "src/scss/ubico/base";
+
+.app-news {
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  &-subtitle {
+    p {
+      margin-block-end: 0.5rem;
+    }
+
+    .small-line {
+      background: $green;
+      height: 0.3125rem;
+      width: 3.75rem;
+    }
+
+    strong {
+      color: $darkgray-900;
+    }
+  }
+
+  &__card {
+    cursor: pointer;
+    height: 26.5rem;
+    margin-bottom: 2rem;
+    position: relative;
+
+    @media (min-width: $media-desktop) {
+      margin-bottom: 0;
+    }
+
+    &-image {
+      height: 12rem;
+      overflow: hidden;
+      width: 100%;
+
+      @media (min-width: $media-desktop) {
+        height: 11.75rem;
+      }
+
+      img {
+        height: 100%;
+        object-fit: cover;
+        transition: 0.3s ease;
+        width: 100%;
+      }
+    }
+
+    &-title {
+      -webkit-box-orient: vertical;
+      display: -webkit-box;
+      height: 2.8125rem;
+      -webkit-line-clamp: 2;
+      margin-top: 1.25rem;
+      overflow: hidden;
+    }
+
+    &-description {
+      -webkit-box-orient: vertical;
+      display: -webkit-box;
+      height: 4.375rem;
+      -webkit-line-clamp: 3;
+      margin-top: 1.25rem;
+      overflow: hidden;
+    }
+
+    &-category {
+      bottom: 0;
+      position: absolute;
+
+      h5 {
+        margin-block-end: 0;
+      }
+
+      em {
+        color: $green;
+      }
+    }
+
+    &:hover {
+      .app-news__card-image-img {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &__medium-card {
+    margin-bottom: 2rem;
+
+    @media (min-width: $media-tablet) {
+      margin-bottom: 0.75rem;
+    }
+
+    &-image {
+      height: 12rem;
+      overflow: hidden;
+
+      @media (min-width: $media-desktop) {
+        height: 11.75rem;
+      }
+
+      img {
+        height: 100%;
+        object-fit: cover;
+        transition: 0.3s ease;
+        width: 100%;
+      }
+    }
+
+    &-text {
+      height: 7rem;
+      position: relative;
+
+      @media (min-width: $media-tablet) {
+        height: 11.75rem;
+      }
+
+      &-title {
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+        height: 4.375rem;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+
+        @media (min-width: $media-desktop) {
+          -webkit-line-clamp: 3;
+        }
+      }
+
+      &-category {
+        bottom: 0;
+        left: 0;
+        position: absolute;
+
+        em {
+          color: $green;
+        }
+
+        h5 {
+          margin-block-end: 0;
+        }
+      }
+    }
+
+    &:hover {
+      .app-news__medium-card-image-img {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &__small-card {
+    margin-bottom: 2rem;
+
+    @media (min-width: $media-tablet) {
+      margin-bottom: 0.75rem;
+    }
+
+    &-text {
+      height: 7rem;
+      position: relative;
+
+      @media (min-width: $media-tablet) {
+        height: 12.35rem;
+      }
+
+      @media (min-width: $media-desktop) {
+        height: 100%;
+      }
+
+      &-title {
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+        height: 2.9rem;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+      }
+    }
+
+    &-image {
+      height: 12rem;
+      overflow: hidden;
+
+      @media (min-width: $media-desktop) {
+        height: 7.375rem;
+      }
+
+      img {
+        height: 100%;
+        object-fit: cover;
+        transition: 0.3s ease;
+        width: 100%;
+      }
+    }
+
+    &-category {
+      bottom: 0;
+      position: absolute;
+
+      h5 {
+        margin-block-end: 0;
+      }
+
+      em {
+        color: $green;
+      }
+    }
+
+    &:hover {
+      .app-news__small-card-image-img {
+        transform: scale(1.1);
+      }
+    }
+  }
+}

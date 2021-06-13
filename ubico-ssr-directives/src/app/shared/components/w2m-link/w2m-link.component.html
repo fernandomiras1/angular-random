@@ -1,0 +1,14 @@
+<a *ngIf="urlLink && isInternalLink; else content" [routerLink]="urlLink">
+  <ng-container [ngTemplateOutlet]="content"></ng-container>
+</a>
+
+<a *ngIf="urlLink && !isInternalLink; else content"
+  [href]="urlLink"
+  target="_blank"
+  rel="noopener noreferrer">
+  <ng-container [ngTemplateOutlet]="content"></ng-container>
+</a>
+
+<ng-template #content>
+  <ng-content></ng-content>
+</ng-template>

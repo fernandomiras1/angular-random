@@ -1,0 +1,60 @@
+// Overriding global variables
+
+// COLORS
+
+$darkblue: #003E72;
+
+$green: #72BF44;
+
+$softblue: #00A7E1;
+$softblue-100: #B3E5F6;
+
+$turquoise: #1ECAD3;
+
+$pink: #DF1683;
+
+$purple: #60269E;
+
+$red: #FF0A0A;
+
+$orange: #F4B63E;
+
+$gray: #616161;
+$softgray-100: #D0D0D0;
+$softgray-300: #909090;
+$darkgray-900: #333333;
+
+$white: #FFFFFF;
+
+$iberostar-color: #67BAAF;
+$w2m-color: #C4D600;
+
+$titles-color: $darkblue;
+$body-color: $gray;
+$soft-text: $softgray-300;
+
+$primary: $darkblue;
+$secondary: $green;
+$tertiary: $softblue;
+$quaternary: $turquoise;
+$quinary: $pink;
+$sextary: $purple;
+
+$info: $softblue-100;
+$success: $green;
+$warning: $orange;
+$danger: $red;
+
+$headings-color: $primary;
+
+// BOX COMPONENTS
+$reverse-box: row-reverse;
+
+//Breakpoints
+$media-tablet: 48.0625rem;
+$media-desktop: 64rem;
+$media-widescreen: 76rem;
+$media-fullhd: 88rem;
+
+// Sections
+$section-padding: 7.5rem;

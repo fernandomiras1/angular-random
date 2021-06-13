@@ -1,0 +1,49 @@
+@import "src/scss/ubico/variables";
+@import "src/scss/ubico/base";
+
+.app-box-image-text {
+  &__info {
+    width: 100%;
+
+    &-container {
+      max-width: 50rem;
+      padding: 1.875rem;
+
+      @media (min-width: $media-desktop) {
+        padding: 7.5rem;
+      }
+
+      &-big-line {
+        height: 0.9375rem;
+        margin: 1.875rem 0;
+        position: relative;
+        width: 8.75rem;
+
+        &--left {
+          background-color: $green;
+          height: 100%;
+          left: 0;
+          position: absolute;
+          top: 0;
+          width: 6.875rem;
+        }
+
+        &--right {
+          background-color: $green;
+          height: 100%;
+          position: absolute;
+          right: 0;
+          top: 0;
+          width: 0.9375rem;
+        }
+      }
+
+      &-description {
+        h3 {
+          color: $darkblue;
+          margin-block-end: 0.5rem;
+        }
+      }
+    }
+  }
+}

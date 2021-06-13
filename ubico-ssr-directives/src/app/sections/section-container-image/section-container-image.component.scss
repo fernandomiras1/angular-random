@@ -1,0 +1,23 @@
+@import "src/scss/ubico/variables";
+@import "src/scss/ubico/base";
+
+.section-container-image {
+  width: 100%;
+
+  &--container {
+    display: flex;
+    padding: unset;
+  }
+
+  &--box-image-text {
+    display: flex;
+    max-width: 50%;
+    min-width: 50%;
+  }
+
+  &--info-text {
+    display: flex;
+    max-width: 50%;
+    min-width: 50%;
+  }
+}

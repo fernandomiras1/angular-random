@@ -1,0 +1,12 @@
+<ng-container *ngIf="textInfo">
+  <div [class]="textInfo.style" [class.columns]="getOrientation(textInfo)" class="app-box-image-text__info">
+    <div class="app-box-image-text__info-container">
+      <h2 *ngIf="textInfo.smallTitle">{{ textInfo.smallTitle }}</h2>
+      <p *ngIf="textInfo.title" class="mat-display-1">{{ textInfo.title }}</p>
+      <app-divider [isBigLine]="!!!textInfo.smallTitle" *ngIf="textInfo.hasSeparator"></app-divider>
+      <div class="app-box-image-text__info-container-description">
+        <p [innerHTML]="textInfo.subtitle | w2mSafeToHtml"></p>
+      </div>
+    </div>
+  </div>
+</ng-container>

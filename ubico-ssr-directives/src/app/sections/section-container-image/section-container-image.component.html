@@ -1,0 +1,15 @@
+<section *ngIf="data" [id]="data.anchor || ''"
+  [class.row-reverse]="data.containerPosition === 'left'"
+  class="section-container section-container-image brand-color"
+  [ngClass]="data.brand">
+    <div class="section-container-image--container">
+      <ng-container *ngFor="let item of data.fields" [ngSwitch]="item.typeComponent">
+        <ng-container *ngSwitchCase="ComponentType.ComponentImage">
+          <app-box-image-text class="section-container-image--box-image-text" [data]="item.field"></app-box-image-text>
+        </ng-container>
+        <ng-container *ngSwitchCase="ComponentType.ComponentInfoText">
+          <w2m-info-text class="section-container-image--info-text" [textInfo]="item.field"></w2m-info-text>
+        </ng-container>
+      </ng-container>
+    </div>
+</section>

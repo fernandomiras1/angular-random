@@ -1,0 +1,48 @@
+<ng-container *ngIf="data.fields as header">
+  <div class="w2m-sidenav-header" [ngClass]="{ headerscrolled: headerScrolled }">
+    <div class="w2m-sidenav-header__container container is-flex is-align-items-center is-justify-content-space-between">
+      <div class="w2m-sidenav-header__container-logo">
+        <em (click)="drawer.toggle()" class="far fa-bars"></em>
+        <img class="w2m-sidenav-header__container-logo--light" src="../../../assets/img/ubico/logo-ubico-light.svg"
+          alt="Ubico Logo">
+        <img class="w2m-sidenav-header__container-logo--dark" src="../../../assets/img/ubico/logo-ubico-dark.svg"
+          alt="Ubico Logo">
+      </div>
+      <div class="w2m-sidenav-header__container-language-picker">
+        <w2m-language-picker></w2m-language-picker>
+      </div>
+      <w2m-link *ngIf="header.button"
+      class="w2m-sidenav-header__container-private-area"
+      [urlLink]="header.button?.urlButton">
+        <span>
+          <p>{{ header.button?.textButton }}</p>
+          <em [ngClass]="header.button?.iconButton"></em>
+        </span>
+      </w2m-link>
+    </div>
+  </div>
+  <mat-drawer-container class="w2m-sidenav-menu">
+    <mat-drawer #drawer class="w2m-sidenav-menu__container" mode="over">
+      <ul *ngFor="let item of getSubItems(header.items)">
+        <li>
+          <w2m-link [urlLink]="item.url">
+            <h3><strong>{{item.steps}}</strong></h3>
+          </w2m-link>
+        </li>
+        <li *ngFor="let option of item.options">
+          <w2m-link class="w2m-sidenav-menu__container-link" [urlLink]="option.url">
+            {{option.name}}
+          </w2m-link>
+        </li>
+      </ul>
+      <div class="w2m-sidenav-menu__container-rrss">
+        <div class="w2m-sidenav-menu__container-rrss-icons">
+          <w2m-link *ngFor="let item of header.icons" [urlLink]="item.url">
+            <em [ngClass]="item.icon"></em>
+          </w2m-link>
+        </div>
+        <h6 *ngIf="header.copyright" [innerHtml]="header.copyright | w2mSafeToHtml"></h6>
+      </div>
+    </mat-drawer>
+  </mat-drawer-container>
+</ng-container>

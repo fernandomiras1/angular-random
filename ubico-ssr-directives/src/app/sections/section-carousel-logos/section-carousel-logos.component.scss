@@ -1,0 +1,30 @@
+@import "src/scss/ubico/variables";
+@import "src/scss/ubico/base";
+
+.section-carousel-logos {
+  align-items: center;
+  background: #F5F5F5;
+  display: flex;
+  height: 11.25rem;
+  padding: 4.375rem 0 4.375rem 0;
+}
+
+.carousel-logo {
+  filter: grayscale(1);
+  height: 3.125rem;
+  max-height: 3.125rem;
+  max-width: 9.375rem;
+  text-align: center;
+  transition: 0.3s ease;
+  width: 9.375rem;
+
+  &:hover {
+    filter: grayscale(0);
+  }
+
+  img {
+    height: 100%;
+    object-fit: contain;
+    width: 100%;
+  }
+}

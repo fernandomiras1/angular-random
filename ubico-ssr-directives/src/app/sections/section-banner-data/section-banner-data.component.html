@@ -1,0 +1,80 @@
+<ul>
+  <li *ngFor="let item of [1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2]">
+    <h2>Scroll {{item}}</h2>
+  </li>
+</ul>
+
+<section class="section section-banner-data brand-color w2m">
+  <img class="section-banner-data__background--img"
+    src="https://images.unsplash.com/photo-1444723121867-7a241cacace9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"
+    alt="city background">
+  <div class="section-banner-data__background--color">
+    <div class="container">
+      <div class="banner-data">
+        <div class="columns is-multiline is-centered is-variable is-mobile">
+          <div class="column is-12-mobile is-three-fifths-desktop">
+            <div class="banner-data__head">
+              <h4 class="banner-data__head-title">w2m</h4>
+              <p class="banner-data__head-text">
+                W2M Fusce viverra, augue non volutpat vestibulum, risus ex congue libero, eget volutpat nunc ligula sit
+                amet arcu. Maecenas dui justo, venenatis id mollis a, sagittis eu felis.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div appear (appear)="onAppear()" class="columns is-multiline is-variable is-mobile">
+          <div *ngIf="hasAppeared" class="column is-6-mobile is-4-tablet is-2-desktop">
+            <div class="banner-data__stat">
+              <div>
+                <!-- <animated-digit [digit]="123" class="banner-data__stat-number" [duration]="1000"></animated-digit> -->
+                <h3 [appAnimatedCounter]="123" [delay]="1000" class="banner-data__stat-number"></h3>
+                <h5 class="banner-data__stat-number-text">Ventas</h5>
+              </div>
+            </div>
+          </div>
+          <div class="column is-6-mobile is-4-tablet is-2-desktop">
+            <div class="banner-data__stat">
+              <div>
+                <h3 class="banner-data__stat-number">534</h3>
+                <h5 class="banner-data__stat-number-text">Pasajeros</h5>
+              </div>
+            </div>
+          </div>
+          <div class="column is-6-mobile is-4-tablet is-2-desktop">
+            <div class="banner-data__stat">
+              <div>
+                <h3 class="banner-data__stat-number">54</h3>
+                <h5 class="banner-data__stat-number-text">Clientes</h5>
+              </div>
+            </div>
+          </div>
+          <div class="column is-6-mobile is-4-tablet is-2-desktop">
+            <div class="banner-data__stat">
+              <div>
+                <h3 class="banner-data__stat-number">39</h3>
+                <h5 class="banner-data__stat-number-text">Países</h5>
+              </div>
+            </div>
+          </div>
+          <div class="column is-6-mobile is-4-tablet is-2-desktop">
+            <div class="banner-data__stat">
+              <div>
+                <h3 class="banner-data__stat-number">209</h3>
+                <h5 class="banner-data__stat-number-text">Hoteles</h5>
+              </div>
+            </div>
+          </div>
+          <div class="column is-6-mobile is-4-tablet is-2-desktop">
+            <div class="banner-data__stat">
+              <div>
+                <h3 class="banner-data__stat-number">431</h3>
+                <h5 class="banner-data__stat-number-text">Empleados</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

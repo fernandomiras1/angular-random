@@ -1,0 +1,15 @@
+@import "src/scss/ubico/variables";
+@import "src/scss/ubico/base";
+
+.app-job-detail {
+  &__columns {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .small-line {
+    background: $green;
+    height: 0.3125rem;
+    width: 3.75rem;
+  }
+}

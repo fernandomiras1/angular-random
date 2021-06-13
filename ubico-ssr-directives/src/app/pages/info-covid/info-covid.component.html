@@ -1,0 +1,48 @@
+<div class="section-hero">
+  <img src="../../../assets/img/ubico/home-4.jpg" alt="Hero picture">
+  <div class="container">
+    <div class="section-hero__title">
+      <h2>Info Covid-19</h2>
+      <div class="small-line"></div>
+      <div class="section-hero__title-description">
+        <h3>Debido a la situación sanitaria, los países han impuesto diferentes medidas de entrada a los viajeros. Te
+          recomendamos que verifiques los requisitos del país al que vayas a viajar en el siguiente mapa interactivo.
+        </h3>
+      </div>
+    </div>
+  </div>
+</div>
+<section class="ubi-padding-section">
+  <div class="container">
+    <div class="columns">
+      <div class="column widget-container">
+        <widget-smartvel-seach [origin]="params.or" [destination]="params.dt"></widget-smartvel-seach>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <div class="columns">
+      <div class="column widget-container">
+        <widget-smartvel-map [iata]="params.iata"></widget-smartvel-map>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="footer">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-12">
+          <img src="../../../assets/img/ubico/logo-ubico-dark.svg" alt="Logo Úbico">
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column is-4">
+          <h6>C/ General Riera, 154, 07010 Palma, Illes Balears. <br>©2021 Úbico | All rights reserved</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

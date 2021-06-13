@@ -1,0 +1,43 @@
+<h3 class="app-form-contact__title">{{formConfig.title}}</h3>
+<form class="app-form-contact" [formGroup]="formContact">
+    <mat-form-field appearance="legacy">
+      <mat-label> {{'FORMS.CONTACT.NAME' | translate}}</mat-label>
+      <input
+      formControlName="name"
+      autocomplete="off"
+      [placeholder]="'FORMS.CONTACT.NAME' | translate"
+      matInput>
+      <mat-icon matPrefix><em class="far fa-user"></em></mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="legacy">
+      <mat-label> {{'FORMS.CONTACT.EMAIL' | translate}}</mat-label>
+      <input
+      formControlName="email"
+      autocomplete="off"
+      [placeholder]="'FORMS.CONTACT.EMAIL' | translate"
+      matInput>
+      <mat-icon matPrefix><em class="far fa-envelope-open"></em></mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="legacy">
+      <mat-label> {{'FORMS.CONTACT.DOUBTS' | translate}}</mat-label>
+      <input
+      formControlName="doubts"
+      autocomplete="off"
+      [placeholder]="'FORMS.CONTACT.DOUBTS' | translate"
+      matInput
+      >
+      <mat-icon matPrefix><em class="far fa-pencil"></em></mat-icon>
+    </mat-form-field>
+
+  <button
+  [disabled]="!formContact.valid"
+  (click)="submit(formContact.value)"
+  type="button"
+  class="app-form-contact__button"> {{'FORMS.CONTACT.SUBSCRIBE' | translate}}</button>
+  <mat-checkbox
+  formControlName="acceptedPolicy"
+  class="app-form-contact__checkbox"></mat-checkbox>
+  <p *ngIf="formConfig.textGDPR" [innerHTML]="formConfig.textGDPR | w2mSafeToHtml"></p>
+</form>

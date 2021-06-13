@@ -1,0 +1,44 @@
+@import "src/scss/ubico/variables";
+
+.app-form-contact {
+  &__title {
+    color: $primary;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+  }
+
+  .mat-form-field {
+    width: 100%;
+  }
+
+  .mat-checkbox-label {
+    margin-left: 0.625rem;
+  }
+
+  .mat-icon {
+    color: $secondary;
+    margin-right: 0.625rem;
+  }
+
+  &__checkbox {
+    margin-right: 0.625rem;
+    margin-top: 2.625rem;
+  }
+
+  ::ng-deep.mat-form-field.mat-focused .mat-form-field-label {
+    margin-top: 0.3125rem;
+  }
+
+  &__button {
+    background: $secondary;
+    border: none;
+    color: $white;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    height: 2.5rem;
+    position: relative;
+    width: 100%;
+  }
+}

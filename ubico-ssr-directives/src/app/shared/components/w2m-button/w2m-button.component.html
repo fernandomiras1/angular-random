@@ -1,0 +1,6 @@
+<w2m-link *ngIf="buttonData" [urlLink]="buttonData.urlButton">
+  <button [disabled]="disabled" [color]="color" (click)="clicked.emit($event)">
+    <ng-content></ng-content>
+    <span *ngIf="buttonData.textButton" class="w2m-button--text">{{buttonData.textButton}}</span>
+  </button>
+</w2m-link>

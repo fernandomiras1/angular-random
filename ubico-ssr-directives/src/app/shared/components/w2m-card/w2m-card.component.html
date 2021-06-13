@@ -1,0 +1,9 @@
+<div *ngIf="card" class="w2m-card" (click)="clickedCard.emit(card)">
+  <w2m-link [urlLink]="urlLink" class="w2m-card__link">
+    <ng-content select="[header-content]"></ng-content>
+    <div class="w2m-card__container">
+      <ng-content select="[title-content]"></ng-content>
+      <ng-content select="[body-content]"></ng-content>
+    </div>
+  </w2m-link>
+</div>

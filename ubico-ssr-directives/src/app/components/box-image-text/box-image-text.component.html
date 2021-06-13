@@ -1,0 +1,9 @@
+<div class="app-box-image-text">
+  <div class="app-box-image-text__img">
+    <div *ngIf="data.textBox" [ngClass]="getClass()">
+      <h2>{{ data.textBox.textBox }}</h2>
+      <div class="app-box-image-text__img-float-text--background"></div>
+    </div>
+    <img [src]="data.image" [alt]="data.altText">
+  </div>
+</div>

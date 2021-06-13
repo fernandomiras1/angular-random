@@ -1,0 +1,11 @@
+{
+  "FORMS": {
+    "CONTACT": {
+      "NAME": "Name",
+      "EMAIL": "Email",
+      "DOUBTS": "Tell us your doubts",
+      "SUBSCRIBE": "Subscribe"
+    }
+  },
+  "Subtitle": "Angular Multi Language Site - en_US"
+}

@@ -1,0 +1,110 @@
+@import "src/scss/ubico/variables";
+
+.w2m-footer {
+  padding-top: 6.25rem;
+
+  &__image {
+    padding-bottom: 4.375rem;
+  }
+
+  &__title {
+    color: $primary;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__border {
+    background-color: $secondary;
+    background-repeat: no-repeat;
+    padding-bottom: 0.3125rem;
+    width: 3.75rem;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+
+    &--link {
+      color: $gray;
+      margin-bottom: 0.75rem;
+
+      &:hover {
+        color: $secondary;
+      }
+    }
+
+    p {
+      text-align: left;
+    }
+  }
+
+  &__links p:nth-child(1) {
+    margin-top: 1.25rem;
+  }
+
+  &__links a:nth-child(1) {
+    margin-top: 1.375rem;
+  }
+
+  &__social {
+    margin-bottom: 1.875rem;
+    margin-top: 0;
+
+    em {
+      margin-left: 1.125rem;
+    }
+
+    @media (min-width: $media-desktop) {
+      margin-top: -6.25rem;
+    }
+  }
+
+  &__social a:nth-child(1) {
+    em {
+      margin-left: 0 !important;
+    }
+  }
+
+  &__politicas {
+    display: block;
+    margin-bottom: 1.5rem;
+
+    @media (min-width: $media-tablet) {
+      display: flex;
+    }
+
+    &-link {
+      color: $gray;
+      font-size: 0.875rem;
+      margin-left: 0.3125rem;
+
+      &:hover {
+        color: $secondary;
+        transition: ease 0.3s;
+      }
+
+      @media (min-width: $media-tablet) {
+        display: block;
+      }
+    }
+  }
+
+  &__politicas a:nth-child(1) {
+    margin-left: 0;
+  }
+
+  &__copyright {
+    display: flex;
+
+    p {
+      color: $gray;
+      font-size: 0.875rem;
+      margin-left: 0.3125rem;
+    }
+  }
+
+  &__copyright p:nth-child(1) {
+    margin-left: 0;
+  }
+}
