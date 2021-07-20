@@ -1,4 +1,4 @@
-<mat-toolbar class="w2f-header">
+<mat-toolbar class="w2f-header" [ngClass]="{ headerscrolled: headerScrolled }">
   <img src="assets/img/w2fly_logo.svg" class="w2f-header__logo" alt="w2fly company logo">
   <div class="w2f-header__menu is-hidden-touch is-hidden-desktop-only">
     <ng-container *ngFor="let menu of listMenu;let last = last">
