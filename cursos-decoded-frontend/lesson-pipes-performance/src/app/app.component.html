@@ -1,0 +1,7 @@
+<h1>Users: </h1>
+<div *ngFor="let user of user.users">
+    <!-- El error, de esta forma NO
+    <span>{{ user.name }} - {{ getTheory(user.id)?.title }}</span> -->
+
+    <span>{{ user.name }} - {{ user.id | theory: 'title' | async }}</span>
+</div>
