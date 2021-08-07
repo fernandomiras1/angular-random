@@ -1,0 +1,109 @@
+@import "src/scss/brands/w2fly/variables";
+
+.w2f-footer {
+  background-color: $primary;
+  color: $white;
+  padding-bottom: 0;
+  padding-top: 0;
+  position: relative;
+
+  &__top,
+  &__bottom {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__top {
+    margin-bottom: 0;
+    padding: 2.5rem 0;
+  }
+
+  &__title {
+    margin-bottom: 0.625rem;
+  }
+
+  &__dots {
+    display: flex;
+    margin-bottom: 1.25rem;
+  }
+
+  &__dot {
+    border-radius: 50%;
+    height: 0.3125rem;
+    width: 0.3125rem;
+
+    &--red {
+      background-color: $quaternary;
+    }
+
+    &--skyblue {
+      background-color: $tertiary;
+    }
+
+    &--blue {
+      background-color: $secondary;
+    }
+  }
+
+  &__list {
+    &-item {
+      margin-bottom: 0.625rem;
+    }
+
+    &-link {
+      color: $white;
+    }
+  }
+
+  &__icon {
+    color: rgba($white, 0.3);
+    font-size: 1.5rem;
+    margin-right: 0.625rem;
+
+    &:hover {
+      color: $white;
+    }
+  }
+
+  &__bottom {
+    align-items: center;
+    padding-bottom: 0.625rem;
+
+    &-divider {
+      background-color: rgba($white, 0.3);
+      height: 0.0625rem;
+      margin: 0;
+    }
+  }
+
+  &__legal {
+    &-text {
+      font-size: 0.8125rem;
+      margin: 0;
+
+      &--lightgrey {
+        color: rgba($white, 0.3);
+      }
+    }
+  }
+
+  &__security {
+    display: flex;
+
+    @media (min-width: $media-desktop) {
+      justify-content: flex-end;
+    }
+  }
+
+  &__logo {
+    display: none;
+    height: 100%;
+    position: absolute;
+    right: -3rem;
+    top: 0;
+
+    @media (min-width: $media-desktop) {
+      display: block;
+    }
+  }
+}

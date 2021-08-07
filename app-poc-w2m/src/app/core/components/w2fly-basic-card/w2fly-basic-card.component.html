@@ -1,0 +1,40 @@
+<mat-card *ngIf="card" class="w2f-card mat-elevation-z0">
+  <mat-card-content>
+    <div class="w2f-card__image">
+      <div class="w2f-card__image--content">
+        <ng-container *ngIf="card?.generalTags.length > 0">
+          <w2fly-tag class="w2f-card__image--top" [tags]="card?.generalTags">
+          </w2fly-tag>
+        </ng-container>
+        <div class="w2f-card__image--bottom">
+          <ng-container *ngIf="card?.categoryTags.length > 0">
+            <w2fly-tag [tags]="card.categoryTags">
+            </w2fly-tag>
+          </ng-container>
+          <ng-container *ngIf="card?.titleImage">
+            <h3 class="w2f-card__title w2f-card__title--image">{{card?.titleImage}}</h3>
+          </ng-container>
+          <!-- <ng-container *ngIf="card?.avatar.length > 0">
+            <w2fly-avatar [avatar]="card.avatar">
+            </w2fly-avatar>
+          </ng-container> -->
+        </div>
+      </div>
+      <ng-container *ngIf="card?.urlImage">
+        <div class="w2f-card__background"
+          [style.background]="'url('+(card?.urlImage | w2flyImgCdn)+') no-repeat center / cover'"
+          [class.w2f-card__background--zoom]="card?.imageZoom"></div>
+      </ng-container>
+    </div>
+    <ng-container *ngIf="card?.title || card?.content">
+      <div class="w2f-card__content">
+        <h3 class="w2f-card__title" *ngIf="card?.title">
+          {{card?.title}}
+        </h3>
+        <p *ngIf="card?.content" class="w2f-card__text">
+          {{card?.content}}
+        </p>
+      </div>
+    </ng-container>
+  </mat-card-content>
+</mat-card>

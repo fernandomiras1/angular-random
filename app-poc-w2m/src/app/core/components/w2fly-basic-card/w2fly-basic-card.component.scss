@@ -1,0 +1,57 @@
+@import "src/scss/brands/w2fly/variables";
+
+.w2f-card {
+  background-color: $white;
+  padding: 0;
+
+  &__image {
+    border-radius: $card-border-radius;
+    height: $w2f-card-height;
+    min-height: $w2f-card-height;
+    overflow: hidden;
+    position: relative;
+
+    &--top,
+    &--bottom {
+      position: absolute;
+      z-index: 1;
+    }
+
+    &--top {
+      right: $card-content-padding;
+      top: $card-content-padding;
+    }
+
+    &--bottom {
+      bottom: $card-content-padding;
+      left: $card-content-padding;
+    }
+  }
+
+  &__background {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: transform 0.5s;
+    width: 100%;
+
+    &--zoom {
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  &__content {
+    padding: 1.25rem 0;
+  }
+
+  &__title {
+    margin: 0;
+
+    &--image {
+      color: $white;
+    }
+  }
+}
