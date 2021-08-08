@@ -15,3 +15,16 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
+
+<!-- Ponemos los botones dependiendo que se tiene que mostar es decir, el contenido -->
+
+<ng-container *cdkPortal>
+  <button mat-fab color="accent">
+    <mat-icon>add</mat-icon>
+  </button>
+</ng-container>
+
+
+<section id="dom-portal">
+  <p>this is a dom portal</p>
+</section>

@@ -11,20 +11,26 @@ import { ActionAreaComponent } from './action-area/action-area.component';
 import { UsersPageComponent } from './users-page/users-page.component';
 import { OrdersPageComponent } from './orders-page/orders-page.component';
 
+// Tenemos que poder esto: PortalModule
+import { PortalModule } from '@angular/cdk/portal';
+import { ActionsButtonsComponent } from './actions-buttons/actions-buttons.component';
+
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
     HeaderComponent,
     SidebarComponent,
     ActionAreaComponent,
     UsersPageComponent,
-    OrdersPageComponent
-  ],
+    OrdersPageComponent,
+    ActionsButtonsComponent
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    PortalModule
   ],
   providers: [],
   bootstrap: [AppComponent]
