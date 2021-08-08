@@ -69,10 +69,5 @@
     "ts-node": "~8.3.0",
     "typescript": "~3.9.5",
     "webpack-bundle-analyzer": "~3.7.0"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint"
-    }
   }
 }
