@@ -25,6 +25,10 @@ import { W2flyCarouselComponent } from './w2fly-carousel/w2fly-carousel.componen
 import { W2flyFooterComponent } from './w2fly-footer/w2fly-footer.component'
 import { W2flySubtitleComponent } from './w2fly-subtitle/w2fly-subtitle.component'
 import { W2flyButtonComponent } from './w2fly-button/w2fly-button.component'
+import { AppDatepickerHeaderComponent } from './datepicker-inside-price/app-datepicker-header/app-datepicker-header.component';
+import { DatepickerInsidePriceComponent } from './datepicker-inside-price/datepicker-inside-price.component';
+import { MatDatepickerModule } from '@angular/material/datepicker'
+import { MatNativeDateModule } from '@angular/material/core'
 
 const MATERIAL_MODULES = [
   MatCardModule,
@@ -35,6 +39,8 @@ const MATERIAL_MODULES = [
   MatChipsModule,
   MatInputModule,
   MatFormFieldModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
 ]
 
 const W2FLY_COMPONENTS = [
@@ -49,6 +55,8 @@ const W2FLY_COMPONENTS = [
   W2flyFooterComponent,
   W2flySubtitleComponent,
   W2flyButtonComponent,
+  AppDatepickerHeaderComponent,
+  DatepickerInsidePriceComponent
 ]
 
 @NgModule({
