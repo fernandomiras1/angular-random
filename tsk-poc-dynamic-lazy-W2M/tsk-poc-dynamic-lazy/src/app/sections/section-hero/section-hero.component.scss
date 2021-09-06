@@ -1,0 +1,136 @@
+@import "src/scss/brands/w2fly/variables";
+@import "src/scss/brands/w2fly/mixins";
+
+.w2f-hero {
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  height: 34rem;
+  justify-content: space-between;
+
+  @media (min-width: $media-tablet) {
+    height: 62vh;
+  }
+
+  &__image {
+    filter: brightness(0.9);
+    height: 34rem;
+    object-fit: cover;
+    object-position: center center;
+    position: absolute;
+    width: 100%;
+
+    @media (min-width: $media-tablet) {
+      height: 62vh;
+    }
+  }
+
+  &__content {
+    align-items: center;
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 0;
+    padding-top: 5.625rem;
+
+    @media (min-width: $media-widescreen) {
+      padding-top: 7.375rem;
+    }
+
+    &-subtitle-container {
+      margin-bottom: 5rem;
+      padding: 0 1.5rem;
+      text-shadow: 0 0 30px #0000002B;
+      width: 100%;
+
+      @media (min-width: $media-tablet) {
+        width: 80%;
+      }
+
+      @media (min-width: $media-desktop) {
+        padding: 0;
+        width: 50%;
+      }
+
+      @media (min-width: $media-widescreen) {
+        padding: 0;
+        width: 40%;
+      }
+    }
+  }
+
+  &__title {
+    color: $headings-color-light;
+  }
+
+  &__subtitle {
+    color: $text-color-light;
+  }
+
+  &.hero-home {
+    .w2f-hero__image {
+      filter: none;
+
+      @media (max-width: $media-desktop - 1) {
+        object-position: 76%;
+      }
+    }
+
+    .w2f-hero__content {
+      align-items: flex-end;
+      display: flex;
+      flex-grow: 1;
+      flex-shrink: 0;
+      margin-bottom: 1.25rem;
+      padding: 3rem 1.5rem;
+
+      &-subtitle-container {
+        margin-bottom: 0;
+        padding: 0;
+        width: 100%;
+      }
+    }
+
+    ::ng-deep .w2f-subtitle__title {
+      margin-bottom: 0.6rem;
+    }
+  }
+
+  &.hero-fleet {
+    background-color: $primary;
+    height: auto;
+    padding-bottom: 2rem;
+    padding-top: 6rem;
+
+    @media (min-width: $media-desktop) {
+      height: 48rem;
+      padding-top: 12rem;
+    }
+
+    .w2f-hero__content {
+      align-items: flex-start;
+      display: flex;
+      flex-grow: 1;
+      flex-shrink: 0;
+      margin-bottom: 0;
+      padding: 3rem 1.5rem;
+
+      &-subtitle-container {
+        margin-bottom: 0;
+        padding: 0;
+        width: 100%;
+      }
+    }
+  }
+
+  &.hero-primary {
+    background-color: $primary;
+    height: auto;
+    padding-bottom: 2rem;
+    padding-top: 6rem;
+
+    @media (min-width: $media-desktop) {
+      height: 50vh;
+      padding-top: 4rem;
+    }
+  }
+}

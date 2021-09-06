@@ -1,0 +1,112 @@
+@import "src/scss/brands/w2fly/variables";
+@import "src/scss/brands/w2fly/mixins";
+
+.w2f-alert-common {
+  border-radius: $border-radius;
+  display: flex;
+  padding: 1.5625rem;
+
+  &-image {
+    @media (max-width: $media-tablet) {
+      flex-direction: column;
+    }
+  }
+
+  &__image {
+    padding: 0.75rem;
+
+    @media (max-width: $media-tablet) {
+      margin-bottom: 0.625rem;
+    }
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &__left {
+    margin-right: 0.75rem;
+
+    .w2f-dot {
+      margin-top: 0.625rem;
+    }
+  }
+
+  &__right {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__title {
+    color: inherit;
+  }
+
+  &__paragraph {
+    font-size: 0.875rem;
+
+    ::ng-deep p {
+      margin-bottom: 0;
+    }
+  }
+
+  &--default {
+    background-color: $white;
+    color: $primary;
+  }
+
+  &--info {
+    background-color: $soft-blue;
+    color: $primary;
+    display: flex;
+  }
+
+  &--success {
+    background-color: $soft-green;
+    color: $green;
+  }
+
+  &--danger {
+    background-color: $soft-red;
+    color: $red;
+  }
+
+  &--warning {
+    background-color: $soft-orange;
+    color: $orange;
+  }
+
+  .w2f {
+    &-dot {
+      border-radius: 50%;
+      display: flex;
+
+      &--medium {
+        height: 0.5rem;
+        width: 0.5rem;
+      }
+
+      &--red {
+        background-color: $quaternary;
+      }
+
+      &--skyblue {
+        background-color: $tertiary;
+      }
+
+      &--blue {
+        background-color: $secondary;
+      }
+    }
+
+    &-button {
+      &--large {
+        em {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+<ng-container *ngIf="listAlert?.length">
+  <div class="w2f-home-alert">
+    <div class="w2f-home-alert__container">
+      <div class="w2f-home-alert__text">
+        <div *ngFor="let alert of listAlert; let indexAlert = index" class [style.display]="displaySlide(indexAlert)">
+          <em *ngIf="alert.dot" class="fas fa-circle w2f-home-alert__dot"></em>
+          <a class="w2f-home-alert__link" [srcLink]="alert.link" [attr.aria-label]="alert.title">
+            <span>{{alert.title}}</span>
+          </a>
+        </div>
+      </div>
+      <div *ngIf="listAlert.length>1" class="w2f-home-alert__controls">
+        <div class="w2f-home-alert__controls--index">
+          <span class="is-hidden-mobile">
+            {{slideIndex}}/{{listAlert.length}}
+          </span>
+          <button mat-button class="w2f-home-alert__button is-hidden-tablet"
+          (click)="changeSlide(-1)"
+          [matTooltip]="'Anterior'">
+            <em class="far fa-angle-left"></em>
+          </button>
+        </div>
+        <div>
+          <button mat-button class="w2f-home-alert__button is-hidden-mobile"
+          (click)="changeSlide(-1)"
+          [attr.aria-label]="'Anterior'"
+          [matTooltip]="'Anterior'">
+            <em class="far fa-angle-left"></em>
+          </button>
+          <span class="is-hidden-tablet">
+            {{slideIndex}}/{{listAlert.length}}
+          </span>
+        </div>
+        <div>
+          <button mat-button class="w2f-home-alert__button"
+           (click)="changeSlide(+1)"
+           [matTooltip]="'Siguiente'">
+            <em class="far fa-angle-right"></em>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>

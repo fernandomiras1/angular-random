@@ -1,0 +1,47 @@
+@import "src/scss/brands/w2fly/variables";
+
+.w2f-image-basic {
+  &__image {
+    height: 37.5rem;
+    width: 100%;
+
+    &--bottom {
+      bottom: 10%;
+      display: flex;
+      position: absolute;
+      z-index: 1;
+
+      &.left {
+        justify-content: left;
+        left: 2%;
+        text-align: left;
+      }
+
+      &.center {
+        margin-right: -50%;
+        right: 50%;
+      }
+
+      &.right {
+        justify-content: right;
+        right: 2%;
+        text-align: right;
+      }
+    }
+  }
+
+  &__background {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  &__title {
+    width: 100%;
+
+    &--image {
+      color: $white;
+      margin: 0;
+    }
+  }
+}

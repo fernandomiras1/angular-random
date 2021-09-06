@@ -1,0 +1,29 @@
+@import "src/scss/brands/w2fly/variables";
+
+.w2f-info-item {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  &__title {
+    color: $darkblue;
+  }
+
+  &__image {
+    align-items: center;
+    display: flex;
+    height: 8rem;
+    justify-content: center;
+    width: 8rem;
+
+    @media (min-width: $media-tablet) {
+      margin-bottom: 1rem;
+    }
+
+    img {
+      height: auto;
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+#!groovy
+
+@Library('devops-pipeline-library@master') _
+
+def pipelineConfig = [
+    azure_project: "Ubico",
+    git_repository: "app-ng-ssr-ubico",
+    application_name: "ssr-ubico",
+    k8s_namespace: "ubico",
+    min_reviewer_votes: "1"
+]
+
+pipelineAngularSSR pipelineConfig

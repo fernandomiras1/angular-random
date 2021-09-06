@@ -1,0 +1,14 @@
+<ng-container *ngIf="w2flyTitle">
+  <div class="w2f-subtitle">
+    <h2 *ngIf="w2flyTitle.title" class="w2f-subtitle__title"
+      [ngClass]="setColor(w2flyTitle.titleColor)"
+      [style.text-align]="w2flyTitle?.textAlign">
+        {{w2flyTitle.title}}
+    </h2>
+    <w2fly-divider *ngIf="w2flyTitle?.hasSeparator"></w2fly-divider>
+    <p *ngIf="w2flyTitle.subtitle" class="w2f-subtitle__paragraph"
+      [ngClass]="setColor(w2flyTitle.subtitleColor)"
+      [innerHTML]="w2flyTitle?.subtitle | w2flySafeToHtml">
+    </p>
+  </div>
+</ng-container>

@@ -1,0 +1,88 @@
+// Overriding global variables
+
+// COLORS
+
+$darkblue: #121E7E;
+$blue: #649CF8;
+$soft-blue: rgba($blue, 0.15);
+$turquoise: #0EEEE9;
+$red: #C52E1C;
+$soft-red: #FFEAE8;
+$orange: #F4B63E;
+$soft-orange: #FFF5DE;
+$green: #18A584;
+$soft-green: #E6F6F1;
+$gray-dark: #505759;
+$gray: #A8ABAC;
+$soft-gray: #C6C8C9;
+$soft: #F7F7F7;
+$dark: #272C2E;
+$white: #FFFFFF;
+$soft-text: #CBCDCD;
+$text: $gray-dark;
+$body-color: $gray-dark;
+
+$primary: $darkblue;
+$secondary: $blue;
+$tertiary: $turquoise;
+$quaternary: $red;
+
+$info: $blue;
+$success: $green;
+$warning: $orange;
+$danger: $red;
+$light: $soft;
+$background: $soft;
+
+$headings-color: $primary;
+$headings-color-light: $white;
+$text-color-light: $white;
+
+$border-color: rgba($gray, 0.3);
+$border-radius: 0.625rem;
+
+// TYPOGRAPHY
+
+$base-font-family: 'Montserrat', sans-serif;
+$headings-font-family: 'Sofia Pro Soft W01 Medium', sans-serif;
+$headings-regular-font-family: 'Sofia Pro Soft W01 Regular', sans-serif;
+$headings-light-font-family: 'Sofia Pro Soft W01 Light', sans-serif;
+$button-font-family: 'Sofia Pro Soft W01 Regular', sans-serif;
+$font-weight-medium: 600;
+
+// COMPONENTS
+
+//Mat-basic-chip
+$chip-font-family: $headings-regular-font-family;
+$chip-font-size: 1rem;
+$chip-line-height: 1.25rem;
+$chip-color: $white;
+$chip-border-radius: 3.125rem;
+
+//Mat-card
+$card-border-radius: $border-radius;
+
+//W2F variables
+$w2f-card-border-radius: 0 0 0 5rem;
+$w2f-card-height: 18.75rem;
+
+//Breakpoints
+$media-tablet: 48.0625rem;
+$media-desktop: 64rem;
+$media-widescreen: 76rem;
+$media-fullhd: 88rem;
+
+//Paddings
+$section-padding: 6.25rem;
+
+//Link hover font weight
+$link-hover-font-weight: 600;
+
+//W2f-basic-card
+$w2f-basic-card-padding: 1.5rem;
+
+//W2f-link-card
+$w2f-link-card-padding: 1.5rem;
+
+//W2f-hover-card
+$w2f-hover-card-padding: 2.5rem;
