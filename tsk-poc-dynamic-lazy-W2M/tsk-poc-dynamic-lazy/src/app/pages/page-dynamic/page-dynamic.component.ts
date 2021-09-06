@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
 import { Title } from '@angular/platform-browser'
 import { DynamicService } from '../../core/services/dynamic.service'
-import { PageDynamic } from '../../core/model/dynamic-page/dynamic-data-dto'
+import { PageDynamic, SectionsDynamic } from '../../core/model/dynamic-page/dynamic-data-dto'
 import { DynamicDirective } from '../../core/directives/dynamic.directive'
 @Component({
   selector: 'w2fly-page-dynamic',
@@ -36,9 +36,7 @@ export class PageDynamicComponent implements OnInit {
 
   public renderComponents(fields: PageDynamic) {
     const { content } = fields
-    this.dynamicService.processModules(content).subscribe(module => {
-      content.map((item, index) => this.dynamicService
-        .loadComponent(module[index], item.typeSection, item, this.dynamicHost))
-    })
+    content.forEach((section: SectionsDynamic) => this.dynamicService
+      .loadSection(section.typeSection, section, this.dynamicHost))
   }
 }
