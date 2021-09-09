@@ -1,0 +1,79 @@
+@import "src/scss/brands/w2fly/variables";
+
+.w2f-card-text {
+  background: transparent;
+  border-radius: 0.5rem;
+  display: flex;
+  height: 100%;
+  padding: 0;
+
+  @media (min-width: $media-tablet) {
+    background: $white;
+    padding: 2.5rem;
+  }
+
+  &.has-background {
+    @media (min-width: $media-tablet) {
+      background: $background;
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-left: 0.625rem;
+  }
+
+  &__content {
+    margin: 0;
+
+    &--alert {
+      ::ng-deep .w2f-alert-common {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  &__footer {
+    margin: auto 0 0 0;
+  }
+
+  &__header {
+    margin: 0 -1rem;
+  }
+
+  &__semidot {
+    margin-top: 0.5rem !important;
+  }
+
+  &__title {
+    align-items: center;
+    color: #121E7E;
+    display: flex;
+    font-family: $chip-font-family;
+
+    &--text {
+      margin-bottom: 0;
+    }
+  }
+
+  &__button {
+    display: inline-block;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+  }
+
+  &__subtitle {
+    margin-top: 0 !important;
+
+    &--text {
+      color: #505759;
+      font-family: $chip-font-family;
+    }
+  }
+
+  ::ng-deep .mat-card-header .mat-card-title {
+    margin-bottom: 0.375rem;
+  }
+}

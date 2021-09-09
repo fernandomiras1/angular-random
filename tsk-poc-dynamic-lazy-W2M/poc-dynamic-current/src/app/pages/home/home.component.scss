@@ -1,0 +1,111 @@
+@import "src/scss/brands/w2fly/variables";
+@import "src/scss/brands/w2fly/mixins";
+
+.w2f-booking-header {
+  margin-right: 0.625rem;
+  padding: 1.25rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  &__back {
+    a {
+      color: $white;
+      font-weight: 600;
+
+      @media (min-width: $media-desktop) {
+        color: $primary;
+      }
+    }
+  }
+}
+
+.w2f-booking {
+  display: block;
+
+  @media (min-width: $media-desktop) {
+    display: flex;
+  }
+
+  &__carousel {
+    @media (min-width: $media-desktop) {
+      background: $darkblue;
+      clip-path: ellipse(90% 80% at 10% 50%);
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      width: 40%;
+    }
+
+    &-container {
+      background: $darkblue;
+      height: 25rem;
+      width: 100%;
+
+      @media (min-width: $media-tablet) {
+        background: $darkblue;
+      }
+    }
+  }
+
+  &__form {
+    padding: 3.75rem 1.5rem;
+
+    @media (min-width: $media-desktop) {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 60%;
+    }
+
+    &-container {
+      @media (min-width: $media-desktop) {
+        width: 70%;
+      }
+
+      @media (min-width: $media-fullhd) {
+        width: 50%;
+      }
+    }
+
+    &-widget {
+      background-color: rgb(216, 214, 214);
+      height: 11.25rem;
+      width: 100%;
+
+      &-container {
+        margin: 2rem 0;
+      }
+    }
+
+    &-checks {
+      column-count: 2;
+
+      @media (min-width: $media-tablet) {
+        column-count: 3;
+      }
+
+      @media (min-width: $media-desktop) {
+        column-count: 2;
+      }
+
+      &-item {
+        margin-bottom: 0.75rem;
+        transition: ease 0.3s;
+
+        &:hover {
+          cursor: default;
+          font-weight: $font-weight-medium;
+          transform: translate(0.625rem);
+          transition: ease 0.3s;
+        }
+
+        em {
+          color: $soft-gray;
+          margin-right: 0.3125rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+<section class="w2f-section-info section" [anchor]="data.anchor"  [class.section-background]="data.backgroundColor">
+  <div class="container">
+      <ng-container  *ngFor="let item of data.fields">
+        <div class="columns is-centered is-multiline">
+          <ng-container [ngSwitch]="item.typeComponent">
+            <ng-container  *ngSwitchCase="ComponentType.ComponentIcons">
+              <w2fly-info-item
+                *ngFor="let info of item.field"
+                class="column is-12 is-4-desktop"
+                [info]="info">
+              </w2fly-info-item>
+            </ng-container>
+          <ng-container *ngSwitchCase="ComponentType.ComponentButton">
+              <w2fly-button [buttonDto]="item.field"
+                            class="column is-12 is-flex is-justify-content-center">
+              </w2fly-button>
+          </ng-container>
+        </ng-container>
+        </div>
+      </ng-container>
+    </div>
+</section>

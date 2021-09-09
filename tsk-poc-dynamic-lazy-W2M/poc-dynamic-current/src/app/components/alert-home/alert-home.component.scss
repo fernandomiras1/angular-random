@@ -1,0 +1,130 @@
+@import "src/scss/brands/w2fly/variables";
+
+.w2f-home-alert {
+  background-color: $white;
+  border-radius: 0.625rem;
+
+  &__container {
+    align-items: center;
+    display: grid;
+    gap: 0.625rem;
+    padding: 0.875rem;
+
+    @media (min-width: $media-tablet) {
+      display: flex;
+    }
+  }
+
+  &__text {
+    text-align: center;
+    width: 100%;
+
+    @media (min-width: $media-tablet) {
+      text-align: left;
+      width: 85%;
+    }
+
+    @media (min-width: $media-desktop) {
+      width: 83%;
+    }
+
+    @media (min-width: $media-widescreen) {
+      width: 90%;
+    }
+
+    div {
+      align-items: baseline;
+      justify-content: center;
+
+      @media (min-width: $media-tablet) {
+        align-items: center;
+        justify-content: start;
+      }
+    }
+
+    a {
+      color: $quaternary;
+    }
+  }
+
+  &__controls {
+    align-items: flex-end;
+    display: flex;
+    height: 100%;
+    justify-content: space-around;
+    margin: auto;
+    text-align: right;
+    width: 11.25rem;
+
+    span {
+      position: relative;
+      top: -0.38rem;
+    }
+
+    @media (min-width: $media-tablet) {
+      justify-content: space-between;
+      width: 17%;
+    }
+
+    @media (min-width: $media-desktop) {
+      width: 14%;
+    }
+
+    @media (min-width: $media-widescreen) {
+      width: 10%;
+    }
+
+    &--index {
+      span {
+        position: relative;
+        top: -0.38rem;
+      }
+    }
+  }
+
+  &__info {
+    align-items: center;
+    display: block;
+    text-align: center;
+
+    @media (min-width: $media-tablet) {
+      display: flex;
+    }
+  }
+
+  &__dot {
+    color: $quaternary;
+    font-size: 0.5rem;
+    margin-top: 0.1875rem;
+    position: relative;
+    top: -2px;
+
+    @media (min-width: $media-tablet) {
+      top: 1px;
+    }
+  }
+
+  &__link {
+    font-family: $headings-font-family;
+    font-size: 1.125rem;
+    padding-left: 0.5rem;
+  }
+
+  &__total {
+    align-items: center;
+    bottom: 0;
+    display: flex;
+    margin: 0;
+  }
+
+  &__button {
+    background: $background;
+    border-radius: 6.25rem;
+    height: 2.375rem;
+    line-height: 0;
+    min-height: 1.375rem;
+    min-width: 1.375rem;
+    padding: 0.625rem 0.875rem;
+    width: 2.375rem;
+  }
+}

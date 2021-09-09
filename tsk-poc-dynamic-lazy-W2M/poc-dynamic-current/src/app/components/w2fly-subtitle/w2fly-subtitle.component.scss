@@ -1,0 +1,20 @@
+@import "src/scss/brands/w2fly/variables";
+@import "src/scss/brands/w2fly/mixins";
+
+.w2f-subtitle {
+  margin-bottom: 1.625rem;
+
+  &__title {
+    margin-bottom: 1.25rem;
+  }
+
+  &__paragraph {
+    margin-bottom: 0;
+  }
+
+  &__button-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 2rem;
+  }
+}

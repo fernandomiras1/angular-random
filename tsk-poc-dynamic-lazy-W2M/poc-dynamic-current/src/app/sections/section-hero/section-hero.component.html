@@ -1,0 +1,16 @@
+<section class="w2f-hero" [class]="data.typeHero"
+  [anchor]="data.anchor"  [class.section-background]="data.backgroundColor">
+  <img *ngIf="data.backgroundImage" class="w2f-hero__image"
+       [src]="data.backgroundImage"
+       alt="airplane">
+  <div class="w2f-hero__content">
+    <div class="container">
+      <div class="w2f-hero__content-subtitle-container">
+        <w2fly-subtitle
+          [w2flyTitle]="subtitle.field">
+        </w2fly-subtitle>
+      </div>
+      <w2fly-alert-home *ngIf="alert" [listAlert]="alert.field"></w2fly-alert-home>
+    </div>
+  </div>
+</section>

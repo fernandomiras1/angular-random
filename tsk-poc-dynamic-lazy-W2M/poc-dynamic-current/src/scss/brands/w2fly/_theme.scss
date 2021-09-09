@@ -1,0 +1,120 @@
+// Angular material overwriting
+@import '~@angular/material/theming';
+
+
+// COLORS
+
+$w2f-darkblue: (
+  50: #E3E4F0,
+  100: #B8BCD8,
+  200: #898FBF,
+  300: #5962A5,
+  400: #364091,
+  500: #121E7E,
+  600: #101A76,
+  700: #0D166B,
+  800: #0A1261,
+  900: #050A4E,
+  A100: #8286FF,
+  A200: #4F54FF,
+  A400: #1C23FF,
+  A700: #030AFF,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #FFFFFF,
+    400: #FFFFFF,
+    500: #FFFFFF,
+    600: #FFFFFF,
+    700: #FFFFFF,
+    800: #FFFFFF,
+    900: #FFFFFF,
+    A100: #000000,
+    A200: #FFFFFF,
+    A400: #FFFFFF,
+    A700: #FFFFFF,
+  )
+);
+
+$w2f-blue: (
+  50: #ECF3FE,
+  100: #D1E1FD,
+  200: #B2CEFC,
+  300: #93BAFA,
+  400: #7BABF9,
+  500: #649CF8,
+  600: #5C94F7,
+  700: #528AF6,
+  800: #4880F5,
+  900: #366EF3,
+  A100: #FFFFFF,
+  A200: #FFFFFF,
+  A400: #D4E0FF,
+  A700: #BBCEFF,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #000000,
+    800: #FFFFFF,
+    900: #FFFFFF,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  )
+);
+
+$w2f-red: (
+  50: #F8E6E4,
+  100: #EEC0BB,
+  200: #E2978E,
+  300: #D66D60,
+  400: #CE4D3E,
+  500: #C52E1C,
+  600: #BF2919,
+  700: #B82314,
+  800: #B01D11,
+  900: #A31209,
+  A100: #FFD2D0,
+  A200: #FFA19D,
+  A400: #FF6F6A,
+  A700: #FF5751,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #FFFFFF,
+    500: #FFFFFF,
+    600: #FFFFFF,
+    700: #FFFFFF,
+    800: #FFFFFF,
+    900: #FFFFFF,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  )
+);
+
+$app-primary: mat-palette($w2f-darkblue);
+$app-accent:  mat-palette($w2f-blue);
+$app-warn:  mat-palette($w2f-red);
+
+$w2f-app-theme: mat-light-theme(
+  (
+    color: (
+      primary: $app-primary,
+      accent: $app-accent,
+      warn: $app-warn
+    )
+  )
+);
+
+@include angular-material-theme($w2f-app-theme);

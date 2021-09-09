@@ -1,0 +1,32 @@
+<ng-container *ngIf="buttonDto && !buttonDto.componentModal">
+  <a
+    class="w2f-button--large"
+    mat-flat-button
+    [color]="configButtonInput.color"
+    [srcLink]="buttonDto.urlButton"
+    [ngClass]="configButtonInput.size"
+    [attr.aria-label]="buttonDto.textButton">
+    <ng-container [ngTemplateOutlet]="textButton"></ng-container>
+  </a>
+</ng-container>
+
+<!-- MODAL -->
+<ng-container *ngIf="buttonDto && buttonDto.componentModal">
+  <a
+    class="w2f-button--large"
+    mat-flat-button
+    [color]="configButtonInput.color"
+    [ngClass]="configButtonInput.size"
+    [attr.aria-label]="buttonDto.textButton">
+    <ng-container [ngTemplateOutlet]="textButton"></ng-container>
+  </a>
+</ng-container>
+<ng-template #textButton>
+  <em *ngIf="buttonDto.icon"
+  [ngClass]="buttonDto.icon"
+  matPrefix></em>
+  {{buttonDto.textButton}}
+  <em *ngIf="buttonDto.externalLinkIcon"
+  class="far fa-external-link"
+  matSuffix></em>
+</ng-template>

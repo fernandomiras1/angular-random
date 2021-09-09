@@ -1,0 +1,30 @@
+<ng-container *ngIf="alert">
+  <div class="w2f-alert-common"
+  [class.w2f-alert-common-image]="alert.image"
+  [ngClass]="getTypeAlert(alert)">
+    <div *ngIf="alert.dotColor || alert.image" class="w2f-alert-common__left">
+      <span *ngIf="alert.dotColor" class="w2f-dot w2f-dot--medium"
+        [ngClass]="getDotColor(alert)">
+      </span>
+      <figure *ngIf="alert.image && alert.altText" class="w2f-alert-common__image image is-96x96">
+        <img [src]="alert.image" [alt]="alert.altText">
+      </figure>
+    </div>
+    <div class="w2f-alert-common__right">
+      <h5 *ngIf="alert.title" class="w2f-alert-common__title">{{alert.title}}</h5>
+      <div *ngIf="alert.text" class="w2f-alert-common__paragraph" [innerHtml]="alert.text | w2flySafeToHtml"></div>
+      <ng-container
+      *ngIf="alert.urlButton && alert.textButton">
+        <a
+          class="w2f-button--large mt-3"
+          mat-flat-button
+          [attr.aria-label]="alert.textButton"
+          [srcLink]="alert.urlButton"
+          color="primary">
+          {{alert.textButton}}
+          <em *ngIf="alert.externalLinkIcon" class="far fa-external-link ml-1"></em>
+        </a>
+      </ng-container>
+    </div>
+  </div>
+</ng-container>

@@ -1,0 +1,17 @@
+<ng-container *ngIf="info">
+  <div class="w2f-info-item">
+    <figure class="w2f-info-item__image">
+      <img [src]="info.image"
+           [alt]="info.altText"
+           width="124px"
+           height="124px"
+           class="lazyload">
+    </figure>
+    <h3 *ngIf="info.title" class="w2f-info-item__title">
+      {{info.title}}
+    </h3>
+    <div *ngIf="info.description"
+      [innerHTML]="info.description | w2flySafeToHtml">
+    </div>
+  </div>
+</ng-container>

@@ -1,0 +1,70 @@
+@import "src/scss/brands/w2fly/variables";
+@import "src/scss/brands/w2fly/mixins";
+
+.w2f-info-image-cards {
+  display: flex;
+  flex-direction: column;
+
+  @include w2f-padding-section;
+
+  &__image {
+    display: none;
+    order: 1;
+
+    ::ng-deep .w2f-image-basic__image {
+      height: auto;
+      width: auto;
+    }
+
+    ::ng-deep .w2f-image-basic__background {
+      border-radius: 0 8rem 0 0 !important;
+    }
+
+    @media (min-width: $media-desktop) {
+      display: block;
+
+      ::ng-deep .w2f-image-basic__background {
+        height: 40rem;
+        margin-left: -1.5625rem;
+        margin-top: 0;
+        object-fit: cover;
+        position: absolute;
+        width: 55%;
+      }
+    }
+  }
+
+  ::ng-deep .w2f-card-text {
+    @media (min-width: $media-tablet) {
+      min-height: 100%;
+    }
+  }
+
+  &--spacing {
+    order: 2;
+
+    @media (min-width: $media-tablet) {
+      margin-bottom: 2rem;
+      margin-top: 0;
+    }
+
+    @media (min-width: $media-desktop) {
+      margin-bottom: 4rem;
+      margin-top: 4rem;
+    }
+
+    @media (min-width: $media-widescreen) {
+      margin-bottom: 5rem;
+      margin-top: 5rem;
+    }
+
+    @media (min-width: $media-fullhd) {
+      margin-bottom: 7.5rem;
+      margin-top: 7.5rem;
+    }
+  }
+
+  &__info {
+    order: 3;
+  }
+}

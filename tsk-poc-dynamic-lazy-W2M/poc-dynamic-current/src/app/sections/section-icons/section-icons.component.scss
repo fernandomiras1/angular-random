@@ -1,0 +1,12 @@
+@import "src/scss/brands/w2fly/variables";
+@import "src/scss/brands/w2fly/mixins";
+
+.w2f-section-info {
+  @include w2f-padding-section;
+
+  ::ng-deep .w2f-info-item__image {
+    img {
+      width: 70% !important;
+    }
+  }
+}

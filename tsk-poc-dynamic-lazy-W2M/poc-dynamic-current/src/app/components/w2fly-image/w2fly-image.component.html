@@ -1,0 +1,15 @@
+<ng-container *ngIf="data">
+  <div class="w2f-image-basic__image">
+    <ng-container *ngIf="data.title">
+      <div
+        class="w2f-image-basic__image--bottom"
+        [ngClass]="data.align">
+        <h3 class="w2f-image-basic__title w2f-image-basic__title--image">{{data.title}}</h3>
+      </div>
+    </ng-container>
+    <img class="w2f-image-basic__background"
+      [style.border-radius]="data.borderRadiusStyle"
+      [alt]="data.altText"
+      [src]="data.image">
+  </div>
+</ng-container>
