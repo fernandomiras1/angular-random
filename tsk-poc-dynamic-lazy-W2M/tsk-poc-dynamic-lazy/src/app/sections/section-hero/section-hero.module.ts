@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
+import { SkeletonBoxModule } from 'src/app/components/skeleton-box/skeleton-box.module'
+import { PipesModule } from 'src/app/core/pipes/pipes.module'
 import { DirectivesModule } from '../../core/directives/directives.module'
 import { SectionHeroComponent } from './section-hero.component'
-import { W2flySubtitleModule } from '../../components/w2fly-subtitle/w2fly-subtitle.module'
-import { AlertHomeModule } from '../../components/alert-home/alert-home.module'
 
 @NgModule({
   declarations: [
@@ -11,9 +11,9 @@ import { AlertHomeModule } from '../../components/alert-home/alert-home.module'
   ],
   imports: [
     CommonModule,
-    W2flySubtitleModule,
-    AlertHomeModule,
     DirectivesModule,
+    SkeletonBoxModule,
+    PipesModule,
   ],
   exports: [SectionHeroComponent],
 })

@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
+import { SkeletonBoxModule } from 'src/app/components/skeleton-box/skeleton-box.module'
+import { PipesModule } from 'src/app/core/pipes/pipes.module'
 import { DirectivesModule } from '../../core/directives/directives.module'
 import { SectionIconsComponent } from './section-icons.component'
-import { W2flyInfoItemModule } from '../../components/w2fly-info-item/w2fly-info-item.module'
 import { W2flyButtonModule } from '../../components/w2fly-button/w2fly-button.module'
 
 @NgModule({
@@ -12,8 +13,9 @@ import { W2flyButtonModule } from '../../components/w2fly-button/w2fly-button.mo
   imports: [
     CommonModule,
     W2flyButtonModule,
-    W2flyInfoItemModule,
     DirectivesModule,
+    SkeletonBoxModule,
+    PipesModule,
   ],
   exports: [SectionIconsComponent],
 })

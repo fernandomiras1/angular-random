@@ -14,7 +14,7 @@ import { DynamicDirective } from '../../core/directives/dynamic.directive'
   styles: [],
 })
 export class PageDynamicComponent implements OnInit {
-  fields: PageDynamic
+  data: any
 
   @ViewChild(DynamicDirective, { static: true }) dynamicHost: DynamicDirective
 
@@ -23,20 +23,21 @@ export class PageDynamicComponent implements OnInit {
     private dynamicService: DynamicService,
     private route: ActivatedRoute,
   ) {
-    this.fields = this.route.snapshot.data.content
+    this.data = this.route.snapshot.data.content
+    console.log('PAGE', this.data)
   }
 
   ngOnInit() {
-    if (this.fields) {
-      const { title } = this.fields
+    if (this.data) {
+      const { title } = this.data
       this.titleService.setTitle(title)
-      this.renderComponents(this.fields)
+      this.renderComponents(this.data)
     }
   }
 
-  public renderComponents(fields: PageDynamic) {
-    const { content } = fields
-    content.forEach((section: SectionsDynamic) => this.dynamicService
-      .loadSection(section.typeSection, section, this.dynamicHost))
+  public renderComponents({ sections }) {
+    console.log('renderComponents', sections)
+    sections.map((section: SectionsDynamic) => this.dynamicService
+      .loadSection(section.type, section, this.dynamicHost))
   }
 }

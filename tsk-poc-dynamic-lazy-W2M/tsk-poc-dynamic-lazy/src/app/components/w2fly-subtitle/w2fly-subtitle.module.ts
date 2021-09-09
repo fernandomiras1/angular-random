@@ -13,4 +13,6 @@ import { W2flySubtitleComponent } from './w2fly-subtitle.component'
   ],
   exports: [W2flySubtitleComponent],
 })
-export class W2flySubtitleModule {}
+export class W2flySubtitleModule {
+  static entry = W2flySubtitleComponent
+}

@@ -9,6 +9,10 @@ import { ImageDto } from '../../core/model/image-dto'
 export class W2flyImageComponent extends ComponentDto {
   @Input() data: ImageDto
 
+  ngOnInit(): void {
+    this.data.borderRadiusStyle = '0.625rem 8rem 0.625rem 0.625rem '
+  }
+
   public getBackground(): string {
     return `url(${this.data.image}) no-repeat center / cover`
   }

@@ -1,16 +1,32 @@
-<section class="w2f-hero" [class]="data.typeHero"
-  [anchor]="data.anchor"  [class.section-background]="data.backgroundColor">
+
+<section class="w2f-hero" *ngIf="uuid | sections | async as data; else noDataResult" [class]="data.typeHero"
+  [anchor]="data.anchor" [class.section-background]="data.backgroundColor">
   <img *ngIf="data.backgroundImage" class="w2f-hero__image"
        [src]="data.backgroundImage"
        alt="airplane">
   <div class="w2f-hero__content">
     <div class="container">
-      <div class="w2f-hero__content-subtitle-container">
-        <w2fly-subtitle
-          [w2flyTitle]="subtitle.field">
-        </w2fly-subtitle>
-      </div>
-      <w2fly-alert-home *ngIf="alert" [listAlert]="alert.field"></w2fly-alert-home>
+
+      <ng-container *ngFor="let component of data.components" [ngSwitch]="component.type">
+        
+        <ng-container *ngSwitchCase="ComponentType.ComponentSubtitle">
+          <div class="w2f-hero__content-subtitle-container">
+            
+            <ng-template [lazyComp]="component.type"
+              [inputs]="{w2flyTitle: component.data}"
+              [outputs]="outputs">
+            </ng-template>
+          <!-- <ng-template #subtitle></ng-template> -->
+          <!-- <MINDATA [w2flyTitle]="subtitle.field"></w2fly-subtitle> -->
+        </div>
+      </ng-container>
+
+    </ng-container>
+
     </div>
   </div>
 </section>
+
+<ng-template #noDataResult>
+  <app-skeleton-box></app-skeleton-box>
+</ng-template>

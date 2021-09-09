@@ -6,6 +6,7 @@
         {{w2flyTitle.title}}
     </h2>
     <w2fly-divider *ngIf="w2flyTitle?.hasSeparator"></w2fly-divider>
+    <h5 (click)="titleChanges.emit('changed')">Tocame con un click</h5>
     <p *ngIf="w2flyTitle.subtitle" class="w2f-subtitle__paragraph"
       [ngClass]="setColor(w2flyTitle.subtitleColor)"
       [innerHTML]="w2flyTitle?.subtitle | w2flySafeToHtml">

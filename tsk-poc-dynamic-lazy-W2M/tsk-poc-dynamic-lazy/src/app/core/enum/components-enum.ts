@@ -1,5 +1,4 @@
 export enum ComponentsEnum {
-  ComponentAlert = 'component-alert',
   ComponentIcons = 'component-icons',
   ComponentImage = 'component-image',
   ComponentSubtitle ='component-subtitle',

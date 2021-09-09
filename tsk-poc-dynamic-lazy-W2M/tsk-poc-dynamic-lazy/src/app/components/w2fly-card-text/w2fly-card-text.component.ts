@@ -7,19 +7,20 @@ import { AlertCommonDto } from '../../core/model/alert/alert-common-dto'
   styleUrls: ['./w2fly-card-text.component.scss'],
 })
 export class W2flyCardTextComponent implements OnInit {
-  @Input() data: any
+  @Input() data: any[]
 
   public alertText: AlertCommonDto
 
   ngOnInit(): void {
-    if (this.data?.alertType && this.data?.alertTitle && this.data?.alertDescription) {
-      this.alertText = {
-        alertType: this.data.alertType,
-        text: this.data.alertDescription,
-        title: this.data.alertTitle,
-        dotColor: this.data.alertDotColor || null,
-        externalLinkIcon: this.data.externalLinkIcon,
-      }
-    }
+    console.log('-----W2flyCardTextComponent-------', this.data)
+    // if (this.data?.alertType && this.data?.alertTitle && this.data?.alertDescription) {
+    //   this.alertText = {
+    //     alertType: this.data.alertType,
+    //     text: this.data.alertDescription,
+    //     title: this.data.alertTitle,
+    //     dotColor: this.data.alertDotColor || null,
+    //     externalLinkIcon: this.data.externalLinkIcon,
+    //   }
+    // }
   }
 }

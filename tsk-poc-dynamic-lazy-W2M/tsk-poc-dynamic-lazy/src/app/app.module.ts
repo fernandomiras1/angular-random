@@ -3,11 +3,11 @@ import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { lazyArrayComponent } from 'src/app/components/lazy-components'
+import { LazyLoaderService } from 'src/app/core/services/lazy-loader.service'
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
-import { DynamicService } from './core/services/dynamic.service'
 import { LAZY_COMPONENT } from './core/tokens'
-import { lazyArraySection } from './sections/lazy-sections'
 
 @NgModule({
   declarations: [
@@ -20,7 +20,7 @@ import { lazyArraySection } from './sections/lazy-sections'
     BrowserAnimationsModule,
   ],
   providers: [
-    DynamicService, { provide: LAZY_COMPONENT, useFactory: lazyArraySection },
+    LazyLoaderService, { provide: LAZY_COMPONENT, useFactory: lazyArrayComponent },
   ],
   bootstrap: [AppComponent],
 })

@@ -68,3 +68,43 @@
     order: 3;
   }
 }
+
+.hola {
+  w2fly-card-text {
+    display: flex;
+  }
+}
+
+.test-image {
+
+  w2fly-image {
+    height: 40rem;
+    margin-left: -1.5625rem;
+    margin-top: 0;
+    object-fit: cover;
+    position: absolute;
+    width: 55%;
+
+    ::ng-deep .w2f-image-basic__image {
+      height: auto;
+      width: auto;
+    }
+
+    ::ng-deep .w2f-image-basic__background {
+      border-radius: 0 8rem 0 0 !important;
+    }
+
+    @media (min-width: $media-desktop) {
+      display: block;
+
+      ::ng-deep .w2f-image-basic__background {
+        height: 40rem;
+        margin-left: -1.5625rem;
+        margin-top: 0;
+        object-fit: cover;
+        position: absolute;
+        width: 55%;
+      }
+    }
+  }
+}

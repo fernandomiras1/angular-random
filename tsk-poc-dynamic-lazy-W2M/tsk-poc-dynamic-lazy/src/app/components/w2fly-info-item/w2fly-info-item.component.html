@@ -1,17 +1,17 @@
 <ng-container *ngIf="info">
-  <div class="w2f-info-item">
+  <div *ngFor="let item of info" class="column is-12 is-4-desktop w2f-info-item">
     <figure class="w2f-info-item__image">
-      <img [src]="info.image"
-           [alt]="info.altText"
+      <img [src]="item.image"
+           [alt]="item.altText"
            width="124px"
            height="124px"
            class="lazyload">
     </figure>
-    <h3 *ngIf="info.title" class="w2f-info-item__title">
-      {{info.title}}
+    <h3 *ngIf="item.title" class="w2f-info-item__title">
+      {{item.title}}
     </h3>
-    <div *ngIf="info.description"
-      [innerHTML]="info.description | w2flySafeToHtml">
+    <div *ngIf="item.description"
+      [innerHTML]="item.description | w2flySafeToHtml">
     </div>
   </div>
 </ng-container>

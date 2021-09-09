@@ -1,17 +1,27 @@
-<section class="w2f-info-image-cards section" [anchor]="data.anchor" [class.section-background]="this.data.backgroundColor">
-  <ng-container *ngFor="let item of data.fields">
-    <ng-container [ngSwitch]="item.typeComponent">
+<section class="w2f-info-image-cards section" *ngIf="uuid | sections | async as data;" [class.section-background]="this.data.backgroundColor">
+  <ng-container *ngFor="let component of data.components" [ngSwitch]="component.type">
       <ng-container *ngSwitchCase="ComponentType.ComponentImage">
-        <w2fly-image  class="w2f-info-image-cards__image"
+        <div class="test-image">
+          <ng-template [lazyComp]="component.type"
+            [inputs]="{data: component.data}">
+          </ng-template>
+          <!-- <ng-template #image></ng-template> -->
+        </div>
+        <!-- <w2fly-image  class="w2f-info-image-cards__image"
                       *ngIf="item?.field"
                       [data]="item.field | w2flyCommonField">
-        </w2fly-image>
+        </w2fly-image> -->
       </ng-container>
       <ng-container *ngSwitchCase="ComponentType.ComponentInfoText">
         <div class="container w2f-info-image-cards--spacing">
           <div class="columns is-variable">
             <div class="column is-4-desktop is-offset-8-desktop">
-              <w2fly-subtitle [w2flyTitle]="item.field"></w2fly-subtitle>
+              <ng-template [lazyComp]="component.type"
+              [inputs]="{w2flyTitle: component.data}">
+              </ng-template>
+              <!-- <ng-template #subtitle></ng-template> -->
+
+              <!-- <w2fly-subtitle [w2flyTitle]="item.field"></w2fly-subtitle> -->
             </div>
           </div>
         </div>
@@ -19,12 +29,18 @@
       <ng-container *ngSwitchCase="ComponentType.ComponentCardsText">
         <div class="container w2f-info-image-cards__info">
           <div class="columns is-variable is-multiline">
-            <ng-container *ngIf="item?.field">
+            <div class="hola">
+              <ng-template [lazyComp]="component.type"
+              [inputs]="{data: component.data}">
+              </ng-template>
+              <!-- <ng-template #cardText></ng-template> -->
+            </div>
+            <!-- <ng-container *ngIf="item?.field">
               <div class="column is-12-tablet is-4-desktop"
                    *ngFor="let card of item.field">
                 <w2fly-card-text [data]="card"></w2fly-card-text>
               </div>
-            </ng-container>
+            </ng-container> -->
           </div>
           <ng-container *ngIf="item?.information">
             <div class="columns is-variable is-multiline">
@@ -34,5 +50,4 @@
         </div>
       </ng-container>
     </ng-container>
-  </ng-container>
 </section>

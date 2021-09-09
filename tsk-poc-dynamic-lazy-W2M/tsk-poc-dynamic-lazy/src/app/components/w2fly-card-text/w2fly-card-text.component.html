@@ -1,25 +1,28 @@
-<mat-card *ngIf="data" class="w2f-card-text mat-elevation-z0" [class.has-background]="data.backgroundColor">
-  <w2fly-semi-dot *ngIf="data.semidot && data.semidotColor" [color]="data.semidotColor" class="w2f-card-text__semidot"></w2fly-semi-dot>
-  <div class="w2f-card-text__wrap">
-    <mat-card-header class="w2f-card-text__header">
-      <mat-card-title class="w2f-card-text__title" [class.w2f-card-text__title--semidot]="data.semidot && data.semidotColor">
-          <h3 class="w2f-card-text__title--text">
-            {{data.title}}
-          </h3>
-      </mat-card-title>
-      <mat-card-subtitle *ngIf="data.subtitle" class="w2f-card-text__subtitle">
-        <h4 class="w2f-card-text__subtitle--text">
-          {{data.subtitle}}
-        </h4>
-      </mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content class="w2f-card-text__content">
-      <div *ngIf="data.content" [innerHTML]="data.content | w2flySafeToHtml"></div>
-      <w2fly-alert-common class="w2f-card-text__content--alert" *ngIf="alertText" [alert]="alertText"></w2fly-alert-common>
-    </mat-card-content>
-    <mat-card-footer *ngIf="data.buttons" class="w2f-card-text__footer">
-      <w2fly-button *ngFor="let btn of data.buttons" class="w2f-card-text__button" [buttonDto]="btn"></w2fly-button>
-    </mat-card-footer>
-  </div>
-</mat-card>
+<ng-container *ngFor="let item of data">
+  <mat-card *ngIf="item" class="w2f-card-text mat-elevation-z0" [class.has-background]="item.backgroundColor">
+    <w2fly-semi-dot *ngIf="item.semidot && item.semidotColor" [color]="item.semidotColor" class="w2f-card-text__semidot"></w2fly-semi-dot>
+    <div class="w2f-card-text__wrap">
+      <mat-card-header class="w2f-card-text__header">
+        <mat-card-title class="w2f-card-text__title" [class.w2f-card-text__title--semidot]="item.semidot && item.semidotColor">
+            <h3 class="w2f-card-text__title--text">
+              {{item.title}}
+            </h3>
+        </mat-card-title>
+        <mat-card-subtitle *ngIf="item.subtitle" class="w2f-card-text__subtitle">
+          <h4 class="w2f-card-text__subtitle--text">
+            {{item.subtitle}}
+          </h4>
+        </mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content class="w2f-card-text__content">
+        <div *ngIf="item.content" [innerHTML]="item.content | w2flySafeToHtml"></div>
+        <w2fly-alert-common class="w2f-card-text__content--alert" *ngIf="alertText" [alert]="alertText"></w2fly-alert-common>
+      </mat-card-content>
+      <mat-card-footer *ngIf="item.buttons" class="w2f-card-text__footer">
+        <w2fly-button *ngFor="let btn of item.buttons" class="w2f-card-text__button" [buttonDto]="btn"></w2fly-button>
+      </mat-card-footer>
+    </div>
+  </mat-card>
+</ng-container>
+
 
