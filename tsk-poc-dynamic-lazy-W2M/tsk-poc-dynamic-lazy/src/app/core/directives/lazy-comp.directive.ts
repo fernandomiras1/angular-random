@@ -49,23 +49,26 @@ export class LazyCompDirective {
 
     const factory = this.resolver.resolveComponentFactory(moduleClass.entry)
     this.compRef = this.vcr.createComponent(factory)
+    this.compRef.hostView.detectChanges()
     this.refreshInputs(this.inputsComp)
-    if (this.outputsComp) {
-      this.refreshOutputs(this.outputsComp)
-    }
+    this.refreshOutputs(this.outputsComp)
   }
 
   private refreshInputs(inputs) {
-    Object.keys(inputs).forEach(inputName => {
-      this.compRef.instance[inputName] = inputs[inputName]
-    })
+    if (inputs) {
+      Object.keys(inputs).forEach(inputName => {
+        this.compRef.instance[inputName] = inputs[inputName]
+      })
+    }
   }
 
   private refreshOutputs(outputs) {
-    Object.keys(outputs).forEach(output => {
-      this.subscription.add((this.compRef.instance[output] as EventEmitter<any>)
-        .subscribe(this.outputsComp[output]))
-    })
+    if (outputs) {
+      Object.keys(outputs).forEach(output => {
+        this.subscription.add((this.compRef.instance[output] as EventEmitter<any>)
+          .subscribe(this.outputsComp[output]))
+      })
+    }
   }
 
   private ngOnDestroy() {
