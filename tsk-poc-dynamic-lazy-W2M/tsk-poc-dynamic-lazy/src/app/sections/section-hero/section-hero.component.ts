@@ -8,13 +8,14 @@ import {
 import { ComponentDto } from '../../core/model/component-dto'
 import { ColorsEnum } from '../../core/enum/colors-enum'
 import { ComponentsEnum } from '../../core/enum/components-enum'
+import { sliderConfig } from './slider-ubico-config'
 
 @Component({
   selector: 'section-hero',
   templateUrl: './section-hero.component.html',
   styleUrls: ['./section-hero.component.scss'],
 })
-export class SectionHeroComponent extends ComponentDto {
+export class SectionHeroComponent {
   // OLD
   // @ViewChild('subtitle', { read: ViewContainerRef, static: false })
   // subtitle: ViewContainerRef
@@ -23,6 +24,8 @@ export class SectionHeroComponent extends ComponentDto {
   public uuid: string
 
   public ComponentType: typeof ComponentsEnum = ComponentsEnum
+
+  public sliderConfig =sliderConfig
 
   public colors: typeof ColorsEnum = ColorsEnum
 

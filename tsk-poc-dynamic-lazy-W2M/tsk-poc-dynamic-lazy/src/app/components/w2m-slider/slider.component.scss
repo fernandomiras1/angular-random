@@ -1,0 +1,94 @@
+
+@import '~@glidejs/glide/src/assets/sass/glide.core';
+@import '~@glidejs/glide/src/assets/sass/glide.theme';
+
+.glide__bullets {
+  &.left {
+    left: 10% !important;
+    right: unset;
+  }
+
+  &.right {
+    left: unset !important;
+    right: -5rem !important;
+  }
+
+  &.top {
+    bottom: unset !important;
+    top: 3rem !important;
+  }
+
+  &.outer {
+    bottom: -4.5rem !important;
+  }
+}
+
+.glide__bullet {
+  margin: 0 0.45rem !important;
+
+  .dot {
+    border-radius: 50%;
+    display: inline-block;
+    height: 0.625rem;
+    width: 0.625rem;
+  }
+
+  &.custom-bullet {
+    background-color: transparent;
+    border: unset !important;
+    border-radius: unset !important;
+    box-shadow: none !important;
+    cursor: pointer !important;
+  }
+
+  &--active {
+    &.custom-bullet {
+      background-color: transparent;
+      color: transparent;
+      left: -1rem;
+      margin: 0 0 0 1rem !important;
+      position: relative;
+
+      .dot {
+        height: 0.5rem;
+        padding: 0.3125rem;
+        width: 0.5rem;
+      }
+
+      .dot-outline {
+        align-items: center;
+        border-radius: 50%;
+        border-style: solid;
+        border-width: 0.125rem;
+        display: flex;
+        height: 1.5rem;
+        justify-content: center;
+        width: 1.5rem;
+      }
+    }
+  }
+}
+
+.w2m-slide-arrow {
+  position: absolute !important;
+
+  &--left {
+    left: -1%;
+  }
+
+  &--right {
+    right: -1%;
+  }
+
+  &.center {
+    top: 50%;
+  }
+
+  &.top {
+    top: -5%;
+  }
+
+  &.bottom {
+    bottom: -5%;
+  }
+}

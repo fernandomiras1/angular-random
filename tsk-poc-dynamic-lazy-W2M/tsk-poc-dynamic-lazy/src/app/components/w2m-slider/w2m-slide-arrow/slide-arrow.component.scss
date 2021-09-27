@@ -1,0 +1,11 @@
+.w2m-slide-arrow {
+  &__button {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+    &--text {
+      margin: 0 0.5rem;
+    }
+  }
+}

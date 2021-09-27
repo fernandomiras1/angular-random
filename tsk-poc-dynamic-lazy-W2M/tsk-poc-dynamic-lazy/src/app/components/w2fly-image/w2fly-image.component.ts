@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core'
+import { Component, Input, OnInit } from '@angular/core'
 import { ComponentDto } from '../../core/model/component-dto'
 import { ImageDto } from '../../core/model/image-dto'
 @Component({
@@ -6,11 +6,11 @@ import { ImageDto } from '../../core/model/image-dto'
   templateUrl: './w2fly-image.component.html',
   styleUrls: ['./w2fly-image.component.scss'],
 })
-export class W2flyImageComponent extends ComponentDto {
+export class W2flyImageComponent extends ComponentDto implements OnInit {
   @Input() data: ImageDto
 
   ngOnInit(): void {
-    this.data.borderRadiusStyle = '0.625rem 8rem 0.625rem 0.625rem '
+    // this.data.borderRadiusStyle = '0.625rem 8rem 0.625rem 0.625rem '
   }
 
   public getBackground(): string {

@@ -17,6 +17,74 @@ export const SECTION_HERO = {
         title: 'Centro de atención al cliente',
       },
     },
+    {
+      field: [
+        {
+          image: 'https://pre-cms.w2m.com/.imaging/mte/basic-theme/fullHd/dam/Sites/Ubico/imagenes/Komodo/GettyImages-1080750202.jpg/jcr:content/GettyImages-1080750202.jpg',
+          backgroundColor: false,
+          altText: 'Calle noche burbujas - Nueva Movilidad',
+          borderRadius: {
+            bottomLeft: false,
+            bottomRight: false,
+            topLeft: false,
+            topRight: false,
+          },
+          title: 'New Corporate Mobility Design',
+        },
+        {
+          image: 'https://pre-cms.w2m.com/.imaging/mte/basic-theme/fullHd/dam/Sites/Ubico/imagenes/Komodo/GettyImages-1154231467.jpg/jcr:content/GettyImages-1154231467.jpg',
+          backgroundColor: false,
+          altText: 'GettyImages-1154231467.jpg',
+          borderRadius: {
+            bottomLeft: false,
+            bottomRight: false,
+            topLeft: false,
+            topRight: false,
+          },
+          title: 'Digital service, family care',
+        },
+        {
+          image: 'https://pre-cms.w2m.com/.imaging/mte/basic-theme/fullHd/dam/Sites/Ubico/imagenes/Komodo/GettyImages-980390320.jpg/jcr:content/GettyImages-980390320.jpg',
+          backgroundColor: false,
+          altText: 'GettyImages-980390320.jpg',
+          borderRadius: {
+            bottomLeft: false,
+            bottomRight: false,
+            topLeft: false,
+            topRight: false,
+          },
+          title: 'La libertad de la experiencia',
+        },
+        {
+          image: 'https://pre-cms.w2m.com/.imaging/mte/basic-theme/fullHd/dam/Sites/Ubico/imagenes/Komodo/GettyImages-615612706---copia.jpg/jcr:content/GettyImages-615612706%20-%20copia.jpg',
+          backgroundColor: false,
+          altText: 'GettyImages-615612706---copia.jpg',
+          borderRadius: {
+            bottomLeft: false,
+            bottomRight: false,
+            topLeft: false,
+            topRight: false,
+          },
+          title: 'Moving on',
+        },
+        {
+          image: 'https://pre-cms.w2m.com/.imaging/mte/basic-theme/fullHd/dam/Sites/Ubico/imagenes/Komodo/GettyImages-1204482432_studio.jpg/jcr:content/GettyImages-1204482432_studio.jpg',
+          backgroundColor: false,
+          altText: 'GettyImages-1204482432_studio.jpg',
+          borderRadius: {
+            bottomLeft: false,
+            bottomRight: false,
+            topLeft: false,
+            topRight: false,
+          },
+          title: 'Buen rollo',
+        },
+      ],
+      displayLength: 1,
+      type: 'component-carousel',
+      variation: 'fullHd',
+      enabledComponent: true,
+    },
   ],
 }
 

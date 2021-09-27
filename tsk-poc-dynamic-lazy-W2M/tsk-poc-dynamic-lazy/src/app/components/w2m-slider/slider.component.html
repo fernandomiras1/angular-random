@@ -1,0 +1,45 @@
+<div class="w2m-slider">
+  <ngx-glide class="w2m-slider-container"
+             [showArrows]="sliderConfig.showArrows"
+             [showBullets]="sliderConfig.showBullets"
+             [arrowLeftLabel]="sliderConfig.arrowLeftLabel"
+             [arrowRightLabel]="sliderConfig.arrowRightLabel"
+             [type]="sliderConfig.type"
+             [startAt]="sliderConfig.startAt"
+             [perView]="sliderConfig.perView"
+             [focusAt]="sliderConfig.isCenter ? 'center' : sliderConfig.focusAt"
+             [gap]="sliderConfig.gap"
+             [autoplay]="sliderConfig.isAutoplay? sliderConfig.autoplay:false"
+             [hoverpause]="sliderConfig.hoverPause"
+             [keyboard]="sliderConfig.keyboard"
+             [bound]="sliderConfig.bound"
+             [swipeThreshold]="sliderConfig.isSwipeThreshold ? sliderConfig.swipeThreshold : false"
+             [dragThreshold]=" sliderConfig.isDragThreshold ? sliderConfig.dragThreshold : false"
+             [perTouch]="sliderConfig.isPerTouch ? sliderConfig.perTouch : false"
+             [touchRatio]="sliderConfig.touchRatio"
+             [touchAngle]="sliderConfig.touchAngle"
+             [animationDuration]="sliderConfig.animationDuration"
+             [rewind]="sliderConfig.rewind"
+             [rewindDuration]="sliderConfig.rewindDuration"
+             [animationTimingFunc]="sliderConfig.animationTimingFunc"
+             [direction]="sliderConfig.direction"
+             [listenToEvents]="sliderConfig.listenToEvents"
+             [breakpoints]="sliderConfig.breakpoints"
+             [arrowLeftTemplate]="sliderConfig.showCustomArrows && arrowLeftTemplate"
+             [arrowRightTemplate]="sliderConfig.showCustomArrows && arrowRightTemplate">
+    <ng-content select='.slide'></ng-content>
+  </ngx-glide>
+</div>
+
+<ng-template #arrowLeftTemplate>
+    <w2m-slide-arrow class="w2m-slide-arrow w2m-slide-arrow--left"
+                     [ngClass]="sliderConfig.customArrows.position"
+                     [slideArrow]="sliderConfig.customArrows.left">
+    </w2m-slide-arrow>
+</ng-template>
+<ng-template #arrowRightTemplate>
+    <w2m-slide-arrow class="w2m-slide-arrow w2m-slide-arrow--right"
+                     [ngClass]="sliderConfig.customArrows.position"
+                     [slideArrow]="sliderConfig.customArrows.right" [right]="true">
+    </w2m-slide-arrow>
+</ng-template>

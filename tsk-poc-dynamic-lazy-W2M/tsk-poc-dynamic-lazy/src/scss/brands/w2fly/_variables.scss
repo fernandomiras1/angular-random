@@ -22,6 +22,19 @@ $soft-text: #CBCDCD;
 $text: $gray-dark;
 $body-color: $gray-dark;
 
+
+$gray-50: #ECECEC;
+$gray-100: #D0D0D0;
+$gray-200: #B0B0B0;
+$gray-300: #909090;
+$gray-400: #797979;
+$gray-500: #616161;
+$gray: $gray-500;
+$gray-600: #595959;
+$gray-700: #4F4F4F;
+$gray-800: #454545;
+$gray-900: #333333;
+
 $primary: $darkblue;
 $secondary: $blue;
 $tertiary: $turquoise;
@@ -41,6 +54,12 @@ $text-color-light: $white;
 $border-color: rgba($gray, 0.3);
 $border-radius: 0.625rem;
 
+
+// shadows
+$shadow-1: 0 0.1875rem 0.625rem rgba(0, 0, 0, 0.1);
+$shadow-2: 0 0 0.625rem rgba(0, 0, 0, 0.161);
+$shadow-3: 0 0.1875rem 0.375rem rgba(0, 0, 0, 0.26);
+
 // TYPOGRAPHY
 
 $base-font-family: 'Montserrat', sans-serif;
@@ -50,6 +69,10 @@ $headings-light-font-family: 'Sofia Pro Soft W01 Light', sans-serif;
 $button-font-family: 'Sofia Pro Soft W01 Regular', sans-serif;
 $font-weight-medium: 600;
 
+$font-weight-light:300;
+$font-weight-regular:400;
+$font-weight-bold: 700;
+
 // COMPONENTS
 
 //Mat-basic-chip
@@ -58,6 +81,12 @@ $chip-font-size: 1rem;
 $chip-line-height: 1.25rem;
 $chip-color: $white;
 $chip-border-radius: 3.125rem;
+
+// Gradient
+$linear-gradient-1: linear-gradient(90deg, rgba(255, 255, 255, 0) 0, $secondary);
+$linear-gradient-2: linear-gradient(180deg, rgba(0, 0, 0, 0.702), transparent);
+$linear-gradient-3: linear-gradient(0deg, rgba(0, 0, 0, 0.702), transparent);
+$linear-gradient-4: linear-gradient(270deg, rgba(255, 255, 255, 1) 20%, rgba(0, 0, 0, 0) 100%);
 
 //Mat-card
 $card-border-radius: $border-radius;
