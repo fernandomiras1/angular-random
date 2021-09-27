@@ -1,10 +1,11 @@
 import {
-  Component, ViewChild, ViewContainerRef, ViewEncapsulation,
+  Component, OnInit, ViewChild, ViewContainerRef, ViewEncapsulation,
 } from '@angular/core'
 import { Observable } from 'rxjs'
 import { LazyLoaderService } from 'src/app/core/services/lazy-loader.service'
 import { MagnoliaService } from 'src/app/core/services/magnolia.service'
 import { tap } from 'rxjs/operators'
+import { FormBuilder, FormGroup } from '@angular/forms'
 import { ComponentsEnum } from '../../core/enum/components-enum'
 import { SectionsDynamic } from '../../core/model/dynamic-page/dynamic-data-dto'
 
@@ -14,7 +15,9 @@ import { SectionsDynamic } from '../../core/model/dynamic-page/dynamic-data-dto'
   styleUrls: ['./section-info-image-cards.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class SectionInfoImageCardsComponent {
+export class SectionInfoImageCardsComponent implements OnInit {
+  form: FormGroup
+
   // @ViewChild('subtitle', { read: ViewContainerRef, static: false })
   // subtitle: ViewContainerRef
 
@@ -38,6 +41,19 @@ export class SectionInfoImageCardsComponent {
   // ngOnInit(): void {
   //   this.getSections()
   // }
+
+  constructor(private fb: FormBuilder) {
+  }
+
+  ngOnInit(): void {
+    this.initForm()
+  }
+
+  initForm(): void {
+    this.form = this.fb.group({
+      inputText: ['Hola Mundo'],
+    })
+  }
 
   private getSections() {
     // this.data$ = this.magnoliaService.getSections(this.uuid).pipe(

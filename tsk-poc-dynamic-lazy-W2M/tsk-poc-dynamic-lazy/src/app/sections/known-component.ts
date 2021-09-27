@@ -1,4 +1,10 @@
 export const KNOWN_COMPONENT = {
+  'section-hero': () => import('../sections/section-hero/section-hero.module')
+    .then(({ SectionHeroModule }) => SectionHeroModule),
+  'section-icons': () => import('../sections/section-icons/section-icons.module')
+    .then(({ SectionIconsModule }) => SectionIconsModule),
+  'section-info-image-cards': () => import('../sections/section-info-image-cards/section-info-image-cards.module')
+    .then(({ SectionInfoImageCardsModule }) => SectionInfoImageCardsModule),
   'component-subtitle': () => import('../components/w2fly-subtitle/w2fly-subtitle.module')
     .then(({ W2flySubtitleModule }) => W2flySubtitleModule),
   'component-icons': () => import('../components/w2fly-info-item/w2fly-info-item.module')

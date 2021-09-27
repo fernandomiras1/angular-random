@@ -1,4 +1,8 @@
 <section class="w2f-info-image-cards section" *ngIf="uuid | sections | async as data;" [class.section-background]="this.data.backgroundColor">
+  <form [formGroup]="form">
+    <p>Formulario Reactivo</p>
+    <input placeholder="Escriba su texto aqui" formControlName="inputText" type="text">
+  </form>
   <ng-container *ngFor="let component of data.components" [ngSwitch]="component.type">
       <ng-container *ngSwitchCase="ComponentType.ComponentImage">
         <div class="test-image">
