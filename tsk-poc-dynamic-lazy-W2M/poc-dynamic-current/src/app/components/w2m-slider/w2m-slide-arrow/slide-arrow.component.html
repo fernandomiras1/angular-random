@@ -1,0 +1,18 @@
+<ng-container *ngIf="slideArrow?.icon && slideArrow?.label; else buttonIcon">
+  <button class="w2m-slide-arrow__button" disableRipple mat-raised-button color="primary">
+    <em *ngIf="!right" class="far fa-fw"
+        [ngClass]="slideArrow.icon"></em>
+    <span class="w2m-slide-arrow__button--text">
+      {{slideArrow.label}}
+    </span>
+    <em *ngIf="right" class="far fa-fw"
+        [ngClass]="slideArrow.icon"></em>
+  </button>
+</ng-container>
+
+
+<ng-template #buttonIcon>
+  <button class="w2m-slide-arrow__button" disableRipple mat-mini-fab color="primary">
+    <em class="far fa-fw" [ngClass]="slideArrow?.icon"></em>
+  </button>
+</ng-template>

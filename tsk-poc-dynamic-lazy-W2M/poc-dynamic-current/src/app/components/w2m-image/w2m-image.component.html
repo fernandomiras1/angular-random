@@ -1,0 +1,5 @@
+<div *ngIf="image" class="w2m-image">
+  <img class="w2m-image--image" *ngIf="image.image" [src]="image.image" [alt]="image.altText">
+  <h2 *ngIf="image.title" class="w2m-image--title" [innerHtml]="image.title"></h2>
+  <ng-content></ng-content>
+</div>

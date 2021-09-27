@@ -5,4 +5,5 @@ export enum ComponentsEnum {
   ComponentSubtitle ='component-subtitle',
   ComponentInfoText = 'component-info-text',
   ComponentCardsText='component-cards-text',
+  ComponentCarousel = 'component-carousel',
 }

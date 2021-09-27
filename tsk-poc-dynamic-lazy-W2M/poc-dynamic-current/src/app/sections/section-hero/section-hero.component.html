@@ -1,4 +1,4 @@
-<section class="w2f-hero" [class]="data.typeHero"
+<!-- <section class="w2f-hero" [class]="data.typeHero"
   [anchor]="data.anchor"  [class.section-background]="data.backgroundColor">
   <img *ngIf="data.backgroundImage" class="w2f-hero__image"
        [src]="data.backgroundImage"
@@ -13,4 +13,22 @@
       <w2fly-alert-home *ngIf="alert" [listAlert]="alert.field"></w2fly-alert-home>
     </div>
   </div>
-</section>
+</section> -->
+
+<div class="section-hero-home">
+  <div class="section-hero-home-gradient-top"></div>
+  <div class="section-hero-home-gradient-bottom"></div>
+  <ng-container *ngFor="let item of data.fields"
+    [ngSwitch]="item.typeComponent">
+    <ng-container *ngSwitchCase="ComponentType.ComponentCarousel">
+      <ng-container *ngIf="item.field.length">
+        <w2m-slider class="container" [sliderConfig]="sliderConfig">
+          <w2m-image *ngFor="let slide of item.field" class="slide"
+            [image]="slide"></w2m-image>
+        </w2m-slider>
+      </ng-container>
+    </ng-container>
+  </ng-container>
+</div>
+
+
