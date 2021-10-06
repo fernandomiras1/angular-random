@@ -47,11 +47,21 @@ export class LazyCompDirective {
   private async load(type: string) {
     const moduleClass = await LazyCompDirective.KNOWN_COMPONENT[type]()
 
-    const factory = this.resolver.resolveComponentFactory(moduleClass.entry)
-    this.compRef = this.vcr.createComponent(factory)
-    this.compRef.hostView.detectChanges()
-    this.refreshInputs(this.inputsComp)
-    this.refreshOutputs(this.outputsComp)
+    if (!LazyCompDirective.KNOWN_COMPONENT[type]) {
+      this.error(type)
+    } else {
+      const factory = this.resolver.resolveComponentFactory(moduleClass.entry)
+      this.compRef = this.vcr.createComponent(factory)
+      this.refreshInputs(this.inputsComp)
+      this.refreshOutputs(this.outputsComp)
+      this.compRef.hostView.detectChanges()
+    }
+  }
+
+  private error(sectionName: string): void {
+    // eslint-disable-next-line no-console
+    console.warn(`Unknown section: ${sectionName}`)
+    return null
   }
 
   private refreshInputs(inputs) {
