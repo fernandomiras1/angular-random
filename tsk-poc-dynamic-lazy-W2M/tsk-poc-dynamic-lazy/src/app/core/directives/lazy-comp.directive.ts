@@ -45,11 +45,10 @@ export class LazyCompDirective {
   constructor(private vcr: ViewContainerRef, private resolver: ComponentFactoryResolver) {}
 
   private async load(type: string) {
-    const moduleClass = await LazyCompDirective.KNOWN_COMPONENT[type]()
-
     if (!LazyCompDirective.KNOWN_COMPONENT[type]) {
       this.error(type)
     } else {
+      const moduleClass = await LazyCompDirective.KNOWN_COMPONENT[type]()
       const factory = this.resolver.resolveComponentFactory(moduleClass.entry)
       this.compRef = this.vcr.createComponent(factory)
       this.refreshInputs(this.inputsComp)
