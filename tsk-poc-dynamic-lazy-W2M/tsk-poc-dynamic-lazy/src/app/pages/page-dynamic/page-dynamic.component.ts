@@ -11,7 +11,6 @@ import { DynamicDirective } from '../../core/directives/dynamic.directive'
       <ng-container *ngFor="let section of data.sections">
         <ng-template [lazyComp]="section.type" [inputs]="{uuid: section.uuid}"></ng-template>
       </ng-container>
-      <!-- <ng-template appDynamicHost></ng-template> -->
     </main>
   `,
   styles: [],

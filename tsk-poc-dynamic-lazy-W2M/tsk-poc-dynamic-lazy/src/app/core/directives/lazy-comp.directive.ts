@@ -1,9 +1,11 @@
 import {
-  ComponentFactoryResolver,
+  Compiler,
   ComponentRef,
   Directive,
   EventEmitter,
+  Injector,
   Input,
+  NgModuleFactory,
   ViewContainerRef,
 } from '@angular/core'
 import { Subscription } from 'rxjs'
@@ -42,19 +44,31 @@ export class LazyCompDirective {
 
   private compRef: ComponentRef<any>
 
-  constructor(private vcr: ViewContainerRef, private resolver: ComponentFactoryResolver) {}
+  constructor(private vcr: ViewContainerRef,
+    private compiler: Compiler,
+    private injector: Injector) {}
 
   private async load(type: string) {
     if (!LazyCompDirective.KNOWN_COMPONENT[type]) {
       this.error(type)
     } else {
-      const moduleClass = await LazyCompDirective.KNOWN_COMPONENT[type]()
-      const factory = this.resolver.resolveComponentFactory(moduleClass.entry)
-      this.compRef = this.vcr.createComponent(factory)
+      const module = await LazyCompDirective.KNOWN_COMPONENT[type]()
+      const moduleFactory = await this.compileModule(module)
+
+      const section = moduleFactory.create(this.injector)
+      const componentFactory = section.componentFactoryResolver
+        .resolveComponentFactory<any>(module.entry)
+      this.compRef = this.vcr.createComponent<any>(componentFactory)
       this.refreshInputs(this.inputsComp)
       this.refreshOutputs(this.outputsComp)
       this.compRef.hostView.detectChanges()
     }
+  }
+
+  private compileModule(module): NgModuleFactory<any> | Promise<NgModuleFactory<any>> {
+    return (module instanceof NgModuleFactory
+      ? module
+      : this.compiler.compileModuleAsync<any>(module))
   }
 
   private error(sectionName: string): void {
