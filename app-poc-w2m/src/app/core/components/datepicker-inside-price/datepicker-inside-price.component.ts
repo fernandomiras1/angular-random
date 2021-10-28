@@ -98,7 +98,7 @@ export class DatepickerInsidePriceComponent implements OnInit, OnDestroy {
 
   public datesAlowed = [
     {
-      date: '2021-07-21',
+      date: '2021-07-23',
       status: 'OK',
     },
     {
@@ -107,6 +107,11 @@ export class DatepickerInsidePriceComponent implements OnInit, OnDestroy {
     },
     {
       date: '2021-07-30',
+
+      status: 'OK',
+    },
+    {
+      date: '2021-08-01',
 
       status: 'OK',
     },
@@ -175,8 +180,14 @@ export class DatepickerInsidePriceComponent implements OnInit, OnDestroy {
     })
   }
 
-  customFilter = (date: Date | null): boolean => this.datesAlowed
-    .some(d => new Date(d.date).getDate() === date.getDate())
+  public customFilter = (date: Date | null): boolean => this.datesAlowed
+    .map(d => d.date)
+    .some(d => {
+      const parseDate = new Date(new Date(d).setDate(new Date(d).getDate() + 1))
+      return parseDate.getDate() === new Date(date).getDate()
+        && parseDate.getMonth() === date.getMonth()
+        && parseDate.getFullYear() === date.getFullYear()
+    })
 
   dateClass = (date: Date) => ([new Date('2021-07-28').getDate(),
     new Date('2021-07-21').getDate(), new Date('2021-07-25').getDate()]
