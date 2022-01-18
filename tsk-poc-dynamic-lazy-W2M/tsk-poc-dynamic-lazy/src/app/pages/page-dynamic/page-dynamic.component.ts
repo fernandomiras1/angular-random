@@ -1,8 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
 import { Title } from '@angular/platform-browser'
-import { DynamicService } from '../../core/services/dynamic.service'
-import { SectionsDynamic } from '../../core/model/dynamic-page/dynamic-data-dto'
 import { DynamicDirective } from '../../core/directives/dynamic.directive'
 @Component({
   selector: 'w2fly-page-dynamic',
@@ -22,7 +20,6 @@ export class PageDynamicComponent implements OnInit {
 
   constructor(
     private titleService: Title,
-    private dynamicService: DynamicService,
     private route: ActivatedRoute,
   ) {
     this.data = this.route.snapshot.data.content
@@ -33,14 +30,6 @@ export class PageDynamicComponent implements OnInit {
     if (this.data) {
       const { title } = this.data
       this.titleService.setTitle(title)
-      // No lo llamo en .ts, si no que lo resuelvo en el DOM
-      // this.renderComponents(this.data)
     }
-  }
-
-  public renderComponents({ sections }) {
-    console.log('renderComponents', sections)
-    sections.map((section: SectionsDynamic) => this.dynamicService
-      .loadSection(section.type, section, this.dynamicHost))
   }
 }
