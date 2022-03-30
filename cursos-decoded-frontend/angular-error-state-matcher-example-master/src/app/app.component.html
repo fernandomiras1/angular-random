@@ -1,0 +1,17 @@
+<form [formGroup]="form">
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput formControlName="name" type="text" name="none">
+    <mat-error *ngIf="this.form.controls.name.hasError('required')">
+      It is required field
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Last name</mat-label>
+    <input matInput formControlName="lastName" type="text" name="none">
+    <mat-error *ngIf="this.form.controls.lastName.hasError('required')">
+      It is required field
+    </mat-error>
+  </mat-form-field>
+  <button mat-raised-button color="primary">Submit</button>
+</form>
