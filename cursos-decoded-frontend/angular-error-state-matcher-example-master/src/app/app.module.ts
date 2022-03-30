@@ -22,6 +22,8 @@ import {
     ReactiveFormsModule,
     MatButtonModule,
   ],
+
+  // Lo agregamos para que lo tenga toda la APP.
   providers: [
     { provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher },
   ],
