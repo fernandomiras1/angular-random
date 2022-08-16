@@ -11,7 +11,7 @@ import { Observable, of } from 'rxjs';
     ProAppComponent,
     BasicComponent
   ],
-  imports: [BrowserModule, HttpClientModule],
+  imports: [BrowserModule, HttpClientModule], 
 })
 export class AppModule implements DoBootstrap {
 
@@ -27,6 +27,10 @@ export class AppModule implements DoBootstrap {
     this.mockAnyAPI().subscribe(
       (data) => {
         console.log('DATA API', data);
+
+        // Por ej: si queremos mostrar una APP mobile, podemos hacer algo asi. 
+        const APP_DESK_MOBILE = window.innerWidth > 300 ? ProAppComponent : BasicComponent
+        console.log('APP_DESK_MOBILE', APP_DESK_MOBILE);
         const APP = data.active ? ProAppComponent : BasicComponent;
         appRef.bootstrap(APP, document.getElementById('app'))
       }
