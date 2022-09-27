@@ -24,7 +24,11 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/@fullcalendar/list/main.css",
+              "node_modules/@fullcalendar/daygrid/main.css",
+              "node_modules/@fullcalendar/timegrid/main.css",
+              "node_modules/@fullcalendar/common/main.css"
             ],
             "scripts": [],
             "preserveSymlinks": true
@@ -78,6 +82,5 @@
         }
       }
     }
-  },
-  "defaultProject": "fullcalendar-angular-example"
+  }
 }
