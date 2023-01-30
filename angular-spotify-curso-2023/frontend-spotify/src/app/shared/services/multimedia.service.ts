@@ -32,6 +32,7 @@ export class MultimediaService {
 
   private listenAllEvents(): void {
 
+    // Son los eventos de la etiquea de <audio />
     this.audio.addEventListener('timeupdate', this.calculateTime, false)
     this.audio.addEventListener('playing', this.setPlayerStatus, false)
     this.audio.addEventListener('play', this.setPlayerStatus, false)
