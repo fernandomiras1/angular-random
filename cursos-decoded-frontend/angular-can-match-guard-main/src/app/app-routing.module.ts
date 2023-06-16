@@ -1,5 +1,11 @@
 import { inject, NgModule } from '@angular/core';
-import { Route, Router, RouterModule, Routes, UrlSegment } from '@angular/router';
+import {
+  Route,
+  Router,
+  RouterModule,
+  Routes,
+  UrlSegment,
+} from '@angular/router';
 import { map } from 'rxjs';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { HomeComponent } from './home/home.component';
@@ -12,19 +18,30 @@ const routes: Routes = [
   {
     path: 'dashboard',
     loadComponent: () =>
-      import('./admin-dashboard/admin-dashboard.component')
-        .then(c => c.AdminDashboardComponent),
-    canMatch: [(route: Route, segments: UrlSegment[]) => {
-      const router = inject(Router);
-      return inject(UserPermissionsService).isAdmin$.pipe(
-        map(isAdmin => isAdmin || router.createUrlTree(['']))
-      );
-    }]
+      import('./admin-dashboard/admin-dashboard.component').then(
+        (c) => c.AdminDashboardComponent
+      ),
+    canMatch: [
+      (route: Route, segments: UrlSegment[]) => {
+        const router = inject(Router);
+        return inject(UserPermissionsService).isAdmin$.pipe(
+          map((isAdmin) => isAdmin || router.createUrlTree(['dashboard-user']))
+        );
+      },
+    ],
   },
 
   {
-    path: 'dashboard',
+    path: 'dashboard-user',
     component: UserDashboardComponent,
+    canMatch: [
+      (route: Route, segments: UrlSegment[]) => {
+        const router = inject(Router);
+        return inject(UserPermissionsService).isAdmin$.pipe(
+          map((isAdmin) => !isAdmin || router.createUrlTree(['dashboard']))
+        );
+      },
+    ],
   },
 
   { path: '**', component: NotFoundComponent },
@@ -32,6 +49,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
