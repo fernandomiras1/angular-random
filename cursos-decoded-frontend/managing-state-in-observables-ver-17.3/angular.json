@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-input-router-binding": {
+    "statefull-rxjs-operators": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/angular-input-router-binding",
+            "outputPath": "dist/statefull-rxjs-operators",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -30,6 +30,7 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -62,10 +63,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "angular-input-router-binding:build:production"
+              "buildTarget": "statefull-rxjs-operators:build:production"
             },
             "development": {
-              "buildTarget": "angular-input-router-binding:build:development"
+              "buildTarget": "statefull-rxjs-operators:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -73,7 +74,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "angular-input-router-binding:build"
+            "buildTarget": "statefull-rxjs-operators:build"
           }
         },
         "test": {
@@ -90,6 +91,7 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -97,8 +99,5 @@
         }
       }
     }
-  },
-  "cli": {
-    "analytics": false
   }
 }
