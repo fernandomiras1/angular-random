@@ -1,4 +1,11 @@
-import { Component, Input, computed, signal } from '@angular/core';
+import {
+  Component,
+  Input,
+  computed,
+  signal,
+  input,
+  effect,
+} from '@angular/core';
 import { User, ModifiedUser } from './models';
 
 @Component({
@@ -8,17 +15,33 @@ import { User, ModifiedUser } from './models';
     <input (input)="updateQuery($event)" placeholder="Start typing..." />
     <ul>
       @for (user of filteredUsers(); track user.id) {
-        <li>{{ user.name }} {{ user.lastName }}</li>
+      <li>{{ user.displayName }}</li>
       }
     </ul>
   `,
 })
 export class UserListComponent {
-  @Input() users: User[] = [];
+  // @Input() users: User[] = [];
+
+  usersList = input.required<ModifiedUser[], User[]>({
+    alias: 'users',
+    transform: concatUserNames,
+  });
+
+  constructor() {
+    // ngOnChanges => Se cambia por effect con Signal.
+    effect(() => {
+      console.log(
+        '%c New input value is:',
+        'background: #222; color: #bada55',
+        this.usersList()
+      );
+    });
+  }
 
   protected filteredUsers = computed(() =>
-    this.users.filter(({ name }) =>
-      name.startsWith(this.query())
+    this.usersList().filter(({ displayName }) =>
+      displayName.startsWith(this.query())
     )
   );
 
