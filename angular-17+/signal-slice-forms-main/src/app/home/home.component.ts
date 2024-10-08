@@ -36,7 +36,7 @@ export default class HomeComponent {
   private fb = inject(FormBuilder);
   private http = inject(HttpClient);
 
-  formDataLoaded$ = of({ name: 'Josh' }).pipe(delay(2000));
+  formDataLoaded$ = of({ name: 'Josh' }).pipe(delay(5000));
 
   form = this.fb.nonNullable.group({
     name: [''],
@@ -102,7 +102,7 @@ export default class HomeComponent {
 
   constructor() {
     effect(() => {
-      console.log(this.formState());
+      console.log('effect (formState):',this.formState());
     });
   }
 }
