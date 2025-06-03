@@ -8,7 +8,7 @@ import { BannerComponent } from './banner/banner.component';
   template: `
     <div class="header">
       <img class="logo" src="./assets/logo.png" alt="Decoded Frontend">
-      
+
       <button class="toggle-button" (click)="showMore.set(!showMore())">
         {{ showMore() ? 'Collapse' : 'Expand' }} Banner
       </button>
