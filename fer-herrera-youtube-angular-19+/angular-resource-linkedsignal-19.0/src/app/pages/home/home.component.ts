@@ -22,6 +22,7 @@ export default class HomeComponent {
   // selectedPokemon = signal<string>('');
   currentPage = signal(0);
 
+
   selectedPokemon = linkedSignal(() => {
     const selected = this.pokemonResource.hasValue()
       ? this.pokemonResource.value()![5].name
