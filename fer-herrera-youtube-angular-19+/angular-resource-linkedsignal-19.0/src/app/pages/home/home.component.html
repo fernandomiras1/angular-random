@@ -1,0 +1,35 @@
+<p class="text-2xl">Selector de Pokémons</p>
+
+<select
+  class="border p-2 w-full"
+  #pokemonSelector
+  (change)="onSelectedPokemon(pokemonSelector.value)"
+>
+  <!-- <option value="0">Selecciona un Pokémon</option> -->
+
+  @if( pokemonResource.hasValue() ) { @for (pokemon of pokemonResource.value();
+  track pokemon.name) {
+  <option
+    value="{{ pokemon.name }}"
+    [selected]="selectedPokemon() === pokemon.name"
+  >
+    {{ pokemon.name }}
+  </option>
+  } } @else {
+  <option value="0">Espere por favor</option>
+  }
+
+  <!-- <option value="1">Bulbasaur</option>
+  <option value="2">Ivysaur</option>
+  <option value="3">Venusaur</option>
+  <option value="4">Charmander</option>
+  <option value="5">Charmeleon</option>
+  <option value="6">Charizard</option> -->
+</select>
+
+<p class="mt-10">
+  Opción seleccionada:
+  <span class="text-blue-500 font-bold">{{ selectedPokemon() }}</span>
+</p>
+
+<button (click)="loadNextPage()">Página actual: {{ currentPage() + 1 }}</button>
